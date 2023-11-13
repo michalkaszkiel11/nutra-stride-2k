@@ -1,13 +1,13 @@
 import { Schema, model } from "mongoose";
 
 const roleOfExerciseSchema = new Schema({
-    name: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     video: String,
     image: String,
 });
 const exercisesSchema = new Schema({
-    name: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     image: String,
 });

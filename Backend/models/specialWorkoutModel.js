@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const specialWorkoutSchema = new Schema({
-    name: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: true },
     workoutDesc: { type: String, required: true },
     video: String,
     image: String,

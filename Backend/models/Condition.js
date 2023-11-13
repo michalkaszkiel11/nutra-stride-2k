@@ -3,7 +3,7 @@ import specialDiet from "./specialDiet.js";
 import specialWorkout from "./specialWorkout.js";
 
 const conditionSchema = new Schema({
-    name: String,
+    title: String,
     conditionDesc: String,
     image: String,
     conditionChoose: {
