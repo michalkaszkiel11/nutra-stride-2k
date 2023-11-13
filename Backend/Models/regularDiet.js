@@ -1,21 +1,21 @@
 import {Schema, model} from "mongoose";
 
 const dietSchema = new Schema({
-    title: String,
-    description: String,
-    mealExample: String
+    title: { type: String, required: true, unique: true },
+    description: { type: String, required: true },
+    mealExample: { type: String, required: true }
 });
 
 const subOptionSchema = new Schema({
-    title: String,
-    description: String,
+    title: { type: String, required: true, unique:true},
+    description: { type: String, required: true },
     diets: [dietSchema] // Array of diet plans
 });
 
 const regularDietSchema = new Schema({
     goalOptions: [{
-        title: String,
-        description: String,
+        title: { type: String, required: true,unique: true },
+    description: { type: String, required: true },
         subOptions: [subOptionSchema] // Array of sub-options
     }]
 });
