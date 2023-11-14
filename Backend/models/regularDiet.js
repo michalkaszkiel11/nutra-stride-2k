@@ -15,7 +15,6 @@ const subOptionSchema = new Schema({
 const regularDietSchema = new Schema({
     goalOptions: [{
         title: { type: String, required: true,unique: true },
-    description: { type: String, required: true },
         subOptions: [subOptionSchema] // Array of sub-options
     }]
 });
