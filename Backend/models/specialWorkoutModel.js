@@ -1,10 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const specialWorkoutSchema = new Schema({
-    title: { type: String, required: true, unique: true },
+    workoutTitle: { type: String, required: true, unique: true },
     workoutDesc: { type: String, required: true },
-    video: String,
-    image: String,
+    workoutExamples: { type: String, required: true},
+    workoutVideo: String,
+    workoutImage: String,
 });
 const SpecialWorkout = model("SpecialWorkout", specialWorkoutSchema);
 export default SpecialWorkout;
