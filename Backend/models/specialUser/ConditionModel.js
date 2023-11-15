@@ -1,13 +1,17 @@
 import { Schema, model } from "mongoose";
-import specialDiet from "./specialDiet.js";
-import specialWorkout from "./specialWorkoutModel.js";
 
 const conditionSchema = new Schema({
     title: String,
     image: String,
     conditionChoose: {
-        diet: [specialDiet],
-        workout: [specialWorkout],
+        diet: [{
+            type: Schema.Types.ObjectId,
+            ref: 'SpecialDiet'
+        }],
+        workout: [{
+            type: Schema.Types.ObjectId,
+            ref: 'SpecialWorkout'
+        }],
     },
 });
 
