@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
-import SpecialDiet from "../models/specialDiet.js";
-import SpecialWorkout from "../models/specialWorkoutModel.js";
-import Condition from "../models/Condition.js";
+import SpecialDiet from "../models/specialUser/specialDiet";
+import SpecialWorkout from "../models/specialUser/specialWorkoutModel.js";
+import Condition from "../models/specialUser/ConditionModel.js";
+
+
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`,
@@ -17,6 +20,10 @@ mongoose
     console.log(error.message);
     console.log("🤨");
   });
+
+
+
+
 
 //create a array of objects where each object is a specific health condition with diet and workout
 
@@ -1186,13 +1193,16 @@ const healthConditionsData = [
 
 
 //iterate over the objects, create and save each object in the database
+
 healthConditionsData.forEach((condition) => saveHealthConditionData(condition));
 
 async function saveHealthConditionData(conditionData) {
+
+    const healthConditionId= ;
   try {
     // Create and save SpecialDiet
     const diet = new SpecialDiet({
-      healthCondition: conditionData.healthCondition,
+        healthCondition: healthConditionId,
       description: conditionData.description,
       meals: conditionData.meals,
     });
@@ -1200,6 +1210,7 @@ async function saveHealthConditionData(conditionData) {
 
     // Create and save SpecialWorkout
     const workout = new SpecialWorkout({
+        healthCondition: healthConditionId,
       workoutTitle: conditionData.workoutTitle,
       workoutDesc: conditionData.workoutDesc,
       workoutVideo: conditionData.workoutVideo,
@@ -1210,7 +1221,6 @@ async function saveHealthConditionData(conditionData) {
     // Create and save Condition instance
     const condition = new ConditionModel({
       title: conditionData.title,
-      conditionDesc: conditionData.conditionDesc,
       image: conditionData.image,
       conditionChoose: {
         diet: [diet._id],
