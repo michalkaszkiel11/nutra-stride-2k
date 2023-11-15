@@ -189,3 +189,24 @@ const regularWorkout = {
         },
     ],
 };
+
+regularExercises.difficulty.forEach(async (level) => {
+    await saveRegularWorkout(level);
+});
+
+async function saveRegularWorkout(workoutLevel) {
+    try {
+        const workout = new RegularWorkout({
+            difficulty: workoutLevel.level,
+            role: workoutLevel.role,
+        });
+        await workout.save();
+        console.log(
+            `Saved workout for difficulty level: ${workoutLevel.level}`
+        );
+    } catch (error) {
+        console.error(
+            `Error saving workout for difficulty level ${workoutLevel.level}: ${error.message}`
+        );
+    }
+}
