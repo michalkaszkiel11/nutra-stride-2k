@@ -1,22 +1,42 @@
 import express from "express";
-import RegularWorkout from "../models/RegularWorkout";
+import {
+    saveExerciseData,
+    saveExerciseRoleData,
+    saveRegularWorkoutData,
+} from "../data/dataExporter/RegularWorkout/RegularWorkoutExporter.js";
+import regularWorkoutData from "../data/regularWorkoutData.js";
 
 const router = express.Router();
 
-router.post("/saveWorkout", async (req, res) => {
+router.post("/uploadRegularWorkoutData", async (req, res) => {
     try {
-        const { difficulty, role } = req.body;
+        // Save Exercise data
+        const exerciseData = regularWorkoutData.difficulty.flatMap((level) =>
+            level.role.flatMap((role) => role.workout)
+        );
+        await saveExerciseData(exerciseData);
 
-        const workout = new RegularWorkout({
-            difficulty,
-            role,
+        // Save ExerciseRole data
+        const exerciseRoleData = regularWorkoutData.difficulty.flatMap(
+            (level) =>
+                level.role.map((role) => ({
+                    title: role.title,
+                    description: role.description,
+                    workout: role.workout.map((exercise) => exercise.title),
+                    video: role.video,
+                    image: role.image,
+                }))
+        );
+        await saveExerciseRoleData(exerciseRoleData);
+
+        // Save RegularWorkout data
+        await saveRegularWorkoutData(regularWorkoutData);
+
+        res.status(201).json({
+            message: "Regular workout data uploaded successfully!",
         });
-
-        await workout.save();
-
-        res.status(201).json({ message: "Workout saved successfully!" });
     } catch (error) {
-        console.error("Error saving workout:", error);
+        console.error("Error uploading regular workout data:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });

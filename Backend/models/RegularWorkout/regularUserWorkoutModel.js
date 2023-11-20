@@ -1,13 +1,17 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model } = mongoose;
 
 const regularWorkoutSchema = new Schema({
     difficulty: [
         {
-            level: { type: String, required: true },
-            role: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "RegularExerciseRole",
-            },
+            level: { type: String, required: true, unique: false },
+            role: [
+                {
+                    type: Schema.Types.ObjectId,
+                    ref: "RegularExerciseRole",
+                },
+            ],
         },
     ],
 });

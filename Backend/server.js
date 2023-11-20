@@ -8,6 +8,16 @@ import cookieParser from "cookie-parser";
 const app = express();
 dotenv.config();
 app.use(cookieParser());
+app.use(express.json()); // Apply express.json() middleware first
+app.use(
+    cors({
+        origin: "*", // Allow all origins * = wildcard
+        methods: ["HEAD", "GET", "POST", "PATCH", "DELETE"],
+        credentials: true,
+    })
+);
+app.use("/api/ns", router);
+
 const port = process.env.PORT || 10000;
 
 mongoose
@@ -20,21 +30,11 @@ mongoose
     )
     .then(() => {
         console.log("Database connected! 😃");
+        app.listen(port, () => {
+            console.log(`🥦The server is listening on port ${port}🥦`);
+        });
     })
     .catch((error) => {
         console.log(error.message);
         console.log("🤨");
     });
-
-const corsOptions = {
-    origin: "*", //allow all origins * = wildcard
-    methods: ["HEAD", "GET", "POST", "PATCH", "DELETE"],
-    credentials: true,
-};
-app.use(express.json());
-app.use(cors(corsOptions));
-app.use("/api/ns", router);
-
-app.listen(port, () => {
-    console.log(`🥦The server is listening on port ${port}🥦`);
-});

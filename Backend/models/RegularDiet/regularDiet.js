@@ -1,13 +1,16 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
+const { Schema, model } = mongoose;
 const regularDietSchema = new Schema({
-    goalOptions: [
+    goal: [
         {
-            title: { type: String, required: true, unique: true },
-            planName: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "RegularDietPlan",
-            },
+            title: { type: String, required: true, unique: false },
+            plan: [
+                {
+                    type: Schema.Types.ObjectId,
+                    ref: "RegularDietPlan",
+                },
+            ],
         },
     ],
 });
