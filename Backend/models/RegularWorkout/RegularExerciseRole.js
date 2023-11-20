@@ -1,16 +1,18 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model } = mongoose;
 
 const roleOfExerciseSchema = new Schema({
-    title: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: false },
     description: { type: String, required: true },
     workout: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Exercises",
         },
     ],
-    video: String,
-    image: String,
+    video: { type: String, required: false },
+    image: { type: String, required: false },
 });
 
 const RegularExerciseRole = model("RegularExerciseRole", roleOfExerciseSchema);

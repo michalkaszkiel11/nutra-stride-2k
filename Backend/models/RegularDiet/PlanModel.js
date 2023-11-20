@@ -1,11 +1,16 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model } = mongoose;
+
 const planSchema = new Schema({
-    title: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: false },
     description: { type: String, required: true },
-    diets: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "DietModel",
-    }],
+    diets: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "DietModel",
+        },
+    ],
 });
 const RegularDietPlan = model("RegularDietPlan", planSchema);
 export default RegularDietPlan;

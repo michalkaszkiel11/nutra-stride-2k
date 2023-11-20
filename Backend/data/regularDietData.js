@@ -1,8 +1,8 @@
 const regularDiet = {
-    goalOptions: [
+    goal: [
         {
             title: "Weight Loss",
-            planName: [
+            plan: [
                 {
                     title: "Lean & Fit",
                     description:
@@ -119,7 +119,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost",
-            planName: [
+            plan: [
                 {
                     title: "Power-Up Meals",
                     description:
@@ -236,7 +236,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost",
-            planName: [
+            plan: [
                 {
                     title: "Muscle Builder's Blueprint",
                     description:
@@ -353,7 +353,7 @@ const regularDiet = {
         },
         {
             title: "Gain Weight",
-            planName: [
+            plan: [
                 {
                     title: "Healthy Bulking",
                     description:
@@ -470,3 +470,4 @@ const regularDiet = {
         },
     ],
 };
+export default regularDiet;
