@@ -35,12 +35,8 @@ async function saveRegularWorkoutData() {
             );
 
             const newWorkout = new RegularWorkout({
-                difficulty: [
-                    {
-                        level: difficultyLevel.level,
-                        role: roleId.filter((id) => id != null),
-                    },
-                ],
+                level: difficultyLevel.level,
+                role: roleId.filter((id) => id != null),
             });
 
             await newWorkout.save();

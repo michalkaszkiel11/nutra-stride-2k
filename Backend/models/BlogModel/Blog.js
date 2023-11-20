@@ -1,12 +1,14 @@
 import { Schema, model } from "mongoose";
 
 const BlogCategoriesSchema = new Schema({
-    title: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: false },
     description: { type: String, required: true },
-    posts: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Post",
-    },
+    posts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Post",
+        },
+    ],
 });
 
 const BlogCategoriesModel = model("BlogCategories", BlogCategoriesSchema);

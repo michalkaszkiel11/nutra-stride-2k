@@ -2,15 +2,11 @@ import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
 const regularDietSchema = new Schema({
-    goal: [
+    title: { type: String, required: true, unique: false },
+    plan: [
         {
-            title: { type: String, required: true, unique: false },
-            plan: [
-                {
-                    type: Schema.Types.ObjectId,
-                    ref: "RegularDietPlan",
-                },
-            ],
+            type: Schema.Types.ObjectId,
+            ref: "RegularDietPlan",
         },
     ],
 });

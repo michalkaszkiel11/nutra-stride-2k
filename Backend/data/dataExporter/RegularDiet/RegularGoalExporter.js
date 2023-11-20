@@ -34,12 +34,8 @@ async function regularGoalExporter() {
                 )
             );
             const newGoal = new RegularDiet({
-                goal: [
-                    {
-                        title: goals.title,
-                        plan: goalId.filter((id) => id != null),
-                    },
-                ],
+                title: goals.title,
+                plan: goalId.filter((id) => id != null),
             });
             await newGoal.save();
             console.log(`Saved goal: ${goals.title}`);
