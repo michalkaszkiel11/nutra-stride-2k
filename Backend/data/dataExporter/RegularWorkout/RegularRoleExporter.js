@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import regularWorkout from "../../regularWorkoutData.js";
 import RegularExerciseRole from "../../../models/RegularWorkout/regularExerciseRole.js";
 import ExercisesModel from "../../../models/RegularWorkout/regularExerciseModel.js";
-import getIdByTitle from "../../../middleware/getIDByTitle.js";
+import getIdByTitle from "../../../middleware/getIdByTitle.js";
 import express from "express";
 dotenv.config();
 

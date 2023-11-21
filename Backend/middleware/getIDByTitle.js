@@ -1,7 +1,7 @@
 const getIdByTitle = async (title, model) => {
     let wantedId; // Declare the variable outside the try block
     try {
-        wantedId = await model.findOne({ title: title }).exec();
+        wantedId = await model.findOne({ title }).exec();
         return wantedId ? wantedId._id : null;
     } catch (error) {
         console.error(

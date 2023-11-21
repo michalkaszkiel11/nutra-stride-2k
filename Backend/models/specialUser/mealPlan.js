@@ -6,6 +6,6 @@ const mealPlanSchema = new Schema({
     healthImpactRange: { type: Number, required: true },
 });
 
-const MealPlan = model("MealPlan", mealPlanSchema);
+const MealSmallest = model("MealSmallest", mealPlanSchema);
 
-export default MealPlan;
+export default MealSmallest;
