@@ -1,12 +1,12 @@
 import { Schema, model } from "mongoose";
 
 const specialDietSchema = new Schema({
-  healthCondition: {
-    type: Schema.Types.ObjectId,
-    ref: 'ConditionModel',
-    required: true
-  },
-  description: { type: String, required: true },
+
+    healthCondition: { 
+        type: String, 
+        required: true 
+      },
+  description: { type: String},
   meals: {
     breakfast: [{
         type: Schema.Types.ObjectId,
