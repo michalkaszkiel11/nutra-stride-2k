@@ -1,5 +1,5 @@
 import express from "express";
-import RegularWorkout from "../models/RegularWorkout";
+
 
 const router = express.Router();
 
