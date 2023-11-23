@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import router from "./Routes/router.js";
+import router from "./routes/router.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
