@@ -3,7 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --primary-color: #90bfb4;
+    --secondary-color: #36a491;
+    --accent-color: #05b0bb;
+    --dark-color: #065a78;
+    --darker-color: #102f40;
+    --darkest-color: #002241;
+}
 body {
     width: 100%;
     height: 100%;
@@ -11,9 +18,5 @@ body {
 .App {
     width: 100vw;
     height: 100vh;
-    div {
-        width: 50%;
-        height: 50%;
-        background-color: antiquewhite;
-    }
+    background-color: var(--primary-color);
 }

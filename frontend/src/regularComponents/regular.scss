@@ -1,0 +1,89 @@
+.mainGoal-box {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-rows: repeat(20, 5%);
+    .header-box {
+        grid-area: 3/6/7/15;
+        @extend .flex-center;
+        font-size: 4vh;
+    }
+    .dietChoose-box {
+        @extend .fullsize, .flex-center;
+        grid-area: 8/3/19/7;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .diet-plans {
+        gap: 1.5rem;
+        transition: all 0.5s;
+        @extend .fullsize, .flex-center;
+        flex-direction: column;
+        grid-area: 8/10/19/18;
+        border-radius: 1.5rem;
+        .plan-card {
+            width: 100%;
+            height: 100%;
+            @extend .flex-center;
+            flex-direction: column;
+            border: solid 1px black;
+            background-color: var(--dark-color);
+            border-radius: 1.5rem;
+            color: white;
+            font-size: larger;
+        }
+    }
+}
+/*Templates styles*/
+.fullsize {
+    width: 100%;
+    height: 100%;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Buttons*/
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 10rem;
+    width: 25rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: var(--darker-color);
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    font-size: larger;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+        82.3deg,
+        rgba(6, 90, 120, 0.5) 10.8%,
+        rgba(5, 176, 187, 1) 94.3%
+    );
+    transition: all 0.7s;
+}

@@ -235,7 +235,7 @@ const regularDiet = {
             ],
         },
         {
-            title: "Energy Boost",
+            title: "Energy Boost 2",
             plan: [
                 {
                     title: "Muscle Builder's Blueprint",
