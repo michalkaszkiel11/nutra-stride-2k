@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
-import ConditionModel from '../../models/specialUser/ConditionModel.js';
-import healthConditionsData from './healthConditionsData.js';
-import SpecialDiet from '../../models/specialUser/specialDietModel.js';
-import SpecialWorkout from '../../models/specialUser/specialWorkoutModel.js';
+import ConditionModel from '../../../models/specialUser/ConditionModel.js';
+import healthConditionsData from '../../healthConditionsData.js';
+import SpecialDiet from '../../../models/specialUser/specialDietModel.js';
+import SpecialWorkout from '../../../models/specialUser/specialWorkoutModel.js';
 
 
 
