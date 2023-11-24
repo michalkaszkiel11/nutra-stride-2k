@@ -9,7 +9,7 @@ import {
     validator,
     authenticateUser,
 } from "../middleware/userValidator.js";
-import { getGoals } from "../controllers/getGoals.js";
+import { getGoalBg, getGoals } from "../controllers/getGoals.js";
 import { getDietPlans } from "../controllers/getDietPlans.js";
 
 const router = express.Router();
@@ -19,5 +19,6 @@ router.post("/user/login", loginUser);
 router.post("/user/logout", logoutUser);
 router.get("/regular/goal", getGoals);
 router.get("/regular/diet-plans/:goalId", getDietPlans);
+router.get("/regular/goal/bg/:goalId", getGoalBg);
 router.use(authenticateUser);
 export default router;
