@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import "../regularComponents/regular.scss";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../regularComponents/regular.scss";
+import { Menu } from "../Menu";
 export const MainGoal = () => {
     useEffect(() => {
         getGoal();
@@ -49,39 +51,50 @@ export const MainGoal = () => {
         setGoalBg(goalId);
     };
 
+    const navigate = useNavigate();
+    const handlePlanCardClick = (planId) => {
+        navigate(`/regular/meal-plans/${planId}`); // Navigate to the Meals component with the planId
+    };
     return (
-        <div className="mainGoal-box">
-            <div className="header-box">
-                <h1 className="mainGoal-header">Find your Path</h1>
-                <h3>Select your aim</h3>
+        <>
+            <Menu />
+            <div className="mainGoal-box">
+                <div className="header-box">
+                    <h1 className="mainGoal-header">Find your Path</h1>
+                    <h3>Select your aim</h3>
+                </div>
+                <div className="dietChoose-box">
+                    {goals.map((goal) => (
+                        <button
+                            className="cta"
+                            key={goal._id}
+                            onClick={() => handleGoalClick(goal._id)}
+                        >
+                            {goal.title}
+                        </button>
+                    ))}
+                </div>
+                <div
+                    className="diet-plans"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                >
+                    {plans.map((plan) => (
+                        <div
+                            className="plan-card"
+                            key={plan._id}
+                            onClick={() => handlePlanCardClick(plan._id)}
+                        >
+                            <h4>{plan.title}</h4>
+                            <p>{plan.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className="dietChoose-box">
-                {goals.map((goal) => (
-                    <button
-                        className="button"
-                        key={goal._id}
-                        onClick={() => handleGoalClick(goal._id)}
-                    >
-                        {goal.title}
-                    </button>
-                ))}
-            </div>
-            <div
-                className="diet-plans"
-                style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                }}
-            >
-                {plans.map((plan) => (
-                    <div className="plan-card" key={plan._id}>
-                        <h4>{plan.title}</h4>
-                        <p>{plan.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
+        </>
     );
 };

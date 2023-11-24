@@ -120,7 +120,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost",
-            image: "https://images.unsplash.com/photo-1452697620382-f6543ead73b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            image: "https://www.canva.com/design/DAF1GgDpy58/view",
             plan: [
                 {
                     title: "Power-Up Meals",
@@ -238,7 +238,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost 2",
-            image: "https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            image: "https://www.canva.com/design/DAF1GvOGhYk/view",
             plan: [
                 {
                     title: "Muscle Builder's Blueprint",
