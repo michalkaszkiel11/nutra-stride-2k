@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import green from "./images/green2.jpg";
 import { Menu } from "../Menu";
+
 export const Meals = () => {
+    const greenImg = green;
+
     const [mealPlans, setMealPlans] = useState([]);
     const { planId } = useParams();
+
     useEffect(() => {
         const fetchMealPlans = async () => {
             try {
                 const response = await axios.get(
                     `http://localhost:10000/api/ns/regular/diet-plans/meals/${planId}`
                 );
-                const plans = response.data.data;
+                const plans = response.data.data.map((plan) => ({
+                    ...plan,
+                    isExpanded: false, // set value for scroll
+                }));
                 setMealPlans(plans);
             } catch (error) {
                 console.log("Unable to fetch meal plans");
@@ -21,18 +29,75 @@ export const Meals = () => {
         fetchMealPlans();
     }, [planId]);
 
+    const toggleReadMore = (index) => {
+        const updatedMealPlans = [...mealPlans];
+        updatedMealPlans[index].isExpanded =
+            !updatedMealPlans[index].isExpanded;
+        setMealPlans(updatedMealPlans);
+    };
+    const readMore = (index) => {
+        const chevronDown =
+            document.querySelectorAll(".fa-chevron-down")[index];
+        const chevronUp = document.querySelectorAll(".fa-chevron-up")[index];
+        const element = document.querySelectorAll(".wrapper")[index];
+        if (element) {
+            element.style.overflow = "scroll";
+        }
+        if (chevronUp) {
+            chevronUp.style.display = "block";
+        }
+        if (chevronDown) {
+            chevronDown.style.display = "none";
+        }
+        toggleReadMore(index);
+    };
+
+    const hideArrowUp = (index) => {
+        const chevronDown =
+            document.querySelectorAll(".fa-chevron-down")[index];
+        const chevronUp = document.querySelectorAll(".fa-chevron-up")[index];
+        const element = document.querySelectorAll(".wrapper")[index];
+        if (element) {
+            element.style.overflow = "hidden";
+        }
+        if (chevronUp) {
+            chevronUp.style.display = "none";
+        }
+        if (chevronDown) {
+            chevronDown.style.display = "block";
+        }
+        toggleReadMore(index);
+    };
+
     return (
         <>
             <Menu />
             <div className="meal-box">
                 <h2>Diet for Selected Plan:</h2>
                 <div className="meal-selection">
-                    {mealPlans.map((mealPlan) => (
+                    {mealPlans.map((mealPlan, index) => (
                         <div className="meal" key={mealPlan._id}>
+                            <img src={greenImg} alt="vege" />
                             <h4>{mealPlan.title}</h4>
-                            <p>{mealPlan.description}</p>
-                            <h5>Example:</h5>
-                            <p>{mealPlan.mealExample}</p>
+                            <div className="wrapper">
+                                <p>{mealPlan.description}</p>
+                                <h5>Example:</h5>
+                                <p className="example">
+                                    {mealPlan.mealExample}
+                                </p>
+                            </div>
+                            <i
+                                className="fa-solid fa-chevron-up"
+                                onClick={() =>
+                                    mealPlan.isExpanded && hideArrowUp(index)
+                                }
+                            ></i>
+                            <i
+                                className="fa-solid fa-chevron-down"
+                                onClick={() =>
+                                    !mealPlan.isExpanded && readMore(index)
+                                }
+                            ></i>
                             <button className="button">Go to workout</button>
                         </div>
                     ))}
