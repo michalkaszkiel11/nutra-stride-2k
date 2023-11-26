@@ -4,7 +4,7 @@ const regularWorkout = {
             level: "Beginner",
             role: [
                 {
-                    title: "Aerobic/Cardio",
+                    title: "Aerobic/Cardio level 1",
                     description:
                         "A gentle start to increase heart rate and stamina.",
                     workout: [
@@ -26,7 +26,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Strength Training",
+                    title: "Strength Training level 1",
                     description:
                         "Basic squats, knee push-ups, and assisted lunges.",
                     workout: [
@@ -43,7 +43,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Flexibility & Balance",
+                    title: "Flexibility & Balance level 1",
                     description:
                         "Simple poses focusing on stretching and balance.",
                     workout: [
@@ -65,7 +65,7 @@ const regularWorkout = {
             level: "Intermediate",
             role: [
                 {
-                    title: "Aerobic/Cardio",
+                    title: "Aerobic/Cardio level 2",
                     description:
                         "A step up from walking to increase cardiovascular health.",
                     workout: [
@@ -87,7 +87,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Strength Training",
+                    title: "Strength Training level 2",
                     description:
                         "Incorporating light to moderate weights for exercises like bicep curls, shoulder presses, and goblet squats.",
                     workout: [
@@ -104,7 +104,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Flexibility & Balance",
+                    title: "Flexibility & Balance level 2",
                     description: "Introduction of more challenging poses.",
                     workout: [
                         {
@@ -125,7 +125,7 @@ const regularWorkout = {
             level: "Advanced",
             role: [
                 {
-                    title: "Aerobic/Cardio",
+                    title: "Aerobic/Cardio level 3",
                     description:
                         "Running: Interval training or longer distances for enhanced endurance.",
                     workout: [
@@ -147,7 +147,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Strength Training",
+                    title: "Strength Training level 3",
                     description:
                         "Free Weights: Heavy compound lifts like deadlifts, bench press, and squats using barbells.",
                     workout: [
@@ -169,7 +169,7 @@ const regularWorkout = {
                     ],
                 },
                 {
-                    title: "Flexibility & Balance",
+                    title: "Flexibility & Balance level 3",
                     description:
                         "Advanced Yoga: Engaging in complex poses requiring increased flexibility and balance.",
                     workout: [

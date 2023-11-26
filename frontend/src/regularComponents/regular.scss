@@ -252,13 +252,176 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             width: 100%;
-            height: 100%;
+            height: 50vh;
             border: solid 1px #000000;
+            button {
+                width: 100%;
+                height: 10vh;
+            }
         }
     }
 }
+.role-box {
+    @extend .grid20x5;
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
+    );
+    h1 {
+        grid-area: 4/2/6/18;
+        color: white;
+        font-size: 6vh;
+        text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+    .exercise-box {
+        grid-area: 7/2/20/20;
+        @extend .fullsize;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        gap: 3rem;
+        background: linear-gradient(
+            82.3deg,
+            rgb(243, 245, 233) 10.8%,
+            rgba(193, 233, 223, 0.8) 94.3%
+        );
+        .role-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 20vw;
+            height: 100%;
+            border-radius: 1.5rem;
+            // border: #000000 1px solid;
 
+            h2 {
+                @extend .fullsize;
+                font-size: 2.8vh;
+                text-align: center;
+                padding: 1rem;
+            }
+            img {
+                object-fit: cover;
+                width: 75%;
+            }
+            p {
+                @extend .fullsize;
+                text-align: justify;
+                padding: 1rem;
+                font-size: 1.8vh;
+            }
+
+            &:hover {
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(194, 204, 146) 10.8%,
+                    rgba(116, 192, 173, 0.8) 94.3%
+                );
+                transition: all 0.5s;
+            }
+        }
+    }
+}
+.exercise-box {
+    @extend.fullsize;
+    .exercise-card-box {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+        .exercise-card {
+            margin: 15vh 5vh 5vh 5vh;
+            width: 90vw;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: repeat(25, 4%);
+            grid-template-rows: repeat(25, 4%);
+            background: linear-gradient(
+                82.3deg,
+                rgb(248, 253, 224) 10.8%,
+                rgba(128, 180, 166, 0.8) 94.3%
+            );
+            .title {
+                grid-area: 2/2/6/15;
+                background-color: #cecece;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                h2 {
+                    padding: 2rem;
+                    font-size: 5vh;
+                }
+                i {
+                    padding: 3rem;
+                    font-size: 4.5vh;
+                }
+            }
+            .text {
+                background-color: #cecece;
+                grid-area: 7/2/19/15;
+                display: flex;
+                flex-direction: column;
+                h3 {
+                    padding: 2rem 1rem 0rem 2rem;
+                    font-size: 3vh;
+                }
+                p {
+                    padding: 1rem 2rem 1rem 2rem;
+                    font-size: 2vh;
+                }
+            }
+            .level {
+                grid-area: 2/16/8/25;
+                background-color: #cecece;
+                h2 {
+                    padding: 2rem 1rem 0rem 2rem;
+                    font-size: 3.5vh;
+                }
+                p {
+                    padding: 0rem 2rem 1rem 2rem;
+                    font-size: 2.5vh;
+                }
+            }
+            .image {
+                grid-area: 9/16/19/25;
+                background-image: url(./images/cycling.jpg);
+                @extend .bg-img-center;
+                background-size: cover !important;
+            }
+            .videos {
+                grid-area: 20/2/25/25;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                gap: 1rem;
+                div {
+                    @extend .fullsize;
+                    background-color: #888;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
 i {
     cursor: pointer;
 }

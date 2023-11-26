@@ -6,6 +6,8 @@ import { MainGoal } from "./regularComponents/MainGoal.jsx";
 import { Meals } from "./regularComponents/Meals.jsx"; // Import the new Meals component
 import { WorkoutLevel } from "./regularComponents/WorkoutLevel.jsx"; // Import the new Workout component
 import "../src/regularComponents/regular.scss";
+import { WorkoutRoles } from "./regularComponents/WorkoutRoles.jsx";
+import { Exercises } from "./regularComponents/Exercises.jsx";
 function App() {
     return (
         <div className="App">
@@ -24,6 +26,14 @@ function App() {
                             <Route
                                 path="/regular/workout-level"
                                 element={<WorkoutLevel />}
+                            />
+                            <Route
+                                path="/regular/workout-level/:lvlId"
+                                element={<WorkoutRoles />}
+                            />
+                            <Route
+                                path="/regular/workout-level/exercises/:roleId"
+                                element={<Exercises />}
                             />
                         </Routes>
                     </AuthenticationProvider>

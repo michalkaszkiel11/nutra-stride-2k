@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import regularWorkout from "../../regularWorkoutData.js";
 import ExercisesModel from "../../../models/RegularWorkout/regularExerciseModel.js";
 dotenv.config();
 mongoose
@@ -42,7 +43,7 @@ async function saveExerciseData(exerciseData) {
     }
 }
 saveExerciseData(
-    regularWorkoutData.difficulty.flatMap(
+    regularWorkout.difficulty.flatMap(
         (level) => level.role.flatMap((role) => role.workout) //role wasnt an array before saving
     )
 );

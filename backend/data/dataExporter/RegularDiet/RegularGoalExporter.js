@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import RegularDiet from "../../../models/RegularDiet/regularDiet.js";
 import regularDiet from "../../../data/regularDietData.js";
 import RegularDietPlan from "../../../models/RegularDiet/PlanModel.js";
-import getIdByTitle from "../../../middleware/getIDByTitle.js";
+import getIdByTitle from "../../../middleware/getIdByTitle.js";
 dotenv.config();
 mongoose
     .connect(

@@ -6,7 +6,6 @@ import axios from "axios";
 export const WorkoutLevel = () => {
     const navigate = useNavigate();
     const [level, setLevel] = useState([]);
-    const [role, setRole] = useState([]);
 
     useEffect(() => {
         getLevels();
@@ -23,35 +22,26 @@ export const WorkoutLevel = () => {
             console.log("Unable to send data to the server");
         }
     };
-    // const getRoles = async (lvlId) => {
-    //     try {
-    //         const response = await axios.get(
-    //             `http://localhost:10000/api/ns/regular/roles/${lvlId}`
-    //         );
-    //         const role = response.data.data;
-    //         setRole(role);
-    //     } catch (error) {
-    //         console.log("Unable to send data to the server");
-    //     }
-    // };
-    // const handleLevelClick = (lvlId) => {
-    //     // getRoles(lvlId);
-    //     navigate(`/regular/workout-level/${lvlId}`);
-    // };
+
+    const handleLevelClick = (lvlId) => {
+        // getRoles(lvlId);
+        navigate(`/regular/workout-level/${lvlId}`);
+    };
+
     return (
         <div className="workout-box">
             <Menu />
             <h1>Choose your level : </h1>
             <div className="level-box">
-                {level.map((lvl) => (
+                {level.map((lvl, index) => (
                     <div className="level-card" key={lvl.level}>
                         <h2>{lvl.level}</h2>
-                        {/* <button
-                            className="btn"
-                            onClick={() => getLevels(lvl.id)}
+                        <button
+                            className="button"
+                            onClick={() => handleLevelClick(lvl._id)}
                         >
                             Choose
-                        </button> */}
+                        </button>
                     </div>
                 ))}
             </div>
