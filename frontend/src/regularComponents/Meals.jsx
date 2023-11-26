@@ -3,10 +3,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import green from "./images/green2.jpg";
 import { Menu } from "../Menu";
+import { useNavigate } from "react-router-dom";
 
 export const Meals = () => {
     const greenImg = green;
-
+    const navigate = useNavigate();
     const [mealPlans, setMealPlans] = useState([]);
     const { planId } = useParams();
 
@@ -68,7 +69,9 @@ export const Meals = () => {
         }
         toggleReadMore(index);
     };
-
+    const navigateToWorkout = () => {
+        navigate("/regular/workout-level");
+    };
     return (
         <>
             <Menu />
@@ -98,7 +101,12 @@ export const Meals = () => {
                                     !mealPlan.isExpanded && readMore(index)
                                 }
                             ></i>
-                            <button className="button">Go to workout</button>
+                            <button
+                                className="button"
+                                onClick={navigateToWorkout}
+                            >
+                                Go to workout
+                            </button>
                         </div>
                     ))}
                 </div>

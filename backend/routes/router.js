@@ -12,6 +12,7 @@ import {
 import { getGoalBg, getGoals } from "../controllers/getGoals.js";
 import { getDietPlans } from "../controllers/getDietPlans.js";
 import { getMealsForPlan } from "../controllers/getMealPlans.js";
+import { getWorkoutLevel } from "../controllers/getWorkoutLevel.js";
 
 const router = express.Router();
 
@@ -22,5 +23,6 @@ router.get("/regular/goal", getGoals);
 router.get("/regular/diet-plans/:goalId", getDietPlans);
 router.get("/regular/goal/bg/:goalId", getGoalBg);
 router.get("/regular/diet-plans/meals/:planId", getMealsForPlan);
+router.get("/regular/workout-level", getWorkoutLevel);
 router.use(authenticateUser);
 export default router;
