@@ -45,8 +45,6 @@ async function saveExerciseRoleData() {
                     title: roles.title,
                     description: roles.description,
                     workout: workoutIds.filter((id) => id != null),
-                    video: roles.video,
-                    image: roles.image,
                 });
 
                 await newExerciseRole.save();

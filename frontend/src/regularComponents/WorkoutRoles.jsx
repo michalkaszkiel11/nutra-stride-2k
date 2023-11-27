@@ -7,7 +7,6 @@ export const WorkoutRoles = () => {
     const navigate = useNavigate();
     const { lvlId } = useParams();
     const [roles, setRoles] = useState([]);
-    // const [levels, setLevel] = useState([]);
 
     useEffect(() => {
         const getRoles = async () => {
@@ -23,21 +22,7 @@ export const WorkoutRoles = () => {
         };
         getRoles();
     }, [lvlId]);
-    // useEffect(() => {
-    //     const getLevels = async (roleId) => {
-    //         try {
-    //             const response = await axios.get(
-    //                 `http://localhost:10000/api/ns/regular/workout-level/exercises/${roleId}`
-    //             );
-    //             const level = response.data.data;
-    //             console.log(level);
-    //             setLevel(level);
-    //         } catch (error) {
-    //             console.log("Unable to send data to the server");
-    //         }
-    //     };
-    //     getLevels();
-    // }, []);
+
     const handleRoleClick = (roleId) => {
         navigate(`/regular/workout-level/exercises/${roleId}`);
     };
@@ -45,7 +30,7 @@ export const WorkoutRoles = () => {
         <div className="role-box">
             <Menu />
             <h1>Welcome to first step. Please choose your level</h1>
-            <div className="exercise-box">
+            <div className="exercises-box">
                 {roles.map((role) => (
                     <div
                         className="role-card"

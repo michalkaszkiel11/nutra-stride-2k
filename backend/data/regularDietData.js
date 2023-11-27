@@ -2,7 +2,6 @@ const regularDiet = {
     goal: [
         {
             title: "Weight Loss",
-            image: "https://images.unsplash.com/photo-1604480132715-bd70038b74df?q=80&w=2118&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             plan: [
                 {
                     title: "Lean & Fit",
@@ -120,7 +119,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost",
-            image: "https://www.canva.com/design/DAF1GgDpy58/view",
+
             plan: [
                 {
                     title: "Power-Up Meals",
@@ -238,7 +237,7 @@ const regularDiet = {
         },
         {
             title: "Energy Boost 2",
-            image: "https://www.canva.com/design/DAF1GvOGhYk/view",
+
             plan: [
                 {
                     title: "Muscle Builder's Blueprint",
@@ -356,7 +355,6 @@ const regularDiet = {
         },
         {
             title: "Gain Weight",
-            image: "https://images.unsplash.com/photo-1604480133054-2597dad6f610?q=80&w=1938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             plan: [
                 {
                     title: "Healthy Bulking",

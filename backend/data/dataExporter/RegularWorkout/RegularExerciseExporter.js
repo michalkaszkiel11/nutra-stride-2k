@@ -1,7 +1,8 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import regularWorkout from "../../regularWorkoutData.js";
-import ExercisesModel from "../../../models/RegularWorkout/regularExerciseModel.js";
+import ExercisesModel from "../../../models/RegularWorkout/RegularExerciseModel.js";
+
 dotenv.config();
 mongoose
     .connect(

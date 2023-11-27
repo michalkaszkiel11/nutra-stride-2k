@@ -11,8 +11,6 @@ const roleOfExerciseSchema = new Schema({
             ref: "Exercises",
         },
     ],
-    video: { type: String, required: false },
-    image: { type: String, required: false },
 });
 
 const RegularExerciseRole = model("RegularExerciseRole", roleOfExerciseSchema);
