@@ -22,7 +22,7 @@ const blogData = {
                     title: "Fueling Your Workout: Pre and Post Nutrition Tips",
                     content:
                         "Nutrition plays a pivotal role in optimizing your workouts. Whether you're gearing up for an intense session or aiding recovery post-exercise, understanding pre and post-workout nutrition is key. Pre-Workout Fuel: Consume a balanced meal 2-3 hours before your workout. Include complex carbohydrates and lean proteins for sustenergy.Stay hydrated; water is your workout ally.Post-Workout Recovery: Refuel with a combination of protein and carbohydrates. Opt for a protein shake or a meal rich in lean proteinhealthy carbs. Hydrate to replenish fluids lost during exercise. Remember, the right nutrition complements your efforts in theenhancing performance and supporting muscle recovery. Stay fustay fit!",
-                    image: "image-url-3.jpg",
+                    image: "https://images.pexels.com/photos/1034940/pexels-photo-1034940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 },
             ],
         },

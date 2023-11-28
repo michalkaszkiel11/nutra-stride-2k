@@ -13,14 +13,12 @@ export const Menu = () => {
                 <li>
                     <Link to="">Register</Link>
                 </li>
+
                 <li>
-                    <Link to="">Profile</Link>
+                    <Link to="/regular/workout-level">Workout</Link>
                 </li>
                 <li>
-                    <Link to="">Workout</Link>
-                </li>
-                <li>
-                    <Link to="">Diets</Link>
+                    <Link to="/regular/goal">Diets</Link>
                 </li>
             </ul>
         </nav>
