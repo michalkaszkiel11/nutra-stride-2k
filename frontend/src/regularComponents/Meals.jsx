@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import green from "./images/green2.jpg";
 import { Menu } from "../Menu";
 import { useNavigate } from "react-router-dom";
 
 export const Meals = () => {
-    const greenImg = green;
     const navigate = useNavigate();
     const [mealPlans, setMealPlans] = useState([]);
     const { planId } = useParams();
@@ -80,7 +78,7 @@ export const Meals = () => {
                 <div className="meal-selection">
                     {mealPlans.map((mealPlan, index) => (
                         <div className="meal" key={mealPlan._id}>
-                            <img src={greenImg} alt="vege" />
+                            <img src={mealPlan.image} alt="index" />
                             <h4>{mealPlan.title}</h4>
                             <div className="wrapper">
                                 <p>{mealPlan.description}</p>
@@ -90,12 +88,18 @@ export const Meals = () => {
                                 </p>
                             </div>
                             <i
+                                style={{
+                                    margin: "0.5rem 0.5rem 0.5rem 0.5rem",
+                                }}
                                 className="fa-solid fa-chevron-up"
                                 onClick={() =>
                                     mealPlan.isExpanded && hideArrowUp(index)
                                 }
                             ></i>
                             <i
+                                style={{
+                                    margin: "0.5rem 0.5rem 0.5rem 0.5rem",
+                                }}
                                 className="fa-solid fa-chevron-down"
                                 onClick={() =>
                                     !mealPlan.isExpanded && readMore(index)

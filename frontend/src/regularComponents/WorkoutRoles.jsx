@@ -31,17 +31,14 @@ export const WorkoutRoles = () => {
             <Menu />
             <h1>Welcome to first step. Please choose your level</h1>
             <div className="exercises-box">
-                {roles.map((role) => (
+                {roles.map((role, index) => (
                     <div
                         className="role-card"
                         key={role._id}
                         onClick={() => handleRoleClick(role._id)}
                     >
                         <h2>{role.title}</h2>
-                        <img
-                            src="https://images.unsplash.com/photo-1470468969717-61d5d54fd036?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="cardio"
-                        />
+                        <img src={role.image} alt={index} />
                         <p>{role.description}</p>
                     </div>
                 ))}

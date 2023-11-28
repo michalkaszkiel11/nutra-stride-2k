@@ -8,6 +8,7 @@ import { WorkoutLevel } from "./regularComponents/WorkoutLevel.jsx"; // Import t
 import "../src/regularComponents/regular.scss";
 import { WorkoutRoles } from "./regularComponents/WorkoutRoles.jsx";
 import { Exercises } from "./regularComponents/Exercises.jsx";
+
 function App() {
     return (
         <div className="App">

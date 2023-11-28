@@ -5,6 +5,7 @@ const regularWorkout = {
             role: [
                 {
                     title: "Aerobic/Cardio level 1",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701199360/regularWorkout/Roles/pwhp0ome2udz9l8djgej.jpg",
                     description:
                         "A gentle start to increase heart rate and stamina.",
                     workout: [
@@ -45,6 +46,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Strength Training level 1",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701200008/regularWorkout/Roles/p7bjjbw0gmu0nkkdsrdn.jpg",
                     description:
                         "Basic squats, knee push-ups, and assisted lunges.",
                     workout: [
@@ -75,6 +77,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Flexibility & Balance level 1",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701199357/regularWorkout/Roles/wwrszohofbxqvxdq7srq.jpg",
                     description:
                         "Simple poses focusing on stretching and balance.",
                     workout: [
@@ -109,6 +112,7 @@ const regularWorkout = {
             role: [
                 {
                     title: "Aerobic/Cardio level 2",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701199359/regularWorkout/Roles/wnct5vl1klxuvozfcedd.jpg",
                     description:
                         "A step up from walking to increase cardiovascular health.",
                     workout: [
@@ -149,6 +153,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Strength Training level 2",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701199365/regularWorkout/Roles/gom7wltavxnazobxmpbp.jpg",
                     description:
                         "Incorporating light to moderate weights for exercises like bicep curls, shoulder presses, and goblet squats.",
                     workout: [
@@ -178,6 +183,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Flexibility & Balance level 2",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701200139/regularWorkout/Roles/gb9znhvjbkpikrw5xv3z.jpg",
                     description: "Introduction of more challenging poses.",
                     workout: [
                         {
@@ -211,6 +217,7 @@ const regularWorkout = {
             role: [
                 {
                     title: "Aerobic/Cardio level 3",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701200054/regularWorkout/Roles/vvaaknltjjumvkstrzah.jpg",
                     description:
                         "Running: Interval training or longer distances for enhanced endurance.",
                     workout: [
@@ -251,6 +258,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Strength Training level 3",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701199369/regularWorkout/Roles/qlo717dycha93y0kwgve.jpg",
                     description:
                         "Free Weights: Heavy compound lifts like deadlifts, bench press, and squats using barbells.",
                     workout: [
@@ -291,6 +299,7 @@ const regularWorkout = {
                 },
                 {
                     title: "Flexibility & Balance level 3",
+                    image: "https://res.cloudinary.com/dx9rdmmff/image/upload/v1701200138/regularWorkout/Roles/fplpslaamsjv6wlo1tdl.jpg",
                     description:
                         "Advanced Yoga: Engaging in complex poses requiring increased flexibility and balance.",
                     workout: [

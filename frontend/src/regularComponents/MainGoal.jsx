@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import { Menu } from "../Menu";
+
 export const MainGoal = () => {
+    const [goals, setGoals] = useState([]);
+    const [plans, setPlans] = useState([]);
+    const [selectedGoalIndex, setSelectedGoalIndex] = useState(null);
+
     useEffect(() => {
         getGoal();
         getDietPlans();
     }, []);
-    const [goals, setGoal] = useState([]);
-    const [plans, setPlans] = useState([]);
-    const [bg, setBg] = useState("");
 
     const getGoal = async () => {
         try {
@@ -18,11 +19,12 @@ export const MainGoal = () => {
                 "http://localhost:10000/api/ns/regular/goal"
             );
             const goal = response.data.data;
-            setGoal(goal);
+            setGoals(goal);
         } catch (error) {
             console.log("Unable to send data to the server");
         }
     };
+
     const getDietPlans = async (goalId) => {
         try {
             const response = await axios.get(
@@ -34,27 +36,17 @@ export const MainGoal = () => {
             console.log("Unable to send plans to the server");
         }
     };
-    const setGoalBg = async (goalId) => {
-        try {
-            const response = await axios.get(
-                `http://localhost:10000/api/ns/regular/goal/bg/${goalId}`
-            );
-            const goal = response.data.data;
-            const bg = goal.image; // Use the specific image URL
-            setBg(bg);
-        } catch (error) {
-            console.log("Unable to send plans to the server");
-        }
-    };
-    const handleGoalClick = (goalId) => {
+
+    const handleGoalClick = (goalId, index) => {
         getDietPlans(goalId);
-        setGoalBg(goalId);
+        setSelectedGoalIndex(index);
     };
 
     const navigate = useNavigate();
     const handlePlanCardClick = (planId) => {
-        navigate(`/regular/meal-plans/${planId}`); // Navigate to the Meals component with the planId
+        navigate(`/regular/meal-plans/${planId}`);
     };
+
     return (
         <>
             <Menu />
@@ -64,25 +56,28 @@ export const MainGoal = () => {
                     <h3>Select your aim</h3>
                 </div>
                 <div className="dietChoose-box">
-                    {goals.map((goal) => (
-                        <button
-                            className="cta"
-                            key={goal._id}
-                            onClick={() => handleGoalClick(goal._id)}
-                        >
-                            {goal.title}
-                        </button>
+                    {goals.map((goal, index) => (
+                        <div className="dietbox" key={goal._id}>
+                            <button
+                                className="cta"
+                                onClick={() => handleGoalClick(goal._id, index)}
+                            >
+                                {goal.title}
+                            </button>
+                            <img
+                                src={goal.image}
+                                alt={index}
+                                className={
+                                    selectedGoalIndex === index
+                                        ? "showHide"
+                                        : ""
+                                }
+                            />
+                        </div>
                     ))}
                 </div>
-                <div
-                    className="diet-plans"
-                    style={{
-                        backgroundImage: `url(${bg})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                >
+
+                <div className="diet-plans">
                     {plans.map((plan) => (
                         <div
                             className="plan-card"

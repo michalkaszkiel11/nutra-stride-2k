@@ -43,6 +43,7 @@ async function saveExerciseRoleData() {
                 );
                 const newExerciseRole = new RegularExerciseRole({
                     title: roles.title,
+                    image: roles.image,
                     description: roles.description,
                     workout: workoutIds.filter((id) => id != null),
                 });
