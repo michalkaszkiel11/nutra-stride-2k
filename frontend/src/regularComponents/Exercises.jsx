@@ -68,8 +68,6 @@ export const Exercises = () => {
                             <div>video</div>
                             <div>video</div>
                             <div>video</div>
-                            <div>video</div>
-                            <div>video</div>
                         </div>
                     </div>
                 ))}

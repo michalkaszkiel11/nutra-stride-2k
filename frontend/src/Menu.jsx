@@ -10,6 +10,18 @@ export const Menu = () => {
                 <li>
                     <Link to="">Login</Link>
                 </li>
+                <li>
+                    <Link to="">Register</Link>
+                </li>
+                <li>
+                    <Link to="">Profile</Link>
+                </li>
+                <li>
+                    <Link to="">Workout</Link>
+                </li>
+                <li>
+                    <Link to="">Diets</Link>
+                </li>
             </ul>
         </nav>
     );
