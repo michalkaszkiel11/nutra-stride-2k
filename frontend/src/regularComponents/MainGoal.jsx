@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 import { Menu } from "../Menu";
+import apiInstance from "../utils/axiosInstance";
 
 export const MainGoal = () => {
     const [goals, setGoals] = useState([]);
     const [plans, setPlans] = useState([]);
     const [selectedGoalIndex, setSelectedGoalIndex] = useState(null);
-
+    const inst = apiInstance();
     useEffect(() => {
         getGoal();
         getDietPlans();
@@ -15,9 +16,7 @@ export const MainGoal = () => {
 
     const getGoal = async () => {
         try {
-            const response = await axios.get(
-                "http://localhost:10000/api/ns/regular/goal"
-            );
+            const response = await inst.get("/regular/goal");
             const goal = response.data.data;
             setGoals(goal);
         } catch (error) {
@@ -27,9 +26,7 @@ export const MainGoal = () => {
 
     const getDietPlans = async (goalId) => {
         try {
-            const response = await axios.get(
-                `http://localhost:10000/api/ns/regular/diet-plans/${goalId}`
-            );
+            const response = await inst.get(`/regular/diet-plans/${goalId}`);
             const plan = response.data.data;
             setPlans(plan);
         } catch (error) {

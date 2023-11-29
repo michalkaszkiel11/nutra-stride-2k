@@ -17,6 +17,8 @@ import {
     getWorkoutLevel,
 } from "../controllers/getWorkoutLevel.js";
 import { getExercises } from "../controllers/getExercises.js";
+import { getBlog, getBlogPosts } from "../controllers/Blog/getBlog.js";
+import { getRoles } from "../controllers/getRoles.js";
 
 const router = express.Router();
 
@@ -30,6 +32,9 @@ router.get("/regular/diet-plans/meals/:planId", getMealsForPlan);
 router.get("/regular/workout-level", getWorkoutLevel);
 router.get("/regular/workout-level/:lvlId", getRolelByLevelId);
 router.get("/regular/workout-level/exercises/:roleId", getExercises);
+router.get("/regular/workout-level/roles/:roleId", getRoles);
+router.get("/blog", getBlog);
+router.get("/blog/posts/:cardId", getBlogPosts);
 
 router.use(authenticateUser);
 export default router;

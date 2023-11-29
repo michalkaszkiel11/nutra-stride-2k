@@ -20,6 +20,9 @@ export const Menu = () => {
                 <li>
                     <Link to="/regular/goal">Diets</Link>
                 </li>
+                <li>
+                    <Link to="/blog">Blog</Link>
+                </li>
             </ul>
         </nav>
     );

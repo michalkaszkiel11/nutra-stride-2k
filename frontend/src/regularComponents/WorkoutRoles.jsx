@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import { Menu } from "../Menu";
 import { useNavigate, useParams } from "react-router-dom";
-
+import apiInstance from "../utils/axiosInstance";
 export const WorkoutRoles = () => {
     const navigate = useNavigate();
     const { lvlId } = useParams();
     const [roles, setRoles] = useState([]);
-
+    const inst = apiInstance();
     useEffect(() => {
         const getRoles = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:10000/api/ns/regular/workout-level/${lvlId}`
+                const response = await inst.get(
+                    `/regular/workout-level/${lvlId}`
                 );
                 const rolesData = response.data.data;
                 setRoles(rolesData);

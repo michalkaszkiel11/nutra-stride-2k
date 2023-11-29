@@ -470,25 +470,169 @@ nav {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 0;
             }
             .videos {
                 grid-area: 20/2/25/25;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                gap: 5rem;
+                div {
+                    width: 100%;
+                    height: 100%;
 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                div > * {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border: #b4b4b4 1px solid;
+                    border-radius: 1.5rem;
+                }
+            }
+        }
+    }
+}
+.blog {
+    @extend .grid20x5;
+    background: linear-gradient(
+        to top,
+        rgb(243, 245, 233) 50%,
+        rgba(193, 233, 223, 0.8) 50%
+    );
+    .blog-box {
+        @extend .fullsize;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        grid-area: 3/2/19/20;
+        gap: 2rem;
+
+        .blog-cards {
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(
+                82.3deg,
+                rgb(243, 245, 233) 10.8%,
+                rgba(193, 233, 223, 0.8) 94.3%
+            );
+            img {
+                width: 100%;
+                height: 35vh;
+                object-fit: cover;
+                border-radius: 1.5rem;
+            }
+            div {
+                width: 100%;
+                height: 16vh;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
                 gap: 1rem;
                 div {
-                    @extend .fullsize;
-                    background-color: #888;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    font-weight: bold;
+                }
+                p {
+                    text-align: justify;
                 }
             }
+            &:hover {
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(237, 243, 206) 10.8%,
+                    rgba(140, 233, 210, 0.8) 94.3%
+                );
+                transition: all 0.5s;
+            }
         }
+    }
+    h1 {
+        background: linear-gradient(
+            82.3deg,
+            rgb(237, 243, 206) 10.8%,
+            rgba(140, 233, 210, 0.8) 94.3%
+        );
+        border-radius: 1.5rem;
+        grid-area: 18/5/20/17;
+        @extend .flex-center;
+        color: white;
+        font-size: 5vh;
+        text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+}
+.posts {
+    @extend .flex-center;
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
+    );
+    .posts-box {
+        margin-top: 15vh;
+        padding: 0vh 2.5vh 5vh 2.5vh;
+        @extend .fullsize;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 2.5vh;
+        .posts-cards {
+            cursor: pointer;
+            height: 30vh;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 2.5vh;
+            div {
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(185, 189, 158) 10.8%,
+                    rgba(157, 209, 196, 0.8) 94.3%
+                );
+                padding: 1rem;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                h4 {
+                    font-size: 2.5vh;
+                }
+                p {
+                    padding: 1rem;
+                    text-align: justify;
+                    object-fit: contain;
+                }
+            }
+            img {
+                width: 40vw;
+                height: 30vh;
+                object-fit: cover;
+            }
+            // &:hover {
+            //     transform: scale(1.015);
+            //     transition: all 0.5s;
+            // }
+        }
+    }
+    .posts-box > .posts-cards:nth-child(even) {
+        flex-direction: row-reverse;
     }
 }
 i {

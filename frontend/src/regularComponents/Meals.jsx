@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import { useParams } from "react-router-dom";
 import { Menu } from "../Menu";
 import { useNavigate } from "react-router-dom";
-
+import apiInstance from "../utils/axiosInstance";
 export const Meals = () => {
     const navigate = useNavigate();
     const [mealPlans, setMealPlans] = useState([]);
     const { planId } = useParams();
-
+    const inst = apiInstance();
     useEffect(() => {
         const fetchMealPlans = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:10000/api/ns/regular/diet-plans/meals/${planId}`
+                const response = await inst.get(
+                    `/regular/diet-plans/meals/${planId}`
                 );
                 const plans = response.data.data.map((plan) => ({
                     ...plan,

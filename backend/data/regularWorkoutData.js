@@ -19,6 +19,12 @@ const regularWorkout = {
                                 "Cool Down (5 minutes): Slow down your pace to allow your heart rate to return to normal.",
                                 "Frequency: Repeat this walking routine three times a week for optimal cardiovascular benefits.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=786B8jCL4lw",
+                                "https://www.youtube.com/watch?v=UD8dWM1F18M",
+                                "https://www.youtube.com/watch?v=JJIhSpGAElw",
+                                "https://www.youtube.com/watch?v=j9EaWZ_fIHM",
+                            ],
                         },
                         {
                             title: "Cycling (Flat Terrain)",
@@ -30,6 +36,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Gradually decrease your cycling intensity to cool down your body.",
                                 "Frequency: Aim for three cycling sessions per week to enhance joint mobility and cardiovascular health.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=ZAXXJdTkWkY",
+                                "https://www.youtube.com/watch?v=4ssLDk1eX9w",
+                                "https://www.youtube.com/watch?v=VsuShNWghXk",
+                                "https://www.youtube.com/watch?v=BapFZkvQHmY",
+                            ],
                         },
                         {
                             title: "Swimming (Slow Pace)",
@@ -40,6 +52,12 @@ const regularWorkout = {
                                 "Steady Pace (20 minutes): Maintain a slow and steady swimming pace to engage muscles without strain.",
                                 "Cool Down Strokes (5 minutes): Conclude your session with slow and relaxed swimming strokes.",
                                 "Frequency: Include this swim two to three times a week to improve overall muscle tone and cardiovascular endurance.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=F7yP2bcoRgM",
+                                "https://www.youtube.com/watch?v=AQy_c30lNjI",
+                                "https://www.youtube.com/watch?v=vFqX_KxqWtE",
+                                "https://www.youtube.com/watch?v=uiI6Z_0Q2Io",
                             ],
                         },
                     ],
@@ -61,6 +79,12 @@ const regularWorkout = {
                                 "Engage in assisted lunges to target multiple muscle groups.",
                                 "Frequency: Incorporate this strength training routine two to three times a week for muscle development.",
                             ],
+                            video: [
+                                "https://www.youtube.com/shorts/whIHIgwQ2ks",
+                                "https://www.youtube.com/watch?v=0hYDDsRjwks&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYmVnaW5uZXI%3D",
+                                "https://www.youtube.com/watch?v=tj0o8aH9vJw&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYmVnaW5uZXI%3D",
+                                "https://www.youtube.com/watch?v=ZYtp27B-iuw&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYmVnaW5uZXI%3D",
+                            ],
                         },
                         {
                             title: "Resistance Bands",
@@ -71,6 +95,12 @@ const regularWorkout = {
                                 "Incorporate leg exercises, such as leg lifts, with resistance bands.",
                                 "Ensure proper form and controlled movements.",
                                 "Frequency: Include resistance band training twice a week to enhance muscle tone and flexibility.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=zWveMGgKtC8&pp=ygUYcmVzaXN0bmFjZSBiYW5kIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=7GHoyzgXwpk&pp=ygUYcmVzaXN0bmFjZSBiYW5kIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=pV73fvNABlg&pp=ygUYcmVzaXN0bmFjZSBiYW5kIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=hQ2lHMP4kco&pp=ygUYcmVzaXN0bmFjZSBiYW5kIGJlZ2lubmVy",
                             ],
                         },
                     ],
@@ -91,6 +121,12 @@ const regularWorkout = {
                                 "Include poses such as Downward Dog, Forward Fold, and Child's Pose.",
                                 "Frequency: Practice basic yoga at least three times a week to enhance flexibility and balance.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=L_xrDAtykMI&pp=ygUeRmxleGliaWxpdHkgJiBCYWxhbmNlIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=GdV8zbmCRaU&pp=ygUeRmxleGliaWxpdHkgJiBCYWxhbmNlIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=qq2-5waRsVA&pp=ygUeRmxleGliaWxpdHkgJiBCYWxhbmNlIGJlZ2lubmVy",
+                                "https://www.youtube.com/watch?v=4zBnM_uozXM&pp=ygUeRmxleGliaWxpdHkgJiBCYWxhbmNlIGJlZ2lubmVy",
+                            ],
                         },
                         {
                             title: "Light Stretching",
@@ -101,6 +137,12 @@ const regularWorkout = {
                                 "Focus on major muscle groups, including legs, arms, and back.",
                                 "Hold each stretch for 15-30 seconds, avoiding bouncing.",
                                 "Frequency: Incorporate light stretching into your routine daily to maintain flexibility.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=FI51zRzgIe4&pp=ygUTc3RyZXRjaGluZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/watch?v=-biuQ994puA&pp=ygUTc3RyZXRjaGluZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/watch?v=3Ynh9LZoCPE&pp=ygUTc3RyZXRjaGluZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/watch?v=LnCQ-MECZSw&pp=ygUTc3RyZXRjaGluZyBiZWdpbm5lcg%3D%3D",
                             ],
                         },
                     ],
@@ -126,6 +168,12 @@ const regularWorkout = {
                                 "Cool Down (5 minutes): Slow down to a brisk walk to cool down your body.",
                                 "Frequency: Incorporate jogging into your routine three times a week to improve cardiovascular endurance.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=kVnyY17VS9Y&pp=ygUQam9nZ2luZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/shorts/QltNOfH6Zhk",
+                                "https://www.youtube.com/watch?v=DVfRPMY4wHU&pp=ygUQam9nZ2luZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/watch?v=Hv5UvqcsIfY&pp=ygUQam9nZ2luZyBiZWdpbm5lcg%3D%3D",
+                            ],
                         },
                         {
                             title: "Cycling (Varied Terrain)",
@@ -137,6 +185,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Gradually decrease your cycling intensity to cool down your body.",
                                 "Frequency: Aim for three cycling sessions per week to challenge your cardiovascular system.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=JGhWkTRxSjk&pp=ygUQQ3ljbGluZyBiZWdpbm5lcg%3D%3D",
+                                "https://www.youtube.com/watch?v=NfDaBYevL8U&pp=ygUaY3ljbGluZyB2YXJpb3VzIGNvbmRpdGlvbnM%3D",
+                                "https://www.youtube.com/watch?v=L7hZw19bNCU&pp=ygUaY3ljbGluZyB2YXJpb3VzIGNvbmRpdGlvbnM%3D",
+                                "https://www.youtube.com/watch?v=J5fYP7DrZjw&pp=ygUaY3ljbGluZyB2YXJpb3VzIGNvbmRpdGlvbnM%3D",
+                            ],
                         },
                         {
                             title: "Swimming (Moderate Pace)",
@@ -147,6 +201,12 @@ const regularWorkout = {
                                 "Switch between different swimming strokes for 20 minutes.",
                                 "Cool Down Strokes (5 minutes): Conclude your session with slow and relaxed swimming strokes.",
                                 "Frequency: Include this swim two to three times a week to enhance overall cardiovascular health.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=fcoNzQYX6Vw&pp=ygUWU3dpbW1pbmcgbW9kZXJhdGUgcGFjZQ%3D%3D",
+                                "https://www.youtube.com/watch?v=rS7bYuDcYA4&pp=ygUWU3dpbW1pbmcgbW9kZXJhdGUgcGFjZQ%3D%3D",
+                                "https://www.youtube.com/watch?v=RhdGDODFXlA&pp=ygUWU3dpbW1pbmcgbW9kZXJhdGUgcGFjZQ%3D%3D",
+                                "https://www.youtube.com/watch?v=Z2wW94G7c9o&pp=ygUWU3dpbW1pbmcgbW9kZXJhdGUgcGFjZQ%3D%3D",
                             ],
                         },
                     ],
@@ -167,6 +227,12 @@ const regularWorkout = {
                                 "Cool Down (5 minutes): Perform static stretches to cool down your muscles.",
                                 "Frequency: Include dumbbell workouts two to three times a week to build strength and tone muscles.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=0A3EgOztptQ&pp=ygURRHVtYmJlbGwgV29ya291dHM%3D",
+                                "https://www.youtube.com/watch?v=GViX8riaHX4&pp=ygURRHVtYmJlbGwgV29ya291dHM%3D",
+                                "https://www.youtube.com/watch?v=2fCKd-BQOhw&pp=ygURRHVtYmJlbGwgV29ya291dHM%3D",
+                                "https://www.youtube.com/watch?v=huB9VTclj_g&pp=ygURRHVtYmJlbGwgV29ya291dHM%3D",
+                            ],
                         },
                         {
                             title: "Bodyweight Progressions",
@@ -177,6 +243,12 @@ const regularWorkout = {
                                 "Perform bodyweight exercises, including push-ups, lunges, and planks, for 20 minutes.",
                                 "Cool Down (5 minutes): Perform static stretches to cool down your muscles.",
                                 "Frequency: Incorporate bodyweight progressions two to three times a week for overall strength development.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=KeNObkhENKQ&pp=ygUXQm9keXdlaWdodCBQcm9ncmVzc2lvbnM%3D",
+                                "https://www.youtube.com/watch?v=ogG1YHKPeL4&pp=ygUXQm9keXdlaWdodCBQcm9ncmVzc2lvbnM%3D",
+                                "https://www.youtube.com/watch?v=8iiBAbAZCfk&pp=ygUXQm9keXdlaWdodCBQcm9ncmVzc2lvbnM%3D",
+                                "https://www.youtube.com/shorts/ZTsuNUzq3e4",
                             ],
                         },
                     ],
@@ -196,6 +268,12 @@ const regularWorkout = {
                                 "Cool Down (5 minutes): Conclude with relaxing stretches to improve flexibility.",
                                 "Frequency: Practice intermediate yoga two to three times a week for enhanced flexibility and balance.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=wqDZ1guFp18&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDI%3D",
+                                "https://www.youtube.com/watch?v=ZpZUxyfJYkg&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDI%3D",
+                                "https://www.youtube.com/watch?v=f82P4Wwid2Y&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDI%3D",
+                                "https://www.youtube.com/watch?v=Eml2xnoLpYE&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDI%3D",
+                            ],
                         },
                         {
                             title: "Pilates",
@@ -206,6 +284,12 @@ const regularWorkout = {
                                 "Perform Pilates exercises targeting the core muscles for 20 minutes.",
                                 "Cool Down (5 minutes): Finish with stretches to promote flexibility.",
                                 "Frequency: Include Pilates in your routine two to three times a week for core strength and stability.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=C2HX2pNbUCM&pp=ygUHUGlsYXRlcw%3D%3D",
+                                "https://www.youtube.com/watch?v=C3LB3Qszx2I&pp=ygUHUGlsYXRlcw%3D%3D",
+                                "https://www.youtube.com/watch?v=u3UjeyPOjoU&pp=ygUHUGlsYXRlcw%3D%3D",
+                                "https://www.youtube.com/watch?v=0zjiVQ950EE&pp=ygUHUGlsYXRlcw%3D%3D",
                             ],
                         },
                     ],
@@ -231,6 +315,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Finish with a slow jog to bring your heart rate down.",
                                 "Frequency: Incorporate running into your routine three to four times a week for optimal cardiovascular fitness.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=yplP5cLuyf4&pp=ygUYQWVyb2JpYy9DYXJkaW8gIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=kv0LUpu6hYk&pp=ygUYQWVyb2JpYy9DYXJkaW8gIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=rfDAkVxVpqc&pp=ygUYQWVyb2JpYy9DYXJkaW8gIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=mQB8D8kHB4E&pp=ygUYQWVyb2JpYy9DYXJkaW8gIGFkdmFuY2Vk",
+                            ],
                         },
                         {
                             title: "Rowing",
@@ -242,6 +332,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Conclude with a gradual decrease in rowing intensity.",
                                 "Frequency: Include rowing sessions in your routine two to three times a week for full-body conditioning.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=w2hGNM4l5so&pp=ygUKUm93aW5nIGd5bQ%3D%3D",
+                                "https://www.youtube.com/watch?v=dPezGjAhrU0&pp=ygUKUm93aW5nIGd5bQ%3D%3D",
+                                "https://www.youtube.com/watch?v=H0r_ZPXJLtg&pp=ygUKUm93aW5nIGd5bQ%3D%3D",
+                                "https://www.youtube.com/watch?v=uCt53OWHa_c&pp=ygUKUm93aW5nIGd5bQ%3D%3D",
+                            ],
                         },
                         {
                             title: "Jump Rope",
@@ -252,6 +348,12 @@ const regularWorkout = {
                                 "Engage in high-speed jump rope exercises for 20 minutes.",
                                 "Cool Down (5 minutes): Finish with slow skipping to lower your heart rate.",
                                 "Frequency: Include jump rope sessions two to three times a week for cardiovascular health and coordination.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=l2yuJRZsV0c&pp=ygUSSnVtcCBSb3BlIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=JLC_T1jQ5Lk&pp=ygUSSnVtcCBSb3BlIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=0pvkgyNGx34&pp=ygUSSnVtcCBSb3BlIGFkdmFuY2Vk",
+                                "https://www.youtube.com/watch?v=_g05NZ3rro8&pp=ygUSSnVtcCBSb3BlIGFkdmFuY2Vk",
                             ],
                         },
                     ],
@@ -272,6 +374,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Conclude with stretches for the worked muscle groups.",
                                 "Frequency: Include free weight sessions in your routine three times a week for strength and muscle development.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=588-C4bEL28&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYWR2YW5jZWQ%3D",
+                                "https://www.youtube.com/watch?v=XC3LJwbGteE&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYWR2YW5jZWQ%3D",
+                                "https://www.youtube.com/watch?v=XxuRSjER3Qk&pp=ygUaU3RyZW5ndGggVHJhaW5pbmcgYWR2YW5jZWQ%3D",
+                                "https://www.youtube.com/watch?v=olvGlzdE7oc",
+                            ],
                         },
                         {
                             title: "Plyometrics",
@@ -283,6 +391,12 @@ const regularWorkout = {
                                 "Cool Down (5 minutes): Finish with static stretches to improve flexibility.",
                                 "Frequency: Include plyometric sessions two times a week for power and agility.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=i1Bp8ZgdJ5w&pp=ygULUGx5b21ldHJpY3M%3D",
+                                "https://www.youtube.com/watch?v=4VodW4pW0Ic&pp=ygULUGx5b21ldHJpY3M%3D",
+                                "https://www.youtube.com/watch?v=oMXHBcI1wJU&pp=ygULUGx5b21ldHJpY3M%3D",
+                                "https://www.youtube.com/watch?v=LWkXLx5PftY&pp=ygULUGx5b21ldHJpY3M%3D",
+                            ],
                         },
                         {
                             title: "Pull-ups/Chin-ups",
@@ -293,6 +407,12 @@ const regularWorkout = {
                                 "Perform pull-ups/chin-ups with varied grips for 20 minutes.",
                                 "Cool Down (5 minutes): Conclude with gentle stretching for the upper body.",
                                 "Frequency: Include pull-ups/chin-ups in your routine three times a week for upper body strength.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=syS4M1G-rII&pp=ygUIUHVsbC11cHM%3D",
+                                "https://www.youtube.com/watch?v=p40iUjf02j0&pp=ygUIUHVsbC11cHM%3D",
+                                "https://www.youtube.com/watch?v=19xCfAZmMWg&pp=ygUIUHVsbC11cHM%3D",
+                                "https://www.youtube.com/watch?v=iBtL9nX2qOs&pp=ygUIUHVsbC11cHM%3D",
                             ],
                         },
                     ],
@@ -313,6 +433,12 @@ const regularWorkout = {
                                 "Cool Down (10 minutes): Conclude with relaxation poses to release tension.",
                                 "Frequency: Practice advanced yoga two to three times a week for advanced flexibility and balance.",
                             ],
+                            video: [
+                                "https://www.youtube.com/watch?v=ZBp_MyOOg9Q&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDM%3D",
+                                "https://www.youtube.com/watch?v=jiD64vpMvt8&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDM%3D",
+                                "https://www.youtube.com/watch?v=T3gmGuIQSg0&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDM%3D",
+                                "https://www.youtube.com/watch?v=SzbVLVxXO0s&pp=ygUdRmxleGliaWxpdHkgJiBCYWxhbmNlIGxldmVsIDM%3D",
+                            ],
                         },
                         {
                             title: "Gymnastics",
@@ -323,6 +449,12 @@ const regularWorkout = {
                                 "Engage in gymnastics exercises focusing on strength, balance, and flexibility for 30 minutes.",
                                 "Cool Down (10 minutes): Finish with gentle stretches for the entire body.",
                                 "Frequency: Include gymnastics sessions in your routine two times a week for a full-body workout.",
+                            ],
+                            video: [
+                                "https://www.youtube.com/watch?v=oFl3nkghbHE&pp=ygUKR3ltbmFzdGljcw%3D%3D",
+                                "https://www.youtube.com/watch?v=yhl2TRnSiNM&pp=ygUKR3ltbmFzdGljcw%3D%3D",
+                                "https://www.youtube.com/watch?v=_bqhb91a228&pp=ygUQR3ltbmFzdGljcyBndWlkZQ%3D%3D",
+                                "https://www.youtube.com/watch?v=E1xlr8Z5uYQ&pp=ygUQR3ltbmFzdGljcyBndWlkZQ%3D%3D",
                             ],
                         },
                     ],

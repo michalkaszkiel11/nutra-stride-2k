@@ -30,6 +30,7 @@ async function saveExerciseData(exerciseData) {
                 title: exercise.title,
                 description: exercise.description,
                 image: exercise.image,
+                video: exercise.video,
             });
 
             await newExercise.save();

@@ -1,9 +1,9 @@
 import { Menu } from "../Menu";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { backgroundStyles } from "./helpers/ClaudinaryBgImage";
 
+import { backgroundStyles } from "./helpers/ClaudinaryBgImage";
+import apiInstance from "../utils/axiosInstance";
 export const WorkoutLevel = () => {
     const navigate = useNavigate();
     const [level, setLevel] = useState([]);
@@ -13,6 +13,7 @@ export const WorkoutLevel = () => {
         "regularWorkout/Levels/m4ovho72rslvnyuyirid",
     ];
     const bgImage = backgroundStyles(linkImg);
+    const inst = apiInstance();
 
     useEffect(() => {
         getLevels();
@@ -20,9 +21,7 @@ export const WorkoutLevel = () => {
 
     const getLevels = async () => {
         try {
-            const response = await axios.get(
-                "http://localhost:10000/api/ns/regular/workout-level"
-            );
+            const response = await inst.get("/regular/workout-level");
             const level = response.data.data;
             setLevel(level);
         } catch (error) {

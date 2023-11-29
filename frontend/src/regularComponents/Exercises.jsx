@@ -1,29 +1,26 @@
 // Exercises.jsx
 import React, { useState, useEffect } from "react";
 import { Menu } from "../Menu";
-import axios from "axios";
+import YouTube from "react-youtube";
+import { getYouTubeVideoId } from "./helpers/youtubeVideo";
 import { useParams } from "react-router-dom";
-
-// import { backgroundStyles } from "./helpers/ClaudinaryBgImage.js";
+import apiInstance from "../utils/axiosInstance";
 
 export const Exercises = () => {
     const [exercises, setExercises] = useState([]);
+    const [roles, setRoles] = useState({});
     const { roleId } = useParams();
-    // const linkImg = [
-    //     "regularWorkout/Exercises/sw2xbjjzp1emioa6znrl",
-    //     "regularWorkout/Exercises/olhbq13srxpxf97wzjsa",
-    //     "regularWorkout/Exercises/epzsuqfvfiiehjdxv6jt",
-    // ];
-    // const bgImage = backgroundStyles(linkImg);
+    const inst = apiInstance();
 
     useEffect(() => {
         getExercises(roleId);
+        level(roleId);
     }, [roleId]);
 
     const getExercises = async (roleId) => {
         try {
-            const response = await axios.get(
-                `http://localhost:10000/api/ns/regular/workout-level/exercises/${roleId}`
+            const response = await inst.get(
+                `/regular/workout-level/exercises/${roleId}`
             );
             const exercisesData = response.data.data;
             setExercises(exercisesData);
@@ -31,7 +28,27 @@ export const Exercises = () => {
             console.error(error);
         }
     };
-
+    const level = async (roleId) => {
+        try {
+            const response = await inst.get(
+                `/regular/workout-level/roles/${roleId}`
+            );
+            const rolesData = response.data.data.title;
+            console.log(rolesData);
+            setRoles(rolesData);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    const setLevel = (title) => {
+        if (title.includes("1")) {
+            return "Beginner";
+        } else if (title.includes("2")) {
+            return "Intermediate";
+        } else if (title.includes("3")) {
+            return "Advanced";
+        }
+    };
     return (
         <div className="exercise-box">
             <Menu />
@@ -56,7 +73,7 @@ export const Exercises = () => {
                         </div>
                         <div className="level">
                             <h2>Difficulty level:</h2>
-                            <p>Beginner render form data</p>
+                            <p>{setLevel(roles)}</p>
                         </div>
                         <img
                             src={exercise.image}
@@ -64,10 +81,15 @@ export const Exercises = () => {
                             className="image"
                         ></img>
                         <div className="videos">
-                            <div>video</div>
-                            <div>video</div>
-                            <div>video</div>
-                            <div>video</div>
+                            {exercise.video.map((video, videoIndex) => (
+                                <div key={videoIndex}>
+                                    <YouTube
+                                        frameBorder="0"
+                                        allowFullScreen={true}
+                                        videoId={getYouTubeVideoId(video)}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 ))}

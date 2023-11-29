@@ -8,6 +8,8 @@ import { WorkoutLevel } from "./regularComponents/WorkoutLevel.jsx"; // Import t
 import "../src/regularComponents/regular.scss";
 import { WorkoutRoles } from "./regularComponents/WorkoutRoles.jsx";
 import { Exercises } from "./regularComponents/Exercises.jsx";
+import { Blog } from "./blog/Blog.jsx";
+import { Posts } from "./blog/Posts.jsx";
 
 function App() {
     return (
@@ -35,6 +37,11 @@ function App() {
                             <Route
                                 path="/regular/workout-level/exercises/:roleId"
                                 element={<Exercises />}
+                            />
+                            <Route path="/blog" element={<Blog />} />
+                            <Route
+                                path="/blog/posts/:cardId"
+                                element={<Posts />}
                             />
                         </Routes>
                     </AuthenticationProvider>
