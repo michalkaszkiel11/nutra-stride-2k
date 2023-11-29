@@ -1,0 +1,44 @@
+.dietPage {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+.dietPage .healthCondition {
+  border: 2px solid rgb(178, 177, 177);
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #7ebbc6;
+  height: 30rem;
+}
+.dietPage .healthCondition h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.dietPage .healthCondition p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.dietPage .mealTypes {
+  display: flex;
+  width: 20rem;
+  height: 5rem;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid rgb(5, 5, 3);
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #7ebbc6;
+}
+.dietPage .mealTypes .button {
+  width: 10rem;
+  height: 3rem;
+  background-color: #cf7b0e;
+  border: 2px solid rgb(5, 5, 3);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}/*# sourceMappingURL=diet.module.css.map */

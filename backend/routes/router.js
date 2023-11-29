@@ -1,10 +1,4 @@
 import express from "express";
-<<<<<<< HEAD:backend/routes/router.js
-
-
-
-=======
->>>>>>> c15ea04ae8f5deb9972e34ccdc84702afbf3b73a:Backend/Routes/router.js
 import {
     createUser,
     loginUser,
@@ -15,12 +9,20 @@ import {
     validator,
     authenticateUser,
 } from "../middleware/userValidator.js";
-<<<<<<< HEAD:backend/routes/router.js
- 
-=======
->>>>>>> c15ea04ae8f5deb9972e34ccdc84702afbf3b73a:Backend/Routes/router.js
+import { getMealPlan } from "../controllers/getMealPlan.js";
+import { getSpecialDiets } from "../controllers/getDiet.js";
+import { getConditions ,getConditionsById  } from "../controllers/getConditions.js";
+
 
 const router = express.Router();
+
+router.get('/special/health-conditions', getConditions);
+router.get('/special/health-conditions/:conditionId', getConditionsById);
+
+router.get('/special/health-conditions/conditions/:conditionId/diets', getSpecialDiets);
+
+router.get('special/meal-plan/:mealId', getMealPlan);
+
 
 router.post("/user/create", validationRules, validator, createUser);
 router.post("/user/login", loginUser);
