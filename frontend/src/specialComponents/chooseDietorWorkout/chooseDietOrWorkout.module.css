@@ -1,6 +1,5 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body,
 html {
@@ -8,8 +7,7 @@ html {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #d1dddf;
-}
+  background-color: #d1dddf; }
 
 .welcome {
   display: flex;
@@ -17,170 +15,139 @@ html {
   align-items: center;
   gap: 10px;
   margin-top: 3rem;
-  margin-bottom: 20px;
-}
-.welcome .title {
-  font-size: 4rem;
-  font-weight: 600;
-  color: #0d3b45;
-  text-align: center;
-}
-.welcome .text {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #0d3b45;
-  text-align: center;
-  padding: 2rem 4rem 1rem 4rem;
-}
-.welcome .searchForm {
-  margin: 2rem 0 3rem 0;
-}
-.welcome .searchForm .search {
-  overflow: hidden;
-  padding: 0 0 1.25em;
-  opacity: 0.7;
-  cursor: pointer;
-  transition-property: opacity;
-  transition-duration: 0.3s;
-}
-.welcome .searchForm .search:hover, .welcome .searchForm .search:focus-within {
-  opacity: 1;
-}
-.welcome .searchForm .one {
-  font-size: 1.4rem;
-  width: calc(15em - 2em);
-  height: 2em;
-  z-index: 2;
-}
-.welcome .searchForm .two {
-  width: calc(100% - 1em);
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 1em;
-}
-.welcome .searchForm .one:before,
-.welcome .searchForm .two:before {
-  content: "";
-  position: absolute;
-  height: 82%;
-  width: 1em;
-  border: 0.2em solid rgb(1, 5, 6);
-}
-.welcome .searchForm .one:before:hover,
-.welcome .searchForm .two:before:hover {
-  background-color: rgb(13, 11, 11);
-}
-.welcome .searchForm .one:before {
-  left: 0;
-  border-right: none;
-  border-radius: 1em 0 0 1em;
-}
-.welcome .searchForm .two:before {
-  right: 0;
-  border-left: none;
-  border-radius: 0 1em 1em 0;
-}
-.welcome .searchForm .three {
-  height: 100%;
-  width: calc(100% - 1em);
-  overflow: hidden;
-}
-.welcome .searchForm input[type=search] {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0.2em solid;
-  border-left: none;
-  border-right: none;
-  background: transparent;
-  color: rgb(7, 6, 6);
-  font: inherit;
-}
-.welcome .searchForm input[type=search], .welcome .searchForm input[type=search]:focus {
-  outline: none;
-}
-.welcome .searchForm .stick {
-  position: absolute;
-  height: 1em;
-  width: 0.2em;
-  right: 1em;
-  top: 50%;
-  transform: translate(0%, -50%);
-}
-.welcome .searchForm .stick:before, .welcome .searchForm .stick:after {
-  content: "";
-  position: absolute;
-  top: 0.11rem;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0d0303;
-}
-.welcome .searchForm .stick:before {
-  transform: rotate(45deg);
-}
-.welcome .searchForm .stick:after {
-  transform: rotate(-45deg);
-}
-.welcome .searchForm .one {
-  transform: translateX(50%) translateX(-1em);
-}
-.welcome .searchForm .two {
-  transform: translateX(-100%) translateX(1em);
-}
-.welcome .searchForm .three {
-  transform: translateX(100%);
-}
-.welcome .searchForm .four {
-  transform: translateX(-100%);
-}
-.welcome .searchForm .stick:before, .welcome .searchForm .stick:after {
-  transform: rotate(-45deg) translateY(150%);
-}
-.welcome .searchForm .search:focus-within:after {
-  opacity: 1;
-  transition-delay: 0.6s;
-}
-.welcome .searchForm .search:focus-within .one,
-.welcome .searchForm .search:focus-within .two,
-.welcome .searchForm .search:focus-within .three,
-.welcome .searchForm .search:focus-within .four {
-  transform: translateX(0);
-}
-.welcome .searchForm .search:focus-within .stick {
-  pointer-events: auto;
-}
-.welcome .searchForm .search:focus-within .stick:before {
-  transform: rotate(45deg);
-}
-.welcome .searchForm .search:focus-within .stick:after {
-  transform: rotate(-45deg);
-}
+  margin-bottom: 20px; }
+  .welcome .title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #0d3b45;
+    text-align: center; }
+  .welcome .text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0d3b45;
+    text-align: center;
+    padding: 2rem 4rem 1rem 4rem; }
+  .welcome .searchForm {
+    margin: 2rem 0 3rem 0; }
+    .welcome .searchForm .search {
+      overflow: hidden;
+      padding: 0 0 1.25em;
+      opacity: 0.7;
+      cursor: pointer;
+      transition-property: opacity;
+      transition-duration: 0.3s; }
+      .welcome .searchForm .search:hover, .welcome .searchForm .search:focus-within {
+        opacity: 1; }
+    .welcome .searchForm .one {
+      font-size: 1.4rem;
+      width: calc(15em - 2em);
+      height: 2em;
+      z-index: 2; }
+    .welcome .searchForm .two {
+      width: calc(100% - 1em);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 1em; }
+    .welcome .searchForm .one:before,
+    .welcome .searchForm .two:before {
+      content: "";
+      position: absolute;
+      height: 82%;
+      width: 1em;
+      border: 0.2em solid #010506; }
+      .welcome .searchForm .one:before:hover,
+      .welcome .searchForm .two:before:hover {
+        background-color: #0d0b0b; }
+    .welcome .searchForm .one:before {
+      left: 0;
+      border-right: none;
+      border-radius: 1em 0 0 1em; }
+    .welcome .searchForm .two:before {
+      right: 0;
+      border-left: none;
+      border-radius: 0 1em 1em 0; }
+    .welcome .searchForm .three {
+      height: 100%;
+      width: calc(100% - 1em);
+      overflow: hidden; }
+    .welcome .searchForm input[type="search"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0.2em solid;
+      border-left: none;
+      border-right: none;
+      background: transparent;
+      color: #070606;
+      font: inherit; }
+      .welcome .searchForm input[type="search"], .welcome .searchForm input[type="search"]:focus {
+        outline: none; }
+    .welcome .searchForm .stick {
+      position: absolute;
+      height: 1em;
+      width: 0.2em;
+      right: 1em;
+      top: 50%;
+      transform: translate(0%, -50%); }
+      .welcome .searchForm .stick:before, .welcome .searchForm .stick:after {
+        content: "";
+        position: absolute;
+        top: 0.11rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0d0303; }
+      .welcome .searchForm .stick:before {
+        transform: rotate(45deg); }
+      .welcome .searchForm .stick:after {
+        transform: rotate(-45deg); }
+    .welcome .searchForm .one {
+      transform: translateX(50%) translateX(-1em); }
+    .welcome .searchForm .two {
+      transform: translateX(-100%) translateX(1em); }
+    .welcome .searchForm .three {
+      transform: translateX(100%); }
+    .welcome .searchForm .four {
+      transform: translateX(-100%); }
+    .welcome .searchForm .stick:before, .welcome .searchForm .stick:after {
+      transform: rotate(-45deg) translateY(150%); }
+    .welcome .searchForm .search:focus-within:after {
+      opacity: 1;
+      transition-delay: 0.6s; }
+    .welcome .searchForm .search:focus-within .one,
+    .welcome .searchForm .search:focus-within .two,
+    .welcome .searchForm .search:focus-within .three,
+    .welcome .searchForm .search:focus-within .four {
+      transform: translateX(0); }
+    .welcome .searchForm .search:focus-within .stick {
+      pointer-events: auto; }
+      .welcome .searchForm .search:focus-within .stick:before {
+        transform: rotate(45deg); }
+      .welcome .searchForm .search:focus-within .stick:after {
+        transform: rotate(-45deg); }
 
 .chooseDietOrWorkout .carouselContainer {
   text-align: center;
-  margin: 20px 0;
-}
-.chooseDietOrWorkout .carouselContainer button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.chooseDietOrWorkout .carouselContainer button:hover {
-  background-color: #e7e7e7;
-}
+  margin: 20px 0; }
+  .chooseDietOrWorkout .carouselContainer button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px; }
+    .chooseDietOrWorkout .carouselContainer button:hover {
+      background-color: #e7e7e7; }
+
 .chooseDietOrWorkout .carouselSlides {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
+
 .chooseDietOrWorkout .slide {
   min-width: 300px;
   max-width: 100%;
@@ -188,49 +155,41 @@ html {
   opacity: 0;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-}
-.chooseDietOrWorkout .slide.active {
-  opacity: 1;
-  position: relative;
-}
+  transform: translateX(-50%); }
+  .chooseDietOrWorkout .slide.active {
+    opacity: 1;
+    position: relative; }
+
 .chooseDietOrWorkout .buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-}
-.chooseDietOrWorkout .buttons .optionButton {
-  margin: 0 5px;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.chooseDietOrWorkout .buttons .optionButton:hover {
-  background-color: #0062cc;
-}
+  margin-top: 20px; }
+  .chooseDietOrWorkout .buttons .optionButton {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; }
+    .chooseDietOrWorkout .buttons .optionButton:hover {
+      background-color: #0062cc; }
 
 .optionButton:hover,
 .optionButton:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
+  transform: translateY(-0.25em); }
 
 .optionButton {
   --color: #ffa260;
-  --hover: #e5ff60;
-}
+  --hover: #e5ff60; }
 
 button {
   color: var(--color);
-  transition: 0.25s;
-}
-button:hover, button:focus {
-  border-color: var(--hover);
-  color: #fff;
-}
+  transition: 0.25s; }
+  button:hover, button:focus {
+    border-color: var(--hover);
+    color: #fff; }
 
 .buttons {
   display: flex;
@@ -238,9 +197,7 @@ button:hover, button:focus {
   justify-content: center;
   gap: 8rem;
   margin: 2rem;
-  padding: 2rem;
-}
-.buttons .optionButton {
-  padding: 0.5rem 1rem;
-  font-size: 2rem;
-}/*# sourceMappingURL=chooseDietOrWorkout.module.css.map */
+  padding: 2rem; }
+  .buttons .optionButton {
+    padding: 0.5rem 1rem;
+    font-size: 2rem; }

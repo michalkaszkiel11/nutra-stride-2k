@@ -15,7 +15,7 @@ const ChooseDietOrWorkout = () => {
   useEffect(() => {
     getConditions();
   
-  });
+  },[]);
 
   const getConditions = async () => {
     try {
