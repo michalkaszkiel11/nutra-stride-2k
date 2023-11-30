@@ -27,10 +27,11 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
+
             a {
                 text-decoration: none;
                 color: white;
-                font-size: 2rem;
+                font-size: 3vh;
                 font-weight: bold;
                 text-shadow: 2px 2px 0px #000000,
                     5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -818,4 +819,186 @@ i {
 .showHide {
     transition: opacity 0.5s ease-in-out;
     display: block !important;
+}
+
+/*Media Queries*/
+
+/* Small smartphones (portrait) */
+@media (max-width: 375px) and (max-height: 667px) {
+    /* Your CSS styles for small smartphones in portrait mode here */
+}
+
+/* Small smartphones (landscape) */
+@media (max-width: 667px) and (max-height: 375px) {
+    /* Your CSS styles for small smartphones in landscape mode here */
+}
+
+/* Medium-sized smartphones (portrait) */
+@media (max-width: 414px) and (max-height: 896px) {
+    /* Your CSS styles for medium-sized smartphones in portrait mode here */
+}
+
+/* Medium-sized smartphones (landscape) */
+@media (max-width: 896px) and (max-height: 414px) {
+    /* Your CSS styles for medium-sized smartphones in landscape mode here */
+}
+
+/* Larger smartphones (portrait) */
+@media (max-width: 480px) and (max-height: 960px) {
+    .mainGoal-box {
+        // @extend .grid20x5;
+        .header-box {
+            grid-area: 3/1/5/21; /*change*/
+            // @extend .flex-center;
+            font-size: 4.5vh;
+            color: white;
+            text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+            position: relative;
+            h1 {
+                font-size: 4.5vh; /*change*/
+            }
+            h3 {
+                position: absolute;
+                top: 70%;
+                left: 75%;
+                margin-top: 0;
+                font-size: 1.5vh; /*change*/
+                text-shadow: none !important;
+            }
+        }
+        .dietChoose-box {
+            // @extend .fullsize, .flex-center;
+            grid-area: 5/1/20/8; /*change*/
+            flex-direction: column; /*change*/
+            gap: 1.5rem;
+            position: relative;
+            .dietbox {
+                width: 100%;
+                display: flex;
+                flex-direction: column; /*change*/
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 1.5rem; /*change*/
+                button {
+                    /*change*/
+                    width: 100%;
+                    height: 100%;
+                }
+                img {
+                    width: 5rem; /*change*/
+                    object-fit: contain;
+                    display: none;
+                }
+            }
+        }
+
+        .diet-plans {
+            gap: 1.5rem;
+            transition: all 0.5s;
+            flex-direction: column;
+            grid-area: 5/9/20/20; /*change*/
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            .plan-card {
+                padding: 0.5rem;
+                box-shadow: 6px 6px 0 black;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                width: 40%;
+                height: 35%;
+                // @extend .flex-center;
+                flex-direction: column;
+                border-radius: 1.5rem;
+                color: white;
+                font-size: larger;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(211, 221, 163) 10.8%,
+                    rgba(129, 192, 176, 0.8) 94.3%
+                );
+                gap: 1rem;
+                h4 {
+                    font-size: 2.5vh;
+                }
+            }
+            .plan-card:hover {
+                transform: scale(1.05);
+                transition: all 0.5s;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(216, 233, 140) 10.8%,
+                    rgba(118, 202, 181, 0.8) 94.3%
+                );
+
+                transition: 0.5s;
+                box-shadow: 10px 10px 0 rgb(255, 255, 255);
+            }
+        }
+    }
+}
+
+/* Larger smartphones (landscape) */
+@media (max-width: 960px) and (max-height: 480px) {
+}
+
+/* Tablets in portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
+    .mainGoal-box {
+        .header-box {
+            grid-area: 3/2/5/20;
+            h1 {
+                font-size: 4.5vh;
+            }
+        }
+        .dietChoose-box {
+            grid-area: 5/1/20/8;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .diet-plans {
+            gap: 1.5rem;
+            transition: all 0.5s;
+            flex-direction: row;
+            grid-area: 5/9/20/20;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .plan-card {
+                padding: 1rem;
+                margin: 2rem;
+                width: 100%;
+                height: 13vh;
+                h4 {
+                    font-size: 2vh;
+                }
+            }
+        }
+    }
+}
+
+/* Tablets in landscape mode */
+@media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
+    .mainGoal-box {
+        .header-box {
+            grid-area: 2/6/7/15;
+            h1 {
+                font-size: 6vh;
+            }
+        }
+        .diet-plans {
+            grid-area: 7/10/20/20;
+        }
+    }
+}
+
+/* Laptops and desktops with wide screens */
+@media (min-width: 1281px) and (min-height: 800px) {
 }
