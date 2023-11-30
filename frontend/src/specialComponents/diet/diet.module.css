@@ -8,7 +8,7 @@
   padding: 2rem;
   margin: 2rem;
   background-color: #7ebbc6;
-  height: 30rem;
+  height: 15rem;
 }
 .dietPage .healthCondition h1 {
   font-size: 2rem;
@@ -41,4 +41,21 @@
   font-weight: 500;
   margin-bottom: 2rem;
   cursor: pointer;
+}
+.dietPage .mealOptions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40rem;
+  height: 15rem;
+  grid-gap: 2rem;
+  margin-top: 2rem;
+  border: 2px solid rgb(5, 5, 3);
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #3b5f65;
+}
+.dietPage .mealOptions .mealCard {
+  width: 8rem;
+  height: 9rem;
 }/*# sourceMappingURL=diet.module.css.map */

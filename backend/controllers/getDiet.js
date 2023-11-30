@@ -4,28 +4,20 @@ import { StatusCodes } from "http-status-codes";
 
 export const getSpecialDiets = async (req, res) => {
   const { conditionId } = req.params;
+  const { OK, NOT_FOUND, INTERNAL_SERVER_ERROR } = StatusCodes;
+
   try {
-    //Find the condition by Id
     const condition = await SpecialConditions.findById(conditionId);
     if (!condition) {
-        return res.status(StatusCodes.NOT_FOUND).json({
-            message: "Condition not found.",
-        });
+      return res.status(NOT_FOUND).json({ message: "Condition not found." });
     }
- // Get the diet IDs from the conditionChoose object
- const dietIds = condition.conditionChoose.diet;
- 
- // Fetch the diets using the dietIds
- const diets = await SpecialDiet.find({ _id: { $in: dietIds } });
 
- return res.status(StatusCodes.OK).json({
-   message: "Diets retrieved successfully",
-   data: diets,
- });
-} catch (error) {
- return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-   message: "Error while retrieving data.",
-   error: error.message,
- });
-}
+    const dietIds = condition.conditionChoose.diet;
+    const diets = await SpecialDiet.findOne({ _id: { $in: dietIds } });
+
+    return res.status(OK).json({ message: "Diets retrieved successfully", data: diets });
+  } catch (error) {
+    console.error("Error fetching special diets:", error);  // Optional: logging the error
+    return res.status(INTERNAL_SERVER_ERROR).json({ message: "Error while retrieving data.", error: error.message });
+  }
 };
