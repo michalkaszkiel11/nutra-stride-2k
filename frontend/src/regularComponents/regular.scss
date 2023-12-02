@@ -14,6 +14,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 100;
+    // margin-bottom: 10vh;
     ul {
         display: flex;
         justify-content: flex-end;
@@ -147,43 +148,45 @@ nav {
     }
 }
 .meal-box {
-    @extend .grid20x5;
-    background: linear-gradient(
-        82.3deg,
-        rgba(231, 239, 197, 1) 10.8%,
-        rgba(163, 196, 188, 0.8) 94.3%
-    );
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    height: 100dvh;
+    gap: 1rem;
+
     h2 {
-        grid-area: 4/2/6/20;
-        @extend .flex-center;
         color: var(--darkest-color);
         font-size: 6vh;
         text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+        width: fit-content;
+        height: fit-content;
+        margin-top: 12vh;
+        padding-left: 4rem;
     }
+
     .meal-selection {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-
-        width: 100%;
-        height: 100%;
-        grid-area: 7/2/20/20;
+        justify-content: space-around;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        padding: 2rem;
         text-align: justify;
-        gap: 10rem;
+        gap: 4rem;
 
         .meal {
             width: 100%;
-            height: 100%;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem 4rem 1rem 4rem;
             border-radius: 1.5rem;
             position: relative;
             .wrapper {
                 width: 100%;
-                height: 100%;
                 overflow: hidden;
                 font-size: 1.6vh;
                 padding: 1rem 1rem 1rem 1rem;
@@ -239,7 +242,7 @@ nav {
             }
             button {
                 width: 100%;
-                height: 25vh;
+                height: 7vh;
             }
         }
     }
@@ -626,10 +629,6 @@ nav {
                 height: 30vh;
                 object-fit: cover;
             }
-            // &:hover {
-            //     transform: scale(1.015);
-            //     transition: all 0.5s;
-            // }
         }
     }
     .posts-box > .posts-cards:nth-child(even) {
@@ -880,6 +879,26 @@ i {
             }
         }
     }
+
+    .meal-box {
+        gap: 1rem;
+        .meal-selection {
+            padding: 1rem;
+            gap: 1rem;
+            .meal {
+                padding: 1rem;
+
+                h4 {
+                    font-size: 2.3vh;
+                    text-align: center;
+                    padding: 1rem 0rem 0.5rem 0rem;
+                }
+                button {
+                    height: 10vh;
+                }
+            }
+        }
+    }
 }
 
 /* Tablets in portrait mode */
@@ -903,7 +922,7 @@ i {
         .dietChoose-box {
             grid-area: 5/1/20/8; /*change*/
             flex-direction: column; /*change*/
-            gap: 1.5rem;
+            gap: 2.5rem;
             position: relative;
             .dietbox {
                 width: 100%;
@@ -912,7 +931,7 @@ i {
                 flex-direction: column; /*change*/
                 justify-content: space-evenly;
                 align-items: center;
-                gap: 1.5rem; /*change*/
+                gap: 0.5rem; /*change*/
                 button {
                     /*change*/
                     width: 100%;
@@ -951,6 +970,67 @@ i {
                 gap: 1rem;
                 h4 {
                     font-size: 2vh;
+                }
+            }
+        }
+    }
+
+    .meal-box {
+        height: 100%;
+        gap: 0.5rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 4rem;
+        }
+    }
+
+    .workout-box {
+        .intro {
+            grid-area: 3/1/8/19;
+            padding: 1.5rem;
+            h1 {
+                font-size: 3.5vh;
+            }
+            p {
+                padding: 1.5rem;
+                font-size: 2vh;
+            }
+        }
+        .image {
+            grid-area: 2/18/6/21;
+        }
+
+        .level-box {
+            grid-area: 9/2/20/20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem;
+            gap: 2rem;
+            .level-card {
+                padding: 1rem;
+                display: flex;
+                border-radius: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                h2 {
+                    padding: 0.25rem;
+                }
+                .bgImg {
+                    width: 100%;
+                    height: 100%;
+                }
+                button {
+                    width: 25vw;
+                    height: 5vh;
+                    margin: 1rem 0rem 0rem 0rem;
                 }
             }
         }
@@ -1003,6 +1083,88 @@ i {
                 gap: 0.5rem;
                 h4 {
                     font-size: 2.5vh;
+                }
+            }
+        }
+    }
+    .meal-box {
+        width: 100dvw;
+        height: 100dvh;
+
+        h2 {
+            padding-left: 2rem;
+        }
+
+        .meal-selection {
+            flex-direction: row;
+            padding: 1rem;
+            gap: 1rem;
+
+            .meal {
+                width: 100%;
+                height: 70vh;
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem;
+                border-radius: 1.5rem;
+                position: relative;
+                gap: 0.5rem;
+                .wrapper {
+                    width: 100%;
+                    overflow: hidden;
+                    font-size: 1.6vh;
+                    padding: 1rem;
+                    h5 {
+                        padding: 1rem;
+                    }
+                }
+                button {
+                    font-size: smaller;
+                    width: 100%;
+                    height: 15vh;
+                }
+            }
+        }
+    }
+
+    .workout-box {
+        .intro {
+            display: flex;
+            flex-direction: column;
+            grid-area: 4/4/8/19;
+
+            h1 {
+                font-size: 6vh;
+            }
+            p {
+                padding: 1rem;
+                font-size: 2.3vh;
+                text-align: justify;
+            }
+        }
+        .image {
+            grid-area: 5/2/9/4;
+        }
+
+        .level-box {
+            grid-area: 9/2/20/20;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem;
+            gap: 2rem;
+            .level-card {
+                flex-direction: column;
+                height: 60vh;
+                cursor: pointer;
+                h2 {
+                    padding: 2rem;
+                }
+                button {
+                    height: 15vh;
+                    margin: 2rem 0rem 0rem 0rem;
                 }
             }
         }
@@ -1078,6 +1240,69 @@ i {
             }
         }
     }
+    .meal-box {
+        height: 100%;
+        gap: 0.25rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 5rem;
+            .meal {
+                padding: 0.5rem;
+            }
+        }
+    }
+    .workout-box {
+        .intro {
+            grid-area: 3/1/8/19;
+            padding: 1.5rem;
+            h1 {
+                font-size: 3vh;
+            }
+            p {
+                padding: 1.5rem;
+                font-size: 1.5vh;
+            }
+        }
+        .image {
+            grid-area: 3/16/6/20;
+        }
+
+        .level-box {
+            grid-area: 9/2/21/20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            gap: 0.5rem;
+            .level-card {
+                padding: 0.25rem;
+                display: flex;
+                border-radius: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                h2 {
+                    padding: 0.05rem;
+                }
+                .bgImg {
+                    width: 100%;
+                    height: 100%;
+                }
+                button {
+                    width: 100%;
+                    height: 4vh;
+                    margin: 0rem;
+                    font-size: small;
+                }
+            }
+        }
+    }
 }
 
 /* Medium-sized smartphones (landscape) */
@@ -1114,6 +1339,101 @@ i {
             }
         }
     }
+    .meal-box {
+        width: 100dvw;
+        height: 100dvh;
+        gap: 0.25rem;
+        h2 {
+            padding-left: 2rem;
+        }
+
+        .meal-selection {
+            flex-direction: row;
+            padding: 1rem;
+            gap: 1rem;
+
+            .meal {
+                width: 100%;
+                height: 75vh;
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem;
+                border-radius: 1.5rem;
+                position: relative;
+                gap: 0.5rem;
+                img {
+                    height: 25vh;
+                }
+                .wrapper {
+                    width: 100%;
+                    height: 50vh;
+                    overflow: hidden;
+                    font-size: 2vh;
+                    padding: 0.25rem;
+                    h5 {
+                        padding: 0.5rem;
+                    }
+                }
+                button {
+                    font-size: small;
+                    width: 100%;
+                    height: 18vh;
+                }
+                .fa-chevron-down {
+                    font-size: 2vh;
+                    margin: 0.1rem 0rem 0rem 0rem;
+                }
+                .fa-chevron-up {
+                    font-size: 2vh;
+                    margin: 0.1rem 0rem 0rem 0rem;
+                }
+            }
+        }
+    }
+    .workout-box {
+        .intro {
+            display: flex;
+            flex-direction: column;
+            grid-area: 3/4/8/19;
+
+            h1 {
+                font-size: 6vh;
+            }
+            p {
+                padding: 1rem;
+                font-size: 2.3vh;
+                text-align: justify;
+            }
+        }
+        .image {
+            grid-area: 4/2/8/4;
+        }
+
+        .level-box {
+            grid-area: 8/2/20/20;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem;
+            margin: 0rem;
+            gap: 0rem;
+            width: 100%;
+            .level-card {
+                flex-direction: column;
+                height: 60vh;
+                cursor: pointer;
+                h2 {
+                    padding: 0.6rem;
+                }
+                button {
+                    font-size: smaller;
+                    height: 20vh;
+                    margin: 1rem 0rem 0rem 0rem;
+                }
+            }
+        }
+    }
 }
 
 /* Medium-sized smartphones (portrait) */
@@ -1124,6 +1444,22 @@ i {
                 button {
                     font-size: 2vh;
                 }
+            }
+        }
+    }
+    .meal-box {
+        h2 {
+            font-size: 4vh;
+            padding-left: 2rem;
+        }
+        height: 100%;
+        gap: 0.25rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 5rem;
+            .meal {
+                padding: 0.5rem;
             }
         }
     }
@@ -1163,6 +1499,50 @@ i {
             }
         }
     }
+    .workout-box {
+        .intro {
+            display: flex;
+            flex-direction: column;
+            grid-area: 4/5/8/19;
+
+            h1 {
+                font-size: 5vh;
+            }
+            p {
+                padding: 0.5rem;
+                font-size: 2.3vh;
+                text-align: justify;
+            }
+        }
+        .image {
+            grid-area: 3/2/8/4;
+        }
+
+        .level-box {
+            grid-area: 8/2/20/20;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem;
+            margin: 0rem;
+            gap: 1rem;
+            width: 100%;
+            .level-card {
+                flex-direction: column;
+                height: 60vh;
+                cursor: pointer;
+                h2 {
+                    padding: 0.6rem;
+                }
+                button {
+                    font-size: smaller;
+                    height: 15vh;
+                    margin: 1rem 0rem 0rem 0rem;
+                }
+            }
+        }
+    }
 }
 
 /* Small smartphones (portrait) */
@@ -1180,6 +1560,73 @@ i {
                 }
                 img {
                     width: 3rem; /*change*/
+                }
+            }
+        }
+    }
+    .meal-box {
+        h2 {
+            font-size: 5.5vh;
+            padding-left: 2rem;
+        }
+        height: 100%;
+        gap: 0.25rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 5rem;
+            .meal {
+                padding: 0.5rem;
+            }
+        }
+    }
+    .workout-box {
+        .intro {
+            grid-area: 3/1/8/19;
+            padding: 1.5rem;
+            h1 {
+                font-size: 3vh;
+            }
+            p {
+                padding: 1rem;
+                font-size: 1.5vh;
+            }
+        }
+        .image {
+            grid-area: 3/17/6/20;
+        }
+
+        .level-box {
+            grid-area: 8/2/21/20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.25rem;
+            gap: 0.1rem;
+            .level-card {
+                padding: 0.25rem;
+                display: flex;
+                border-radius: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                h2 {
+                    padding: 0.05rem;
+                }
+                .bgImg {
+                    width: 100%;
+                    height: 100%;
+                }
+                button {
+                    width: 100%;
+                    height: 5vh;
+                    margin: 0rem;
+                    font-size: small;
                 }
             }
         }
@@ -1222,6 +1669,141 @@ i {
             .plan-card {
                 padding: 0.5rem;
                 gap: 0.25rem;
+            }
+        }
+    }
+    .meal-box {
+        h2 {
+            font-size: 4vh;
+            padding-left: 0.5rem;
+        }
+        height: 100%;
+        gap: 0.25rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 0.25rem;
+            gap: 3rem;
+            .meal {
+                padding: 0.15rem;
+
+                padding: 0.35rem;
+                h4 {
+                    padding: 0.15rem 0rem 0rem 0.05rem;
+                    font-size: 2.8vh;
+                }
+                p {
+                    font-size: larger;
+                }
+                button {
+                    font-size: 2vh;
+                    height: 15vh;
+                }
+                .fa-chevron-down {
+                    margin: 0.01rem 0rem 0rem 0rem;
+                }
+                .fa-chevron-up {
+                    margin: 0.01rem 0rem 0rem 0rem;
+                }
+            }
+        }
+    }
+    .workout-box {
+        .intro {
+            grid-area: 3/1/8/19;
+            padding: 0.5rem;
+            h1 {
+                font-size: 2vh;
+            }
+            p {
+                padding: 0.5rem;
+                font-size: 1.5vh;
+            }
+        }
+        .image {
+            grid-area: 3/18/6/20;
+        }
+
+        .level-box {
+            grid-area: 7/2/21/20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.25rem;
+            gap: 0.5rem;
+            .level-card {
+                padding: 0.25rem;
+                display: flex;
+                border-radius: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                h2 {
+                    font-size: small;
+                    padding: 0.05rem;
+                }
+                .bgImg {
+                    width: 100%;
+                    height: 100%;
+                }
+                button {
+                    width: 100%;
+                    height: 4vh;
+                    margin: 0rem;
+                    font-size: 1.4vh;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 333px) and (max-height: 175px) {
+    .workout-box {
+        .intro {
+            padding: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            grid-area: 4/5/8/19;
+
+            h1 {
+                font-size: 2vh;
+            }
+            p {
+                padding: 0.25rem;
+                font-size: 2.3vh;
+                text-align: justify;
+            }
+        }
+        .image {
+            grid-area: 4/2/8/4;
+        }
+
+        .level-box {
+            grid-area: 8/2/20/20;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem;
+            margin: 0rem;
+            gap: 0.1rem;
+            width: 100%;
+            .level-card {
+                flex-direction: column;
+                height: 60vh;
+                cursor: pointer;
+                h2 {
+                    font-size: 3vh;
+                    padding: 0.6rem;
+                }
+                button {
+                    font-size: 2vh;
+                    height: 10vh;
+                    margin: 1rem 0rem 0rem 0rem;
+                }
             }
         }
     }

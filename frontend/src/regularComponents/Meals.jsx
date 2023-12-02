@@ -71,50 +71,43 @@ export const Meals = () => {
         navigate("/regular/workout-level");
     };
     return (
-        <>
+        <div className="meal-box">
             <Menu />
-            <div className="meal-box">
-                <h2>Diet for Selected Plan:</h2>
-                <div className="meal-selection">
-                    {mealPlans.map((mealPlan, index) => (
-                        <div className="meal" key={mealPlan._id}>
-                            <img src={mealPlan.image} alt="index" />
-                            <h4>{mealPlan.title}</h4>
-                            <div className="wrapper">
-                                <p>{mealPlan.description}</p>
-                                <h5>Example:</h5>
-                                <p className="example">
-                                    {mealPlan.mealExample}
-                                </p>
-                            </div>
-                            <i
-                                style={{
-                                    margin: "0.5rem 0.5rem 0.5rem 0.5rem",
-                                }}
-                                className="fa-solid fa-chevron-up"
-                                onClick={() =>
-                                    mealPlan.isExpanded && hideArrowUp(index)
-                                }
-                            ></i>
-                            <i
-                                style={{
-                                    margin: "0.5rem 0.5rem 0.5rem 0.5rem",
-                                }}
-                                className="fa-solid fa-chevron-down"
-                                onClick={() =>
-                                    !mealPlan.isExpanded && readMore(index)
-                                }
-                            ></i>
-                            <button
-                                className="button"
-                                onClick={navigateToWorkout}
-                            >
-                                Go to workout
-                            </button>
+            <h2>Diet for Selected Plan:</h2>
+            <div className="meal-selection">
+                {mealPlans.map((mealPlan, index) => (
+                    <div className="meal" key={mealPlan._id}>
+                        <img src={mealPlan.image} alt="index" />
+                        <h4>{mealPlan.title}</h4>
+                        <div className="wrapper">
+                            <p>{mealPlan.description}</p>
+                            <h5>Example:</h5>
+                            <p className="example">{mealPlan.mealExample}</p>
                         </div>
-                    ))}
-                </div>
+                        <i
+                            style={{
+                                margin: "0.5rem 0.5rem 0.5rem 0.5rem",
+                            }}
+                            className="fa-solid fa-chevron-up"
+                            onClick={() =>
+                                mealPlan.isExpanded && hideArrowUp(index)
+                            }
+                        ></i>
+                        <i
+                            style={{
+                                margin: "0.5rem 0.5rem 0.5rem 0.5rem",
+                            }}
+                            className="fa-solid fa-chevron-down"
+                            onClick={() =>
+                                !mealPlan.isExpanded && readMore(index)
+                            }
+                        ></i>
+                        <button className="button" onClick={navigateToWorkout}>
+                            Go to workout
+                        </button>
+                    </div>
+                ))}
             </div>
-        </>
+        </div>
     );
 };
