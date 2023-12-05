@@ -15,7 +15,7 @@ export const createUser = async (req, res) => {
         if (existingUser.username === req.body.username) {
             // Duplicate username
             return res.status(StatusCodes.BAD_REQUEST).json({
-                message: "Username already exists",
+                message: "User name already exists",
             });
         } else if (existingUser.email === req.body.email) {
             return res.status(StatusCodes.BAD_REQUEST).json({
