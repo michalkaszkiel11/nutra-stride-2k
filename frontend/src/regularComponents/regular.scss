@@ -636,6 +636,241 @@ nav {
         flex-direction: row-reverse;
     }
 }
+
+.login {
+    overflow: hidden;
+    width: 100dvw;
+    height: 100dvh;
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
+    );
+    .login-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10vh;
+        .login-box {
+            background: linear-gradient(
+                82.3deg,
+                rgba(231, 239, 197, 1) 10.8%,
+                rgba(163, 196, 188, 0.8) 94.3%
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 90vh;
+            flex-direction: column;
+            gap: 2rem;
+            .login-inputs {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                input {
+                    width: 15vw;
+                    height: 5vh;
+                    border-width: 0 0 2px 0;
+                    background: transparent;
+                    font-size: 2.1vh;
+                }
+                input:focus {
+                    outline: none;
+                    border-color: #413c58;
+                    border-width: 0 0 4px 0;
+                }
+            }
+            .login-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2rem;
+                button {
+                    width: 15vw;
+                    height: 5vh;
+                }
+            }
+        }
+        .bg-login {
+            @extend .bg-img-center-cover;
+
+            width: 40vw;
+            height: 50vh;
+            background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        }
+    }
+}
+.register {
+    overflow: hidden;
+    width: 100dvw;
+    height: 100dvh;
+
+    .register-container {
+        margin-top: 10vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        width: 100vw;
+        height: 90vh;
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 20vw);
+            grid-template-rows: repeat(3, 20vh);
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 70vh;
+            gap: 1rem;
+            background: linear-gradient(
+                82.3deg,
+                rgba(231, 239, 197, 1) 10.8%,
+                rgba(163, 196, 188, 0.8) 94.3%
+            );
+            .first1 {
+                grid-area: 1/1/2/2;
+                @extend .fullsize;
+                @extend .flex-center;
+                background: linear-gradient(
+                    82.3deg,
+                    rgba(231, 239, 197, 1) 10.8%,
+                    rgba(163, 196, 188, 0.8) 94.3%
+                );
+                padding: 1rem;
+                div {
+                    @extend .flex-center;
+                    flex-direction: column;
+                    gap: 1.5vh;
+
+                    h4 {
+                        font-size: larger;
+                        text-align: center;
+                    }
+                    p {
+                        text-align: justify;
+                        font-size: 1.75vh;
+                    }
+                }
+            }
+            .second2 {
+                grid-area: 2/2/3/3;
+                @extend .fullsize;
+                @extend .flex-center;
+                padding: 1rem;
+                div {
+                    @extend .flex-center;
+                    flex-direction: column;
+                    gap: 1.5vh;
+
+                    h4 {
+                        font-size: larger;
+                        text-align: center;
+                    }
+                    p {
+                        text-align: justify;
+                        font-size: 1.75vh;
+                    }
+                }
+            }
+            .third3 {
+                grid-area: 3/1/4/2;
+                @extend .fullsize;
+                @extend .flex-center;
+
+                padding: 1rem;
+                div {
+                    @extend .flex-center;
+                    flex-direction: column;
+                    gap: 1.5vh;
+
+                    h4 {
+                        font-size: larger;
+                        text-align: center;
+                    }
+                    p {
+                        text-align: justify;
+                        font-size: 1.75vh;
+                    }
+                }
+            }
+            .arrow1,
+            .bg-1,
+            .bg-2,
+            .bg-3 {
+                @extend .bg-img-center-cover, .fullsize;
+            }
+            .bg-1 {
+                grid-area: 1/2/2/3;
+                background-image: url("https://images.pexels.com/photos/1028599/pexels-photo-1028599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+                // border-top-right-radius: 1.5rem;
+            }
+            .bg-2 {
+                grid-area: 2/1/3/2;
+                background-image: url("https://images.pexels.com/photos/7592767/pexels-photo-7592767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            }
+            .bg-3 {
+                grid-area: 3/2/4/3;
+                background-image: url("https://images.pexels.com/photos/204692/pexels-photo-204692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                // border-bottom-right-radius: 1.5rem;
+            }
+        }
+        .register-box {
+            background: linear-gradient(
+                82.3deg,
+                rgba(231, 239, 197, 1) 10.8%,
+                rgba(163, 196, 188, 0.8) 94.3%
+            );
+            width: 50vw;
+            height: 90vh;
+            @extend .flex-center;
+            flex-direction: column;
+            gap: 2rem;
+            .register-inputs {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+                input {
+                    width: 15vw;
+                    height: 5vh;
+                    border-width: 0 0 2px 0;
+                    background: transparent;
+                    font-size: 2.1vh;
+                }
+                input:focus {
+                    outline: none;
+                    border-color: #413c58;
+                    border-width: 0 0 4px 0;
+                }
+            }
+            .register-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2rem;
+                button {
+                    width: 15vw;
+                    height: 5vh;
+                }
+            }
+        }
+    }
+}
 i {
     cursor: pointer;
 }
@@ -661,7 +896,11 @@ i {
     background-repeat: no-repeat;
     background-size: contain;
 }
-
+.bg-img-center-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*Buttons*/
 .button {
     cursor: pointer;
@@ -2278,3 +2517,73 @@ i {
         }
     }
 }
+
+/*
+                <div class="grid">
+                    <div class="grid-item1"></div>
+                    <div class="grid-item2"></div>
+                    <div class="grid-item3"></div>
+                    <div class="grid-item4"></div>
+                    <div class="grid-item5"></div>
+                    <div class="grid-item6"></div>
+                    <div class="grid-item7"></div>
+                </div>
+
+                .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 40vw;
+            height: 50vh;
+            grid-gap: 10px;
+
+            .grid-item1 {
+                @extend.bg-img-center-cover;
+                background-image: url("https://images.pexels.com/photos/6740535/pexels-photo-6740535.jpeg");
+                grid-column: 1/4;
+                grid-row: 1/2;
+            }
+            .grid-item2 {
+                background-image: url("https://images.pexels.com/photos/6740777/pexels-photo-6740777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 1/2;
+                grid-row: 2/5;
+            }
+
+            .grid-item3 {
+                background-image: url("https://images.pexels.com/photos/3060516/pexels-photo-3060516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 1/5;
+                grid-row: 5/5;
+            }
+
+            .grid-item4 {
+                background-image: url("https://images.pexels.com/photos/8844385/pexels-photo-8844385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 2/4;
+                grid-row: 2/5;
+            }
+
+            .grid-item5 {
+                background-image: url("https://images.pexels.com/photos/3743168/pexels-photo-3743168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 4/6;
+                grid-row: 1/3;
+            }
+
+            .grid-item6 {
+                background-image: url("https://images.pexels.com/photos/7195221/pexels-photo-7195221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 4/5;
+                grid-row: 3/5;
+            }
+
+            .grid-item7 {
+                background-image: url("https://images.pexels.com/photos/6294363/pexels-photo-6294363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                @extend.bg-img-center-cover;
+                grid-column: 5/6;
+                grid-row: 3/6;
+            }
+        }
+
+*/

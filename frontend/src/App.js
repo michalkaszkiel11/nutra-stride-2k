@@ -10,6 +10,8 @@ import { WorkoutRoles } from "./regularComponents/WorkoutRoles.jsx";
 import { Exercises } from "./regularComponents/Exercises.jsx";
 import { Blog } from "./blog/Blog.jsx";
 import { Posts } from "./blog/Posts.jsx";
+import { Login } from "./User/Login.jsx";
+import { Register } from "./User/Register.jsx";
 
 function App() {
     return (
@@ -43,6 +45,8 @@ function App() {
                                 path="/blog/posts/:cardId"
                                 element={<Posts />}
                             />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
                         </Routes>
                     </AuthenticationProvider>
                 </CookiesContext>
