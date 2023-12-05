@@ -684,6 +684,20 @@ nav {
                     border-color: #413c58;
                     border-width: 0 0 4px 0;
                 }
+                .password-box {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    .password {
+                        position: relative;
+                    }
+                    .fa-lock,
+                    .fa-lock-open {
+                        right: 23%;
+                        position: absolute;
+                    }
+                }
             }
             .login-buttons {
                 display: flex;
@@ -855,6 +869,20 @@ nav {
                     outline: none;
                     border-color: #413c58;
                     border-width: 0 0 4px 0;
+                }
+                .password-box {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    .password {
+                        position: relative;
+                    }
+                    .fa-lock,
+                    .fa-lock-open {
+                        right: 18%;
+                        position: absolute;
+                    }
                 }
             }
             .register-buttons {

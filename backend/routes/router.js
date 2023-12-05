@@ -22,9 +22,10 @@ import { getRoles } from "../controllers/getRoles.js";
 
 const router = express.Router();
 
-router.post("/user/create", validationRules, validator, createUser);
+router.post("/user/register", validationRules, validator, createUser);
 router.post("/user/login", loginUser);
 router.post("/user/logout", logoutUser);
+
 router.get("/regular/goal", getGoals);
 router.get("/regular/diet-plans/:goalId", getDietPlans);
 router.get("/regular/goal/bg/:goalId", getGoalBg);
