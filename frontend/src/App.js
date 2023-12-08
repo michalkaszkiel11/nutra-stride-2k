@@ -12,6 +12,7 @@ import { Blog } from "./blog/Blog.jsx";
 import { Posts } from "./blog/Posts.jsx";
 import { Login } from "./User/Login.jsx";
 import { Register } from "./User/Register.jsx";
+import { Home } from "./Home.jsx";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <CookiesContext>
                     <AuthenticationProvider>
                         <Routes>
+                            <Route path="/home" element={<Home />} />
                             <Route
                                 path="/regular/goal"
                                 element={<MainGoal />}

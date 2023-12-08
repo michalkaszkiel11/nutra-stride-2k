@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 const AuthContext = createContext();
 
 export const AuthenticationProvider = ({ children }) => {

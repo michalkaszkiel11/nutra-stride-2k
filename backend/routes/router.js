@@ -38,4 +38,5 @@ router.get("/blog", getBlog);
 router.get("/blog/posts/:cardId", getBlogPosts);
 
 router.use(authenticateUser);
+
 export default router;
