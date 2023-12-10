@@ -5,7 +5,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import { useAuth } from "../context/LoginAuthContext";
 import { useNavigate } from "react-router-dom";
-import { LoginFailed } from "./LoginFailed";
+import { LoginFailed } from "./actionMessages/LoginFailed";
 
 export const Login = () => {
     const inst = apiInstance();

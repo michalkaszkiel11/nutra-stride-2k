@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { Menu } from "../Menu";
 import { useState } from "react";
 import apiInstance from "../utils/axiosInstance";
-import { RegFailure } from "./RegFailure";
-import { RegCompleted } from "./RegCompleted";
+import { RegFailure } from "./actionMessages/RegFailure";
+import { RegCompleted } from "./actionMessages/RegCompleted";
+
 export const Register = () => {
     const inst = apiInstance();
 

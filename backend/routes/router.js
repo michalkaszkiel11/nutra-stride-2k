@@ -38,5 +38,9 @@ router.get("/blog", getBlog);
 router.get("/blog/posts/:cardId", getBlogPosts);
 
 router.use(authenticateUser);
+// router.post("/user/list/add/diets")
+// router.post("/user/list/add/workouts")
+// router.get("/user/list/diets")
+// router.get("/user/list/workouts")
 
 export default router;
