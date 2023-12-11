@@ -1,0 +1,46 @@
+.workoutPage {
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; }
+  .workoutPage .workoutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #c5bc81;
+    background-color: #cbdfd7;
+    border-radius: 5rem 5rem;
+    text-align: center;
+    width: 90%;
+    height: 10%;
+    margin: 5rem auto;
+    transition: transform 0.8s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3), 0 15px 30px rgba(0, 0, 0, 0.3); }
+    .workoutPage .workoutContainer h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 3.5rem; }
+    .workoutPage .workoutContainer p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      padding: 2rem 3rem; }
+    .workoutPage .workoutContainer .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem; }
+      .workoutPage .workoutContainer .content .videoWrapper {
+        background-color: pink;
+        margin: 2rem; }
+        .workoutPage .workoutContainer .content .videoWrapper .workoutVideo {
+          background-color: black; }
+        .workoutPage .workoutContainer .content .videoWrapper .imageWrapper {
+          display: flex; }
+          .workoutPage .workoutContainer .content .videoWrapper .imageWrapper .workoutImage {
+            width: 50px;
+            height: 50px; }

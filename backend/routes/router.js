@@ -9,6 +9,7 @@ import {
     validator,
     authenticateUser,
 } from "../middleware/userValidator.js";
+
 import { getGoalBg, getGoals } from "../controllers/getGoals.js";
 import { getDietPlans } from "../controllers/getDietPlans.js";
 import { getMealsForPlan } from "../controllers/getMealPlans.js";
@@ -19,6 +20,13 @@ import {
 import { getExercises } from "../controllers/getExercises.js";
 import { getBlog, getBlogPosts } from "../controllers/Blog/getBlog.js";
 import { getRoles } from "../controllers/getRoles.js";
+import { getMealPlan, getMeals } from "../controllers/getMealPlan.js";
+import { getSpecialDiets } from "../controllers/getDiet.js";
+import { getWorkouts } from "../controllers/getWorkout.js";
+import {
+    getConditions,
+    getConditionsById,
+} from "../controllers/getConditions.js";
 
 const router = express.Router();
 
@@ -36,6 +44,13 @@ router.get("/regular/workout-level/exercises/:roleId", getExercises);
 router.get("/regular/workout-level/roles/:roleId", getRoles);
 router.get("/blog", getBlog);
 router.get("/blog/posts/:cardId", getBlogPosts);
+
+router.get("/special/health-conditions", getConditions);
+router.get("/special/health-conditions/:conditionId", getConditionsById);
+router.get("/special/diet/diets/:conditionId", getSpecialDiets);
+router.post("/special/meals", getMeals);
+router.get("/special/meal-plan/:conditionId", getMealPlan);
+router.get("/special/conditions-with-workouts/:conditionId", getWorkouts);
 
 router.use(authenticateUser);
 // router.post("/user/list/add/diets")

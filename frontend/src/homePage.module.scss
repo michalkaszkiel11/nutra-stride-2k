@@ -1,0 +1,25 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  
+    .logo-container {
+      margin-bottom: 1rem;
+    }
+  
+    .title-container {
+      text-align: center;
+  
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+  
