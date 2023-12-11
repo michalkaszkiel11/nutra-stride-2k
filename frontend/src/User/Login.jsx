@@ -63,7 +63,9 @@ export const Login = () => {
             <Menu />
 
             <div className="login-container">
-                <div className="bg-login"></div>
+                <div className="bg">
+                    <div className="bg-login"></div>
+                </div>
                 {loading ? (
                     <div className="loading-spinner"></div>
                 ) : (

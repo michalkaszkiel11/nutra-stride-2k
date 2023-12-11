@@ -166,7 +166,11 @@ nav {
     width: 100dvw;
     height: 100dvh;
     gap: 1rem;
-
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
+    );
     h2 {
         color: var(--darkest-color);
         font-size: 6vh;
@@ -371,6 +375,7 @@ nav {
             width: 25vw;
             height: 100%;
             border-radius: 1.5rem;
+
             // border: #000000 1px solid;
 
             h2 {
@@ -438,7 +443,7 @@ nav {
             );
             .title {
                 grid-area: 2/2/6/15;
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -453,7 +458,7 @@ nav {
                 }
             }
             .text {
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 grid-area: 7/2/19/15;
                 display: flex;
                 flex-direction: column;
@@ -478,7 +483,7 @@ nav {
             }
             .level {
                 grid-area: 2/16/8/25;
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 h2 {
                     padding: 2rem 1rem 0rem 2rem;
                     font-size: 3.5vh;
@@ -515,7 +520,7 @@ nav {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    border: #b4b4b4 1px solid;
+                    border: #c5ddb3 1px solid;
                     border-radius: 1.5rem;
                 }
             }
@@ -525,10 +530,11 @@ nav {
 .blog {
     @extend .grid20x5;
     background: linear-gradient(
-        to top,
-        rgb(243, 245, 233) 50%,
-        rgba(193, 233, 223, 0.8) 50%
+        to bottom,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
     );
+
     .blog-box {
         @extend .fullsize;
         display: flex;
@@ -548,6 +554,7 @@ nav {
             gap: 1rem;
             padding: 1rem;
             border-radius: 1.5rem;
+
             background: linear-gradient(
                 82.3deg,
                 rgb(243, 245, 233) 10.8%,
@@ -585,11 +592,6 @@ nav {
         }
     }
     h1 {
-        background: linear-gradient(
-            82.3deg,
-            rgb(237, 243, 206) 10.8%,
-            rgba(140, 233, 210, 0.8) 94.3%
-        );
         border-radius: 1.5rem;
         grid-area: 18/2/20/14;
         @extend .flex-center;
@@ -598,25 +600,29 @@ nav {
         text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
     }
 }
+
 .posts {
+    width: 100dvw !important;
+    overflow: hidden;
     @extend .flex-center;
     background: linear-gradient(
         82.3deg,
         rgba(231, 239, 197, 1) 10.8%,
         rgba(163, 196, 188, 0.8) 94.3%
     );
+
     .posts-box {
-        margin-top: 15vh;
-        padding: 0vh 2.5vh 5vh 2.5vh;
+        margin-top: 12.5vh;
+        padding: 0 2.5rem 3rem 2.5rem;
         @extend .fullsize;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        gap: 2.5vh;
+        gap: 2.5rem;
         .posts-cards {
             cursor: pointer;
-            height: 30vh;
-            width: 100%;
+            height: 325px;
+            width: 100vw;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -659,24 +665,20 @@ nav {
     overflow: hidden;
     width: 100dvw;
     height: 100dvh;
-    background: linear-gradient(
-        82.3deg,
-        rgba(231, 239, 197, 1) 10.8%,
-        rgba(163, 196, 188, 0.8) 94.3%
-    );
+    // background: linear-gradient(
+    //     82.3deg,
+    //     rgba(231, 239, 197, 1) 10.8%,
+    //     rgba(163, 196, 188, 0.8) 94.3%
+    // );
     .login-container {
         display: flex;
         justify-content: center;
         flex-direction: row;
         align-items: center;
-        margin-top: 10vh;
-        .login-box {
-            background: linear-gradient(
-                82.3deg,
-                rgba(231, 239, 197, 1) 10.8%,
-                rgba(163, 196, 188, 0.8) 94.3%
-            );
+        margin: 10vh 0 0 0;
+        padding: 0;
 
+        .login-box {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -684,6 +686,12 @@ nav {
             height: 90vh;
             flex-direction: column;
             gap: 2rem;
+            background: linear-gradient(
+                82.3deg,
+                rgba(231, 239, 197, 1) 10.8%,
+                rgba(163, 196, 188, 0.8) 94.3%
+            );
+
             .login-inputs {
                 display: flex;
                 flex-direction: column;
@@ -729,12 +737,16 @@ nav {
                 }
             }
         }
-        .bg-login {
-            @extend .bg-img-center-cover;
-
-            width: 40vw;
+        .bg {
+            @extend .flex-center;
+            width: 50vw;
             height: 50vh;
-            background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            .bg-login {
+                @extend .bg-img-center-cover;
+                width: 40vw;
+                height: 50vh;
+                background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            }
         }
     }
 }
@@ -874,11 +886,11 @@ nav {
         align-items: center;
         width: 100vw;
         height: 90vh;
-        background: linear-gradient(
-            82.3deg,
-            rgba(231, 239, 197, 1) 10.8%,
-            rgba(163, 196, 188, 0.8) 94.3%
-        );
+        // background: linear-gradient(
+        //     82.3deg,
+        //     rgba(231, 239, 197, 1) 10.8%,
+        //     rgba(163, 196, 188, 0.8) 94.3%
+        // );
         .info {
             display: grid;
             grid-template-columns: repeat(2, 20vw);
@@ -1457,10 +1469,13 @@ i {
                     }
                 }
             }
-            .bg-login {
-                z-index: 1;
-                width: 90vw; /* change */
-                height: 40vh; /* change */
+            .bg {
+                width: 90vw;
+                height: 40vh;
+                .bg-login {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -1763,9 +1778,13 @@ i {
                     }
                 }
             }
-            .bg-login {
+            .bg {
                 width: 40vw;
-                height: 50vh;
+                height: 40vh;
+                .bg-login {
+                    width: 90%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -2065,10 +2084,14 @@ i {
                     }
                 }
             }
-            .bg-login {
+            .bg {
+                width: 100vw;
+                height: 40vh;
                 z-index: 1;
-                width: 90vw; /* change */
-                height: 30vh; /* change */
+                .bg-login {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -2534,8 +2557,8 @@ i {
                 }
                 z-index: 11;
             }
-            .bg-login {
-                z-index: 1 !important;
+            .bg {
+                z-index: 1;
             }
         }
     }
@@ -2788,6 +2811,7 @@ i {
                         rgba(231, 239, 197, 1) 10.8%,
                         rgba(163, 196, 188, 0.8) 94.3%
                     );
+                    padding-top: 2vh;
                 }
                 z-index: 11;
                 height: 35vh; /* change */
@@ -2807,9 +2831,8 @@ i {
                     }
                 }
             }
-            .bg-login {
-                height: 35vh; /* change */
-                z-index: 1 !important;
+            .bg {
+                z-index: 1;
             }
         }
     }
@@ -2991,6 +3014,9 @@ i {
             .login-box {
                 height: 35vh; /* change */
                 gap: 2vh;
+                h1 {
+                    font-size: smaller;
+                }
                 .login-inputs {
                     gap: 5vh;
                     input {
