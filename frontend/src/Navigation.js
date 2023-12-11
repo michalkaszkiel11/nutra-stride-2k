@@ -1,39 +1,31 @@
-import styles from "./Navigation.scss";
-
-
+import { Link } from "react-router-dom";
+import styles from "./Navigation.module.scss";
 export const Navigation = () => {
-    return(
-        <nav className={styles.nav}>
-        <div className={styles.logo}>
-          {/* <img src={logoImage} alt="logo" className={styles.logo} /> */}
-        </div>
-        <div className={styles.links}>
-          <li>
-            <a href="#home" target="_blank" rel="noreferrer">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#blog" target="_blank" rel="noreferrer">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="#about" target="_blank" rel="noreferrer">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#login" target="_blank" rel="noreferrer">
-              Login
-            </a>
-          </li>
-          <li>
-            <a href="#contact" target="_blank" rel="noreferrer">
-              Contact
-            </a>
-          </li>
-        </div>
-      </nav>
-    )
+  return (
+    <nav className={styles.nav}>
+      <ul className={styles.navList}>
+        <li className={styles.navItem}>
+          <Link to="/" className={styles.navLink}>
+            Home
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link to="/blog" className={styles.navLink}>
+            Blog
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link to="/login" className={styles.navLink}>
+            Login
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link to="/contact" className={styles.navLink}>
+            Contact
+          </Link>
+        </li>
+        
+      </ul>
+    </nav>
+  );
 };

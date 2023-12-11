@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./chooseDietOrWorkout.module.scss";
 import { useNavigate } from "react-router-dom";
-import SearchBar from "./searchBar.js";
 import { Navigation } from "../../Navigation.js";
 import { useCallback } from "react";
 
 const ChooseDietOrWorkout = () => {
   let navigate = useNavigate();
+
   const [selectedCondition, setSelectedCondition] = useState(null);
   const [healthConditions, setHealthConditions] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     getConditions();
-  
-  },[]);
+  }, []);
 
   const getConditions = async () => {
     try {
@@ -23,6 +22,7 @@ const ChooseDietOrWorkout = () => {
         "http://localhost:10000/api/ns/special/health-conditions"
       );
       setHealthConditions(response.data.data);
+   
     } catch (error) {
       console.error("Error fetching health conditions:", error);
     }
@@ -39,14 +39,16 @@ const ChooseDietOrWorkout = () => {
     }
   }, []);
 
-  const handleSelectCondition = useCallback((conditionIndex) => {
-    const condition = healthConditions[conditionIndex];
-    setSelectedCondition(condition);
-    if (condition?._id) {
-      getConditionsById(condition._id);
-    }
-  }, [getConditionsById, healthConditions]);
-
+  const handleSelectCondition = useCallback(
+    (conditionIndex) => {
+      const condition = healthConditions[conditionIndex];
+      setSelectedCondition(condition);
+      if (condition?._id) {
+        getConditionsById(condition._id);
+      }
+    },
+    [getConditionsById, healthConditions]
+  );
 
   const goToDiet = () => {
     if (selectedCondition) {
@@ -60,7 +62,7 @@ const ChooseDietOrWorkout = () => {
 
   const goToWorkout = () => {
     if (selectedCondition) {
-      navigate(`/workout/${selectedCondition._id}`);
+      navigate(`/special/workout/${selectedCondition._id}`);
     }
   };
 
@@ -93,12 +95,10 @@ const ChooseDietOrWorkout = () => {
           you!
         </p>
 
-        <SearchBar />
       </section>
 
       {/* Custom Carousel */}
-      <div className={styles.carouselContainer}>
-        <button onClick={prevSlide}>Prev</button>
+      <section className={styles.carouselContainer}>
         <div className={styles.carouselSlides}>
           {healthConditions.map((condition, index) => (
             <div
@@ -107,12 +107,47 @@ const ChooseDietOrWorkout = () => {
               style={{ display: index === activeIndex ? "block" : "none" }}
               onClick={() => handleSelectCondition(index)}
             >
-              <h2>{condition.title}</h2>
+              <img src={condition.image} alt="Health Condition"className={styles.condImage}/>
+              <h2 className={styles.condTitle}>{condition.title}</h2>
             </div>
           ))}
         </div>
-        <button onClick={nextSlide}>Next</button>
-      </div>
+        <div>
+          <button onClick={prevSlide} className={styles.btnchoose}>
+          
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className={styles.arrow}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+              />
+            </svg>
+          </button>
+          <button onClick={nextSlide} className={styles.btnchoose}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className={styles.arrow}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
 
       {/* Conditional rendering for Diet and Workout buttons */}
       {selectedCondition && (

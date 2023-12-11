@@ -7,9 +7,10 @@ html {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #d1dddf;
+  background-image: url("./bkg.png");
+  background-size: cover;
+  background-position: center;
 }
-
 
 //---------------------------------------------------------
 
@@ -33,266 +34,79 @@ $duration: 0.6s;
   }
 
   .text {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #0d3b45;
     text-align: center;
     padding: 2rem 4rem 1rem 4rem;
   }
-
-  .searchForm {
-    margin: 2rem 0 3rem 0;
-    .search {
-      overflow: hidden;
-      padding: 0 0 1.25em;
-      opacity: 0.7;
-      cursor: pointer;
-      transition-property: opacity;
-      transition-duration: 0.3s;
-
-      &:hover,
-      &:focus-within {
-        opacity: 1;
-      }
-    }
-
-    .one {
-      font-size: 1.4rem;
-      width: calc(#{$search-width} - #{$circle-width * 2});
-      height: $circle-width * 2;
-      z-index: 2;
-    }
-
-    .two {
-      width: calc(100% - #{$circle-width});
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: $circle-width;
-    }
-    .one:before,
-    .two:before {
-      content: "";
-      position: absolute;
-      height: 82%;
-      width: $circle-width;
-      border: $border-width solid rgb(1, 5, 6);
-      &:hover {
-        background-color: rgb(13, 11, 11);
-      }
-    }
-
-    .one:before {
-      left: 0;
-      border-right: none;
-      border-radius: $circle-width 0 0 $circle-width;
-    }
-
-    .two:before {
-      right: 0;
-      border-left: none;
-      border-radius: 0 $circle-width $circle-width 0;
-    }
-
-    .three {
-      height: 100%;
-      width: calc(100% - #{$circle-width});
-      overflow: hidden;
-    }
-    // this is the search input!!!
-    input[type="search"] {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: $border-width solid;
-      border-left: none;
-      border-right: none;
-      background: transparent;
-      color: rgb(7, 6, 6);
-      font: inherit;
-
-      &,
-      &:focus {
-        outline: none;
-      }
-    }
-    .stick {
-      position: absolute;
-      height: $circle-width;
-      width: $border-width;
-      right: $circle-width;
-      top: 50%;
-      transform: translate(0%, -50%);
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0.11rem;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #0d0303;
-      }
-
-      &:before {
-        transform: rotate(45deg);
-      }
-
-      &:after {
-        transform: rotate(-45deg);
-      }
-    }
-
-    .one {
-      transform: translateX(50%) translateX(-#{$circle-width});
-    }
-
-    .two {
-      transform: translateX(-100%) translateX(#{$circle-width});
-    }
-
-    .three {
-      transform: translateX(100%);
-    }
-
-    .four {
-      transform: translateX(-100%);
-    }
-
-    .stick {
-      &:before,
-      &:after {
-        transform: rotate(-45deg) translateY(150%);
-      }
-    }
-
-    // -------------------------------
-
-    .search:focus-within {
-      &:after {
-        opacity: 1;
-        transition-delay: $duration;
-      }
-
-      .one,
-      .two,
-      .three,
-      .four {
-        transform: translateX(0);
-      }
-
-      .stick {
-        pointer-events: auto;
-
-        &:before {
-          transform: rotate(45deg);
-        }
-
-        &:after {
-          transform: rotate(-45deg);
-        }
-      }
-    }
-  }
 }
 
 //--------------------------------------------------------
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 5px solid rgb(197, 188, 129);
+  background-color: rgba(203, 223, 215, 0.498);
+  border-radius: 5rem 5rem;
+  text-align: center;
+  width: 50rem;
+  height: 25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: transform 0.8s ease-in-out; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3),
+    0 15px 30px rgba(0, 0, 0, 0.3);
+  &:hover {
+    cursor: pointer;
+  }
+  .btnchoose {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 6rem;
+    margin: 0.8rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    .arrow {
+      width: 2rem;
+      height: 2rem;
+      margin: -0.7rem;
+    }
 
-.chooseDietOrWorkout {
-  .carouselContainer {
-    text-align: center;
-    margin: 20px 0;
-
-    button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background-color: #f8f8f8;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      
-      &:hover {
-        background-color: #e7e7e7;
-      }
+    &:hover {
+      color: rgb(60, 143, 81);
+      box-shadow: 0 0.5em 0.5em -0.4em rgb(97, 74, 74);
     }
   }
-
-  .carouselSlides {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+  .condImage{
+    width: 120px;
+    height: 130px;
+   margin: 2rem;
   }
-
-  .slide {
-    min-width: 300px; // Adjust based on your content
-    max-width: 100%;
-    transition: all 0.5s ease;
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    &.active {
-      opacity: 1;
-      position: relative;
-    }
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    .optionButton {
-      margin: 0 5px;
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      
-      &:hover {
-        background-color: darken(#007bff, 10%);
-      }
-    }
+  .condTitle{
+    font-size: 2rem;
   }
 }
-
 
 //--------------------------------------------------------
 
 $colors: (
-  optionButton: #ffa260,
+  optionButton: #292b2b,
+
 );
 
 .optionButton:hover,
 .optionButton:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+  transform: translateY(-0.20em);
 }
 @each $button, $color in $colors {
   .#{$button} {
     --color: #{$color};
-    --hover: #{adjust-hue($color, 45deg)};
+    --hover: #{adjust-hue($color, 60deg)};
   }
 }
-button {
-  color: var(--color);
-  transition: 0.25s;
-
-  &:hover,
-  &:focus {
-    border-color: var(--hover);
-    color: #fff;
-  }
-}
-
-// Basic button styles
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -302,10 +116,20 @@ button {
   padding: 2rem;
 
   .optionButton {
-    padding: 0.5rem 1rem;
-    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 2.2rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: #ccd196;
+    transition: 0.25s;
+    font-weight: bold;
+    font-family: fantasy;
+
+    &:hover,
+    &:focus {
+      border-color: var(--hover);
+      color: #aaf09a;
+      background-color: #30302981;
+    }
   }
 }
-
-
-

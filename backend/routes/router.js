@@ -9,8 +9,9 @@ import {
   validator,
   authenticateUser,
 } from "../middleware/userValidator.js";
-import { getMealPlan } from "../controllers/getMealPlan.js";
+import { getMealPlan, getMeals } from "../controllers/getMealPlan.js";
 import { getSpecialDiets } from "../controllers/getDiet.js";
+import { getWorkouts } from "../controllers/getWorkout.js";
 import {
   getConditions,
   getConditionsById,
@@ -23,7 +24,13 @@ router.post("/user/login", loginUser);
 router.get("/special/health-conditions", getConditions);
 router.get("/special/health-conditions/:conditionId", getConditionsById);
 router.get("/special/diet/diets/:conditionId", getSpecialDiets);
-router.get("/special/meal-plan/:Id", getMealPlan);
+router.post("/special/meals", getMeals);
+router.get("/special/meal-plan/:conditionId", getMealPlan);
+router.get(
+  "/special/conditions-with-workouts/:conditionId",
+  getWorkouts
+);
+
 router.use(authenticateUser);
 router.post("/user/logout", logoutUser);
 
