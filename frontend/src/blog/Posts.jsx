@@ -21,7 +21,7 @@ export const Posts = () => {
         }
     };
     return (
-        <div className="posts" style={{ width: "100dvw" }}>
+        <div className="posts">
             <Menu />
             <div className="posts-box">
                 {posts.map((post, index) => (
