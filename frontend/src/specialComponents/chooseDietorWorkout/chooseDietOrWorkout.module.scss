@@ -1,135 +1,143 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body,
-html {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-image: url("./bkg.png");
-  background-size: cover;
-  background-position: center;
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./bkg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
 
-//---------------------------------------------------------
+    //---------------------------------------------------------
 
-$border-width: 0.2em;
-$circle-width: 1em;
-$search-width: 15em;
-$duration: 0.6s;
+    $border-width: 0.2em;
+    $circle-width: 1em;
+    $search-width: 15em;
+    $duration: 0.6s;
+    .rest {
+        margin-top: 10vh;
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 3rem;
+            margin-bottom: 20px;
+            .title {
+                font-size: 4rem;
+                font-weight: 600;
+                color: #0d3b45;
+                text-align: center;
+            }
 
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 3rem;
-  margin-bottom: 20px;
-  .title {
-    font-size: 4rem;
-    font-weight: 600;
-    color: #0d3b45;
-    text-align: center;
-  }
+            .text {
+                font-size: 2rem;
+                font-weight: 600;
+                color: #0d3b45;
+                text-align: center;
+                padding: 2rem 4rem 1rem 4rem;
+            }
+        }
 
-  .text {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #0d3b45;
-    text-align: center;
-    padding: 2rem 4rem 1rem 4rem;
-  }
-}
+        //--------------------------------------------------------
+        .carouselContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border: 5px solid rgba(163, 196, 188, 1);
+            background-color: rgba(203, 223, 215, 0.1);
+            border-radius: 5rem 5rem;
+            text-align: center;
+            width: 50rem;
+            height: 25rem;
+            margin: 2rem auto;
+            padding: 1rem;
+            transition: transform 0.8s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3),
+                0 15px 20px rgba(0, 0, 0, 0.3), 0 15px 30px rgba(0, 0, 0, 0.3);
+            &:hover {
+                cursor: pointer;
+            }
+            .btnchoose {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 6rem;
+                margin: 0.8rem;
+                font-size: 1.1rem;
+                cursor: pointer;
+                .arrow {
+                    width: 2rem;
+                    height: 2rem;
+                    margin: -0.7rem;
+                }
 
-//--------------------------------------------------------
-.carouselContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border: 5px solid rgb(197, 188, 129);
-  background-color: rgba(203, 223, 215, 0.498);
-  border-radius: 5rem 5rem;
-  text-align: center;
-  width: 50rem;
-  height: 25rem;
-  margin: 2rem auto;
-  padding: 1rem;
-  transition: transform 0.8s ease-in-out; 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3),
-    0 15px 30px rgba(0, 0, 0, 0.3);
-  &:hover {
-    cursor: pointer;
-  }
-  .btnchoose {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 6rem;
-    margin: 0.8rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    .arrow {
-      width: 2rem;
-      height: 2rem;
-      margin: -0.7rem;
+                &:hover {
+                    color: rgb(60, 143, 81);
+                    box-shadow: 0 0.5em 0.5em -0.4em rgb(97, 74, 74);
+                }
+            }
+            .condImage {
+                width: 120px;
+                height: 130px;
+                margin: 2rem;
+            }
+            .condTitle {
+                font-size: 2rem;
+            }
+        }
+
+        //--------------------------------------------------------
+
+        $colors: (
+            optionButton: #292b2b,
+        );
+
+        .optionButton:hover,
+        .optionButton:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            transform: translateY(-0.2em);
+        }
+        @each $button, $color in $colors {
+            .#{$button} {
+                --color: #{$color};
+                --hover: #{adjust-hue($color, 60deg)};
+            }
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8rem;
+            margin: 2rem;
+            padding: 2rem;
+
+            .optionButton {
+                padding: 1rem 1.5rem;
+                font-size: 2.2rem;
+                border: none;
+                border-radius: 2rem;
+                background-color: #ccd196;
+                transition: 0.25s;
+                font-weight: bold;
+                font-family: fantasy;
+
+                &:hover,
+                &:focus {
+                    border-color: var(--hover);
+                    color: #aaf09a;
+                    background-color: #30302981;
+                }
+            }
+        }
     }
-
-    &:hover {
-      color: rgb(60, 143, 81);
-      box-shadow: 0 0.5em 0.5em -0.4em rgb(97, 74, 74);
-    }
-  }
-  .condImage{
-    width: 120px;
-    height: 130px;
-   margin: 2rem;
-  }
-  .condTitle{
-    font-size: 2rem;
-  }
-}
-
-//--------------------------------------------------------
-
-$colors: (
-  optionButton: #292b2b,
-
-);
-
-.optionButton:hover,
-.optionButton:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.20em);
-}
-@each $button, $color in $colors {
-  .#{$button} {
-    --color: #{$color};
-    --hover: #{adjust-hue($color, 60deg)};
-  }
-}
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8rem;
-  margin: 2rem;
-  padding: 2rem;
-
-  .optionButton {
-    padding: 1rem 1.5rem;
-    font-size: 2.2rem;
-    border: none;
-    border-radius: 2rem;
-    background-color: #ccd196;
-    transition: 0.25s;
-    font-weight: bold;
-    font-family: fantasy;
-
-    &:hover,
-    &:focus {
-      border-color: var(--hover);
-      color: #aaf09a;
-      background-color: #30302981;
-    }
-  }
 }

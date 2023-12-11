@@ -62,7 +62,9 @@ export const Menu = () => {
                         </li>
                     </>
                 )}
-
+                <li>
+                    <Link to="/special">Cure</Link>
+                </li>
                 <li>
                     <Link to="/regular/workout-level">Workout</Link>
                 </li>
