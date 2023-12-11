@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import ExercisesModel from "../../../models/RegularWorkout/regularExerciseModel.js";
+import regularWorkout from "../../regularWorkoutData.js";
+import ExercisesModel from "../../../models/RegularWorkout/RegularExerciseModel.js";
+
 dotenv.config();
 mongoose
     .connect(
@@ -28,6 +30,7 @@ async function saveExerciseData(exerciseData) {
                 title: exercise.title,
                 description: exercise.description,
                 image: exercise.image,
+                video: exercise.video,
             });
 
             await newExercise.save();
@@ -42,7 +45,7 @@ async function saveExerciseData(exerciseData) {
     }
 }
 saveExerciseData(
-    regularWorkoutData.difficulty.flatMap(
+    regularWorkout.difficulty.flatMap(
         (level) => level.role.flatMap((role) => role.workout) //role wasnt an array before saving
     )
 );

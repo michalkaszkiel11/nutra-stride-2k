@@ -15,7 +15,7 @@ export const createUser = async (req, res) => {
         if (existingUser.username === req.body.username) {
             // Duplicate username
             return res.status(StatusCodes.BAD_REQUEST).json({
-                message: "Username already exists",
+                message: "User name already exists",
             });
         } else if (existingUser.email === req.body.email) {
             return res.status(StatusCodes.BAD_REQUEST).json({
@@ -70,7 +70,8 @@ export const loginUser = async (req, res) => {
         if (checkPassword) {
             const token = jwt.sign(
                 { name: user.username },
-                process.env.JWT_SECRET,
+                "process.env.JWT_SECRET",
+                // "secret",
                 {
                     expiresIn: "1h",
                 }
@@ -80,9 +81,6 @@ export const loginUser = async (req, res) => {
             res.status(StatusCodes.OK)
                 .cookie("jwtToken", token, { httpOnly: true, secure: true })
                 .json({ token });
-
-            // Store the token in local storage as well
-            localStorage.setItem("jwtToken", token);
         } else {
             // passwords are not matching
             return res

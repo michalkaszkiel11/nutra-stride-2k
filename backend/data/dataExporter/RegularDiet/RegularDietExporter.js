@@ -29,6 +29,7 @@ const exportRegularDiet = async (dietData) => {
                 title: diet.title,
                 description: diet.description,
                 mealExample: diet.mealExample,
+                image: diet.image,
             });
 
             await newDiet.save();

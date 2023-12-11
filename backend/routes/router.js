@@ -1,10 +1,4 @@
 import express from "express";
-<<<<<<< HEAD:backend/routes/router.js
-
-
-
-=======
->>>>>>> c15ea04ae8f5deb9972e34ccdc84702afbf3b73a:Backend/Routes/router.js
 import {
     createUser,
     loginUser,
@@ -15,15 +9,38 @@ import {
     validator,
     authenticateUser,
 } from "../middleware/userValidator.js";
-<<<<<<< HEAD:backend/routes/router.js
- 
-=======
->>>>>>> c15ea04ae8f5deb9972e34ccdc84702afbf3b73a:Backend/Routes/router.js
+import { getGoalBg, getGoals } from "../controllers/getGoals.js";
+import { getDietPlans } from "../controllers/getDietPlans.js";
+import { getMealsForPlan } from "../controllers/getMealPlans.js";
+import {
+    getRolelByLevelId,
+    getWorkoutLevel,
+} from "../controllers/getWorkoutLevel.js";
+import { getExercises } from "../controllers/getExercises.js";
+import { getBlog, getBlogPosts } from "../controllers/Blog/getBlog.js";
+import { getRoles } from "../controllers/getRoles.js";
 
 const router = express.Router();
 
-router.post("/user/create", validationRules, validator, createUser);
+router.post("/user/register", validationRules, validator, createUser);
 router.post("/user/login", loginUser);
 router.post("/user/logout", logoutUser);
+
+router.get("/regular/goal", getGoals);
+router.get("/regular/diet-plans/:goalId", getDietPlans);
+router.get("/regular/goal/bg/:goalId", getGoalBg);
+router.get("/regular/diet-plans/meals/:planId", getMealsForPlan);
+router.get("/regular/workout-level", getWorkoutLevel);
+router.get("/regular/workout-level/:lvlId", getRolelByLevelId);
+router.get("/regular/workout-level/exercises/:roleId", getExercises);
+router.get("/regular/workout-level/roles/:roleId", getRoles);
+router.get("/blog", getBlog);
+router.get("/blog/posts/:cardId", getBlogPosts);
+
 router.use(authenticateUser);
+// router.post("/user/list/add/diets")
+// router.post("/user/list/add/workouts")
+// router.get("/user/list/diets")
+// router.get("/user/list/workouts")
+
 export default router;

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiInstance = (token) => {
     return axios.create({
-        baseURL: "https://",
+        baseURL: "http://localhost:10000/api/ns",
         headers: {
             Authorization: `Bearer ${token}`,
         },
