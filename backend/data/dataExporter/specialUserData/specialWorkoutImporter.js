@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import SpecialWorkout from '../../models/specialUser/specialWorkoutModel.js';
-import healthConditionsData from './healthConditionsData.js';
+import SpecialWorkout from '../../../models/specialUser/specialWorkoutModel.js';
+import healthConditionsData from '../../healthConditionsData.js';
 import dotenv from "dotenv";
 
 dotenv.config();

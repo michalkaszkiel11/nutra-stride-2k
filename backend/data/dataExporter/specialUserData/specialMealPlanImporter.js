@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import MealPlan from '../../models/specialUser/mealPlanModel.js';
-import healthConditionsData from './healthConditionsData.js';
+import MealPlan from '../../../models/specialUser/mealPlanModel.js'
+import healthConditionsData from '../../healthConditionsData.js';
 import dotenv from "dotenv";
 
 dotenv.config();

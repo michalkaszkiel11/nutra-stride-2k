@@ -15,9 +15,13 @@ export const getSpecialDiets = async (req, res) => {
     const dietIds = condition.conditionChoose.diet;
     const diets = await SpecialDiet.findOne({ _id: { $in: dietIds } });
 
-    return res.status(OK).json({ message: "Diets retrieved successfully", data: diets });
+    return res
+      .status(OK)
+      .json({ message: "Diets retrieved successfully", data: diets });
   } catch (error) {
-    console.error("Error fetching special diets:", error);  // Optional: logging the error
-    return res.status(INTERNAL_SERVER_ERROR).json({ message: "Error while retrieving data.", error: error.message });
+    console.error("Error fetching special diets:", error);
+    return res
+      .status(INTERNAL_SERVER_ERROR)
+      .json({ message: "Error while retrieving data.", error: error.message });
   }
 };

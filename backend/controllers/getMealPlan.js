@@ -3,13 +3,13 @@ import MealPlan from "../models/specialUser/mealPlanModel.js";
 import { StatusCodes } from "http-status-codes";
 
 export const getMealPlan = async (req, res) => {
-  const conditionId = req.params.conditionId;  
+  const { conditionId } = req.params;
 
   try {
     const specialDiet = await SpecialDiet.findById(conditionId)
-                                          .populate('meals.breakfast')
-                                          .populate('meals.lunch')
-                                          .populate('meals.dinner');
+      .populate("meals.breakfast")
+      .populate("meals.lunch")
+      .populate("meals.dinner");
 
     if (!specialDiet) {
       return res.status(StatusCodes.NOT_FOUND).json({
@@ -28,21 +28,21 @@ export const getMealPlan = async (req, res) => {
     });
   }
 };
-// Fetch meal 
+// Fetch meal
+
 export const getMeals = async (req, res) => {
-  const { mealId } = req.params;
+  const mealIds = req.body.mealIds;
+
   try {
-   
-    const meal = await MealPlan.findById(mealId);
-    if (!meal) {
+    const meals = await MealPlan.find({ _id: { $in: mealIds } });
+    if (!meals || meals.length === 0) {
       return res.status(StatusCodes.NOT_FOUND).json({
-        message: "Meal Plan not found.",
+        message: "Meal Plans not found.",
       });
     }
-    // Return the meal plan if found
     return res.status(StatusCodes.OK).json({
-      message: "Meal Plan retrieved successfully",
-      data: meal,
+      message: "Meal Plans retrieved successfully",
+      data: meals,
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
