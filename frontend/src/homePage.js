@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./homePage.module.scss";
 import { Menu } from "../src/Menu";
-import logoImage from "../src/logo/2K.mp4";
+import logoImage from "../src/logo/ns.mp4";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
