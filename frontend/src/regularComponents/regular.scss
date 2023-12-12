@@ -1,3 +1,122 @@
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    height: 50px;
+    padding: 1em;
+    a {
+        text-decoration: none;
+        color: white !important;
+        font-weight: bold;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        z-index: 22;
+    }
+
+    .menu > li {
+        margin: 0 1rem;
+        overflow: hidden;
+        z-index: 22;
+    }
+
+    .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+    }
+
+    .menu-button::before {
+        content: "";
+        margin-top: -8px;
+    }
+
+    .menu-button::after {
+        content: "";
+        margin-top: 8px;
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+    }
+
+    .menu-button-container {
+        display: flex;
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 8vh;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 22;
+    }
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #000000;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #cbdec4;
+        z-index: 22;
+    }
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #b9b9b9;
+    }
+}
 nav {
     grid-area: 1/1/3/21;
 
@@ -67,96 +186,101 @@ nav {
         align-items: center;
     }
 }
-.mainGoal-box {
-    @extend .grid20x5;
+.main-box {
     background: linear-gradient(
         82.3deg,
         rgba(231, 239, 197, 1) 10.8%,
         rgba(163, 196, 188, 0.8) 94.3%
     );
-    .header-box {
-        grid-area: 3/6/7/15;
-        @extend .flex-center;
-        font-size: 4.5vh;
-        color: white;
-        text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
-        position: relative;
-        h3 {
-            position: absolute;
-            top: 70%;
-            left: 75%;
-            margin-top: 0;
-            font-size: 1.6vh;
-            text-shadow: none !important;
-        }
-    }
-    .dietChoose-box {
-        @extend .fullsize, .flex-center;
-        grid-area: 8/3/19/8;
-        flex-direction: column;
-        gap: 1.5rem;
-        position: relative;
-        .dietbox {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 5rem;
-            img {
-                width: 7rem;
-                object-fit: contain;
-                display: none;
-            }
-        }
-    }
+    width: 100%;
+    height: 100%;
+    .mainGoal-box {
+        @extend .grid20x5;
 
-    .diet-plans {
-        gap: 1.5rem;
-        transition: all 0.5s;
-
-        flex-direction: column;
-        grid-area: 7/9/20/19;
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-
-        .plan-card {
-            padding: 0.5rem;
-            box-shadow: 6px 6px 0 black;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            width: 40%;
-            height: 35%;
+        .header-box {
+            grid-area: 3/6/7/15;
             @extend .flex-center;
-            flex-direction: column;
-            border-radius: 1.5rem;
+            font-size: 4.5vh;
             color: white;
-            font-size: larger;
-            background: linear-gradient(
-                82.3deg,
-                rgb(211, 221, 163) 10.8%,
-                rgba(129, 192, 176, 0.8) 94.3%
-            );
-            gap: 1rem;
-            h4 {
-                font-size: 2.5vh;
+            text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+            position: relative;
+            h3 {
+                position: absolute;
+                top: 70%;
+                left: 75%;
+                margin-top: 0;
+                font-size: 1.6vh;
+                text-shadow: none !important;
             }
         }
-        .plan-card:hover {
-            transform: scale(1.05);
-            transition: all 0.5s;
-            background: linear-gradient(
-                82.3deg,
-                rgb(216, 233, 140) 10.8%,
-                rgba(118, 202, 181, 0.8) 94.3%
-            );
+        .dietChoose-box {
+            @extend .fullsize, .flex-center;
+            grid-area: 8/3/19/8;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            .dietbox {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 5rem;
+                img {
+                    width: 7rem;
+                    object-fit: contain;
+                    display: none;
+                }
+            }
+        }
 
-            transition: 0.5s;
-            box-shadow: 10px 10px 0 rgb(255, 255, 255);
+        .diet-plans {
+            gap: 1.5rem;
+            transition: all 0.5s;
+
+            flex-direction: column;
+            grid-area: 7/9/20/19;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            .plan-card {
+                padding: 0.5rem;
+                box-shadow: 6px 6px 0 black;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                width: 40%;
+                height: 35%;
+                @extend .flex-center;
+                flex-direction: column;
+                border-radius: 1.5rem;
+                color: white;
+                font-size: larger;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(211, 221, 163) 10.8%,
+                    rgba(129, 192, 176, 0.8) 94.3%
+                );
+                gap: 1rem;
+                h4 {
+                    font-size: 2.5vh;
+                }
+            }
+            .plan-card:hover {
+                transform: scale(1.05);
+                transition: all 0.5s;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(216, 233, 140) 10.8%,
+                    rgba(118, 202, 181, 0.8) 94.3%
+                );
+
+                transition: 0.5s;
+                box-shadow: 10px 10px 0 rgb(255, 255, 255);
+            }
         }
     }
 }
@@ -606,7 +730,8 @@ nav {
     overflow: hidden;
     height: 100%;
     width: 100vw !important;
-    @extend .flex-center;
+    display: flex !important;
+    flex-direction: column;
     background: linear-gradient(
         82.3deg,
         rgba(231, 239, 197, 1) 10.8%,
@@ -1305,60 +1430,61 @@ i {
 }
 /* Tablets in landscape mode */
 @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
-    .mainGoal-box {
-        overflow: hidden;
-        .header-box {
-            grid-area: 3/1/7/21;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 70%;
+    .main-box {
+        .mainGoal-box {
+            overflow: hidden;
+            .header-box {
+                grid-area: 3/1/7/21;
+                font-size: 4.5vh;
+                h3 {
+                    top: 75%;
+                    left: 70%;
+                }
             }
-        }
-        .dietChoose-box {
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 1rem;
-            width: 100%;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
+            .dietChoose-box {
+                grid-area: 6/1/12/21;
+                flex-direction: row;
                 gap: 1rem;
-                button {
-                    font-size: 2.5vh;
+                width: 100%;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3.5rem;
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 12/2/21/20;
-            justify-content: center;
-            align-items: center;
-
-            .plan-card {
-                width: 40vw;
-                height: 35%;
+            .diet-plans {
+                gap: 1rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                font-size: 2.5vh;
-                gap: 0.5rem;
-                h4 {
+                grid-area: 12/2/21/20;
+                justify-content: center;
+                align-items: center;
+
+                .plan-card {
+                    width: 40vw;
+                    height: 35%;
+                    flex-direction: column;
                     font-size: 2.5vh;
+                    gap: 0.5rem;
+                    h4 {
+                        font-size: 2.5vh;
+                    }
                 }
             }
         }
     }
-
     .meal-box {
         gap: 1rem;
         .meal-selection {
@@ -1453,6 +1579,11 @@ i {
 
 /* Tablets in portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
+    .top-nav {
+        .menu {
+            margin-top: 50px;
+        }
+    }
     nav {
         ul {
             li {
@@ -1463,7 +1594,13 @@ i {
         }
     }
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0vh;
             flex-direction: column; /* change */
             .info {
                 grid-template-columns: repeat(2, 50vw); /* change */
@@ -1473,15 +1610,16 @@ i {
             .register-box {
                 width: 100vw; /* change */
                 height: 50vh; /* change */
-                .registration-progress {
-                    padding-top: 1vh;
 
-                    width: 100vw;
+                .registration-progress {
                     background: linear-gradient(
                         82.3deg,
                         rgba(231, 239, 197, 1) 10.8%,
                         rgba(163, 196, 188, 0.8) 94.3%
                     );
+                    padding-top: 1vh;
+
+                    width: 100vw;
 
                     .register-inputs {
                         input {
@@ -1502,6 +1640,7 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 5vh;
             flex-direction: column; /* change */
             .login-box {
                 width: 100vw; /* change */
@@ -1540,73 +1679,75 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 3/1/3/21; /*change*/
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.25vh; /*change*/
+                }
+                h3 {
+                    position: absolute;
+                    top: 72%;
+                    left: 70%;
+                    margin-top: 0;
+                    font-size: 1.5vh; /*change*/
+                    text-shadow: none !important;
+                }
             }
-            h3 {
-                position: absolute;
-                top: 70%;
-                left: 70%;
-                margin-top: 0;
-                font-size: 1.5vh; /*change*/
-                text-shadow: none !important;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 2.5rem;
-            position: relative;
-            .dietbox {
-                width: 100%;
-                height: 10vh;
-                display: flex;
+            .dietChoose-box {
+                grid-area: 4/1/19/8; /*change*/
                 flex-direction: column; /*change*/
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 0.5rem; /*change*/
-                button {
-                    /*change*/
+                gap: 2.5rem;
+                position: relative;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 7rem; /*change*/
-                    object-fit: contain;
-                    display: none;
+                    height: 10vh;
+                    display: flex;
+                    flex-direction: column; /*change*/
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 0.5rem; /*change*/
+                    button {
+                        /*change*/
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 7rem; /*change*/
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1.5rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 5/10/20/20; /*change*/
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-
-            .plan-card {
-                padding: 0.5rem;
-                box-shadow: 6px 6px 0 black;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                width: 100%;
-                height: 15vh;
+            .diet-plans {
+                gap: 1.5rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                border-radius: 1.5rem;
-                font-size: 1.8vh;
+                grid-area: 4/10/19/20; /*change*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
 
-                gap: 1rem;
-                h4 {
-                    font-size: 2vh;
+                .plan-card {
+                    padding: 0.5rem;
+                    box-shadow: 6px 6px 0 black;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 100%;
+                    height: 15vh;
+                    flex-direction: column;
+                    border-radius: 1.5rem;
+                    font-size: 1.8vh;
+
+                    gap: 1rem;
+                    h4 {
+                        font-size: 2vh;
+                    }
                 }
             }
         }
@@ -1623,7 +1764,11 @@ i {
     }
 
     .workout-box {
+        .top-nav {
+            margin-left: 0.5rem;
+        }
         .intro {
+            margin-top: 0;
             grid-area: 3/1/8/19;
             padding: 1.5rem;
             h1 {
@@ -1679,11 +1824,11 @@ i {
         height: 100%;
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 4vh;
         }
         .exercises-box {
-            margin-top: 1vh;
+            margin-top: 0vh;
             flex-direction: column;
             .role-card {
                 width: 100%;
@@ -1708,6 +1853,8 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
+                height: 90vh;
+                margin-top: 3vh;
                 .title {
                     z-index: 11;
                     width: 100%;
@@ -1783,7 +1930,7 @@ i {
     }
     .posts {
         .posts-box {
-            margin-top: 8vh;
+            margin-top: 0vh;
             flex-direction: column;
             justify-content: space-around;
             .posts-cards {
@@ -1813,8 +1960,20 @@ i {
 
 /* Larger smartphones (landscape) */
 @media (max-width: 960px) and (max-height: 480px) {
+    .top-nav {
+        .menu {
+            margin-top: 50px;
+        }
+    }
+
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0;
             flex-direction: row;
             width: 100vw;
             height: 90vh;
@@ -1898,50 +2057,52 @@ i {
     .error-message {
         width: 15vw;
     }
-    .mainGoal-box {
-        overflow: hidden;
-        .header-box {
-            grid-area: 3/1/7/21;
-            h3 {
-                top: 70%;
-                left: 55%;
+    .main-box {
+        .mainGoal-box {
+            overflow: hidden;
+            .header-box {
+                grid-area: 3/1/7/21;
+                h3 {
+                    top: 70%;
+                    left: 55%;
+                }
             }
-        }
-        .dietChoose-box {
-            // @extend .fullsize, .flex-center;
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 1rem;
-
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
+            .dietChoose-box {
+                // @extend .fullsize, .flex-center;
+                grid-area: 6/1/12/21;
+                flex-direction: row;
                 gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                }
-                img {
-                    width: 4rem;
+
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                    }
+                    img {
+                        width: 4rem;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1rem;
-            flex-direction: column;
-            grid-area: 12/2/21/20;
-            justify-content: center;
-            align-items: center;
-
-            .plan-card {
-                width: 40vw;
-                height: 35%;
+            .diet-plans {
+                gap: 1rem;
                 flex-direction: column;
-                font-size: 2.5vh;
-                gap: 0.5rem;
-                h4 {
+                grid-area: 12/2/21/20;
+                justify-content: center;
+                align-items: center;
+
+                .plan-card {
+                    width: 40vw;
+                    height: 35%;
+                    flex-direction: column;
                     font-size: 2.5vh;
+                    gap: 0.5rem;
+                    h4 {
+                        font-size: 2.5vh;
+                    }
                 }
             }
         }
@@ -2036,7 +2197,7 @@ i {
 
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             color: white;
             font-size: 6vh;
             text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -2065,6 +2226,7 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
+                margin-top: 0vh;
                 .title {
                     grid-area: 2/2/6/15;
                     height: 100%;
@@ -2072,7 +2234,7 @@ i {
 
                     h2 {
                         padding: 2rem;
-                        font-size: 5vh;
+                        font-size: 4vh;
                     }
                     i {
                         padding: 3rem;
@@ -2085,6 +2247,24 @@ i {
                     li {
                         font-size: 1.75vh;
                     }
+                    h2 {
+                        font-size: 1.8vh;
+                        padding: 0.25rem 2rem 0rem 1rem;
+                    }
+                    h3 {
+                        font-size: 2vh;
+                        padding: 0.5rem 2rem 0rem 2rem;
+                    }
+                    p {
+                        font-size: 1.5vh;
+                        padding: 0.2rem 2rem 0rem 2rem;
+                    }
+                    ul {
+                        padding: 0.75rem 0.25rem 0.25rem 1.25rem;
+                        li {
+                            font-size: 2vh;
+                        }
+                    }
                 }
                 .level {
                     grid-area: 2/16/8/25;
@@ -2092,7 +2272,7 @@ i {
                     height: 100%;
                     h2 {
                         padding: 2rem 1rem 0rem 2rem;
-                        font-size: 3.5vh;
+                        font-size: 3.1vh;
                     }
                     p {
                         padding: 0rem 2rem 1rem 2rem;
@@ -2177,7 +2357,13 @@ i {
         }
     }
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0;
             flex-direction: column; /* change */
             .info {
                 grid-template-columns: repeat(2, 50vw); /* change */
@@ -2189,11 +2375,6 @@ i {
                 height: 50vh; /* change */
                 gap: 0;
                 .registration-progress {
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
                     width: 100%;
                     h1 {
                         padding-top: 10px;
@@ -2260,69 +2441,71 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            // @extend .flex-center;
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 3/1/5/21; /*change*/
+                // @extend .flex-center;
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.5vh; /*change*/
+                }
+                h3 {
+                    position: absolute;
+                    top: 70%;
+                    left: 70%;
+                }
             }
-            h3 {
-                position: absolute;
-                top: 70%;
-                left: 70%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 3rem; /*change*/
-            position: relative;
-            .dietbox {
-                width: 100%;
-                height: 10vh;
-                display: flex;
+            .dietChoose-box {
+                grid-area: 5/1/20/8; /*change*/
                 flex-direction: column; /*change*/
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 1.5rem; /*change*/
-                button {
-                    /*change*/
+                gap: 3rem; /*change*/
+                position: relative;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 4rem; /*change*/
+                    height: 10vh;
+                    display: flex;
+                    flex-direction: column; /*change*/
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 1.5rem; /*change*/
+                    button {
+                        /*change*/
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 4rem; /*change*/
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1.5rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 5/10/20/20; /*change*/
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-
-            .plan-card {
-                padding: 0.5rem;
-                box-shadow: 6px 6px 0 black;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                width: 100%;
-                height: 15vh;
+            .diet-plans {
+                gap: 1.5rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                border-radius: 1.5rem;
-                font-size: 1.8vh;
+                grid-area: 5/10/20/20; /*change*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
 
-                gap: 1rem;
-                h4 {
-                    font-size: 2vh;
+                .plan-card {
+                    padding: 0.5rem;
+                    box-shadow: 6px 6px 0 black;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 100%;
+                    height: 15vh;
+                    flex-direction: column;
+                    border-radius: 1.5rem;
+                    font-size: 1.8vh;
+
+                    gap: 1rem;
+                    h4 {
+                        font-size: 2vh;
+                    }
                 }
             }
         }
@@ -2340,15 +2523,18 @@ i {
         }
     }
     .workout-box {
+        .top-nav {
+            margin-left: 0.75rem;
+        }
         .intro {
             grid-area: 3/1/8/19;
-            padding: 1.5rem;
+            padding: 1rem;
             h1 {
                 font-size: 2.8vh;
             }
             p {
-                padding: 1.5rem;
-                font-size: 1.5vh;
+                padding: 1rem 0.5rem 0 0;
+                font-size: 1.75vh;
             }
         }
         .image {
@@ -2397,7 +2583,7 @@ i {
         height: 100%;
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 4vh;
         }
         border-bottom: #888 solid 1px;
@@ -2429,9 +2615,9 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
-                margin: 15vh 5vh 0vh 5vh;
+                margin: 2vh 5vh 0vh 5vh;
                 width: 95vw;
-                height: 82vh;
+                height: 90vh;
                 .title {
                     z-index: 11;
                     width: 100%;
@@ -2486,13 +2672,16 @@ i {
         }
     }
     .blog {
+        .top-nav {
+            margin-left: 0.5rem;
+        }
         width: 100vw;
         height: 100%;
         .blog-box {
-            margin-top: 15vh;
+            margin-top: 16vh;
             display: flex;
             flex-direction: column;
-            grid-area: 4/2/17/20;
+            grid-area: 3/2/17/20;
             .blog-cards {
                 margin-top: 5vh;
                 img {
@@ -2504,7 +2693,7 @@ i {
             }
         }
         h1 {
-            grid-area: 2/2/3/20;
+            grid-area: 1/2/3/20;
             font-size: 2.8vh;
             margin-bottom: 5vh;
             text-align: center;
@@ -2515,7 +2704,8 @@ i {
     }
     .posts {
         .posts-box {
-            margin-top: 8vh;
+            padding-top: 0.5rem !important;
+            margin-top: 0;
             .posts-cards {
                 flex-direction: column;
                 gap: 10px;
@@ -2555,6 +2745,7 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 0vh;
             .login-box {
                 gap: 5vh;
                 .login-inputs {
@@ -2578,34 +2769,43 @@ i {
     .error-message {
         width: 15vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 2/6/7/15;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 81%;
-            }
-        }
-        .dietChoose-box {
-            // @extend .fullsize, .flex-center;
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 0.5rem;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                    width: 100%;
-                    height: 100%;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/6/3/15;
+                font-size: 4vh;
+                h3 {
+                    top: 85%;
+                    left: 75%;
                 }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+            }
+            .dietChoose-box {
+                // @extend .fullsize, .flex-center;
+                grid-area: 4/1/8/21;
+                flex-direction: row;
+                gap: 0.5rem;
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3rem;
+                        object-fit: contain;
+                        display: none;
+                    }
+                }
+            }
+            .diet-plans {
+                grid-area: 8/1/20/21;
+                flex-direction: row;
+                .plan-card {
+                    width: 20vw;
                 }
             }
         }
@@ -2728,7 +2928,8 @@ i {
     }
     .posts {
         .posts-box {
-            margin-top: 5vh;
+            padding-top: 0.25rem !important;
+            margin-top: 0;
             .posts-cards {
                 div {
                     justify-content: center;
@@ -2750,6 +2951,11 @@ i {
 
 /* Medium-sized smartphones (portrait) */
 @media (max-width: 414px) and (max-height: 896px) {
+    .top-nav {
+        .menu {
+            margin-top: 45px;
+        }
+    }
     nav {
         ul {
             gap: 0;
@@ -2762,6 +2968,7 @@ i {
     }
     .register {
         .register-container {
+            margin-top: 2.5vh;
             .register-box {
                 .registration-progress {
                     background: linear-gradient(
@@ -2777,7 +2984,9 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 5vh;
             .login-box {
+                height: 70vh;
                 h1 {
                     text-align: center;
                     width: 100%;
@@ -2791,15 +3000,36 @@ i {
             }
             .bg {
                 z-index: 1;
+                height: 25vh;
+                .bg-login {
+                    height: 30vh;
+                }
             }
         }
     }
-
-    .mainGoal-box {
-        .dietChoose-box {
-            .dietbox {
-                button {
-                    font-size: 2vh;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/1/3/21;
+                font-size: 4vh;
+                h3 {
+                    top: 80%;
+                    left: 70%;
+                }
+            }
+            .dietChoose-box {
+                grid-area: 3/1/20/8;
+                .dietbox {
+                    button {
+                        font-size: 2vh;
+                    }
+                }
+            }
+            .diet-plans {
+                margin-bottom: 4vh;
+                grid-area: 4/8/20/21;
+                .plan-card {
+                    width: 80%;
                 }
             }
         }
@@ -2860,33 +3090,35 @@ i {
     .error-message {
         width: 20vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 2/6/7/15;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 81%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 0.5rem;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                    width: 100%;
-                    height: 100%;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/6/3/15;
+                font-size: 4vh;
+                h3 {
+                    top: 100%;
+                    left: 76%;
                 }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+            }
+            .dietChoose-box {
+                grid-area: 3/1/12/21;
+                flex-direction: row;
+                gap: 0.5rem;
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3.5rem;
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
         }
@@ -3008,16 +3240,17 @@ i {
     }
     .posts {
         .posts-box {
-            margin-top: 7vh;
+            padding-top: 0.25rem !important;
+            margin-top: 0;
             .posts-cards {
                 div {
-                    height: 275px;
+                    height: 200px;
                     p {
                         font-size: 2.1vh;
                     }
                 }
                 img {
-                    height: 275px;
+                    height: 200px;
                     width: 35%;
                 }
             }
@@ -3038,14 +3271,14 @@ i {
     }
     .register {
         .register-container {
+            .info {
+                margin-top: 2vh;
+            }
             .register-box {
                 margin-bottom: 25px;
                 .registration-progress {
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
+                    margin-bottom: 15vh;
+
                     width: 100%;
                     h1 {
                         padding-top: 1rem;
@@ -3069,19 +3302,14 @@ i {
     .login {
         .login-container {
             .login-box {
+                z-index: 11;
+                height: 60vh; /* change */
+
                 h1 {
                     text-align: center;
                     width: 100%;
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
-                    padding-top: 2vh;
+                    margin-top: 2vh;
                 }
-                z-index: 11;
-                height: 35vh; /* change */
-
                 .login-inputs {
                     gap: 2vh;
                     input {
@@ -3095,10 +3323,14 @@ i {
                         width: 60vw;
                         height: 5vh;
                     }
+                    margin-bottom: 20vh;
                 }
             }
             .bg {
-                z-index: 1;
+                height: 30vh;
+                .bg-login {
+                    height: 50vh;
+                }
             }
         }
     }
@@ -3110,20 +3342,25 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .dietChoose-box {
-            gap: 2.5rem;
-            .dietbox {
-                height: 10vh;
-                gap: 1rem;
-                button {
-                    width: 100%;
-                    height: 100%;
-                    font-size: 2vh;
+    .main-box {
+        .mainGoal-box {
+            .dietChoose-box {
+                gap: 2.5rem;
+                .dietbox {
+                    height: 10vh;
+                    gap: 1rem;
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        font-size: 2vh;
+                    }
+                    img {
+                        width: 3rem; /*change*/
+                    }
                 }
-                img {
-                    width: 3rem; /*change*/
-                }
+            }
+            .diet-plans {
+                grid-area: 3/8/20/21;
             }
         }
     }
@@ -3187,7 +3424,7 @@ i {
                 }
                 button {
                     width: 100%;
-                    height: 5vh;
+                    height: 50px;
                     margin: 0rem;
                     font-size: small;
                 }
@@ -3237,7 +3474,7 @@ i {
         width: 100vw;
         height: 100%;
         .blog-box {
-            margin-top: 18vh;
+            margin-top: 12vh;
             display: flex;
             flex-direction: column;
             grid-area: 4/2/17/20;
@@ -3246,7 +3483,7 @@ i {
             }
         }
         h1 {
-            grid-area: 2/2/3/20;
+            grid-area: 1/2/3/20;
             font-size: 2.5vh;
         }
     }
@@ -3263,7 +3500,7 @@ i {
                     }
                 }
                 img {
-                    height: 20vh;
+                    width: 100%;
                 }
             }
         }
@@ -3347,42 +3584,44 @@ i {
         width: 60vw;
         border-radius: 2vh;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
-            }
-            h3 {
-                position: absolute;
-                top: 75%;
-                left: 75%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 1rem;
-
-            .dietbox {
-                width: 100%;
-                height: 12vh;
-
-                gap: 0.8rem; /*change*/
-                button {
-                    text-align: left;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/1/3/21; /*change*/
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.5vh; /*change*/
                 }
-                img {
-                    width: 1rem; /*change*/
+                h3 {
+                    position: absolute;
+                    top: 75%;
+                    left: 75%;
                 }
             }
-        }
-        .diet-plans {
-            gap: 0.5rem;
-            .plan-card {
-                padding: 0.5rem;
-                gap: 0.25rem;
+            .dietChoose-box {
+                grid-area: 5/1/20/8; /*change*/
+                flex-direction: column; /*change*/
+                gap: 1rem;
+
+                .dietbox {
+                    width: 100%;
+                    height: 12vh;
+
+                    gap: 0.8rem; /*change*/
+                    button {
+                        text-align: left;
+                    }
+                    img {
+                        width: 1rem; /*change*/
+                    }
+                }
+            }
+            .diet-plans {
+                gap: 0.5rem;
+                .plan-card {
+                    padding: 0.5rem;
+                    gap: 0.25rem;
+                }
             }
         }
     }
@@ -3476,7 +3715,7 @@ i {
     .role-box {
         h1 {
             padding-left: 1rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 3vh;
         }
         border-bottom: #888 solid 1px;
@@ -3670,7 +3909,7 @@ i {
     .role-box {
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 0vh;
             font-size: 5vh;
         }
         .exercises-box {
