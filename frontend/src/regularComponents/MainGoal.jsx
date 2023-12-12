@@ -45,7 +45,7 @@ export const MainGoal = () => {
     };
 
     return (
-        <>
+        <div className="main-box">
             <Menu />
             <div className="mainGoal-box">
                 <div className="header-box">
@@ -87,6 +87,6 @@ export const MainGoal = () => {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 };

@@ -1,3 +1,122 @@
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    height: 50px;
+    padding: 1em;
+    a {
+        text-decoration: none;
+        color: white !important;
+        font-weight: bold;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        z-index: 22;
+    }
+
+    .menu > li {
+        margin: 0 1rem;
+        overflow: hidden;
+        z-index: 22;
+    }
+
+    .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+    }
+
+    .menu-button::before {
+        content: "";
+        margin-top: -8px;
+    }
+
+    .menu-button::after {
+        content: "";
+        margin-top: 8px;
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+    }
+
+    .menu-button-container {
+        display: flex;
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 8vh;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 22;
+    }
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #000000;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #cbdec4;
+        z-index: 22;
+    }
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #b9b9b9;
+    }
+}
 nav {
     grid-area: 1/1/3/21;
 
@@ -67,96 +186,101 @@ nav {
         align-items: center;
     }
 }
-.mainGoal-box {
-    @extend .grid20x5;
+.main-box {
     background: linear-gradient(
         82.3deg,
         rgba(231, 239, 197, 1) 10.8%,
         rgba(163, 196, 188, 0.8) 94.3%
     );
-    .header-box {
-        grid-area: 3/6/7/15;
-        @extend .flex-center;
-        font-size: 4.5vh;
-        color: white;
-        text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
-        position: relative;
-        h3 {
-            position: absolute;
-            top: 70%;
-            left: 75%;
-            margin-top: 0;
-            font-size: 1.6vh;
-            text-shadow: none !important;
-        }
-    }
-    .dietChoose-box {
-        @extend .fullsize, .flex-center;
-        grid-area: 8/3/19/8;
-        flex-direction: column;
-        gap: 1.5rem;
-        position: relative;
-        .dietbox {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 5rem;
-            img {
-                width: 7rem;
-                object-fit: contain;
-                display: none;
-            }
-        }
-    }
+    width: 100%;
+    height: 100%;
+    .mainGoal-box {
+        @extend .grid20x5;
 
-    .diet-plans {
-        gap: 1.5rem;
-        transition: all 0.5s;
-
-        flex-direction: column;
-        grid-area: 7/9/20/19;
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-
-        .plan-card {
-            padding: 0.5rem;
-            box-shadow: 6px 6px 0 black;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            width: 40%;
-            height: 35%;
+        .header-box {
+            grid-area: 3/6/7/15;
             @extend .flex-center;
-            flex-direction: column;
-            border-radius: 1.5rem;
+            font-size: 4.5vh;
             color: white;
-            font-size: larger;
-            background: linear-gradient(
-                82.3deg,
-                rgb(211, 221, 163) 10.8%,
-                rgba(129, 192, 176, 0.8) 94.3%
-            );
-            gap: 1rem;
-            h4 {
-                font-size: 2.5vh;
+            text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+            position: relative;
+            h3 {
+                position: absolute;
+                top: 70%;
+                left: 75%;
+                margin-top: 0;
+                font-size: 1.6vh;
+                text-shadow: none !important;
             }
         }
-        .plan-card:hover {
-            transform: scale(1.05);
-            transition: all 0.5s;
-            background: linear-gradient(
-                82.3deg,
-                rgb(216, 233, 140) 10.8%,
-                rgba(118, 202, 181, 0.8) 94.3%
-            );
+        .dietChoose-box {
+            @extend .fullsize, .flex-center;
+            grid-area: 8/3/19/8;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            .dietbox {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 5rem;
+                img {
+                    width: 7rem;
+                    object-fit: contain;
+                    display: none;
+                }
+            }
+        }
 
-            transition: 0.5s;
-            box-shadow: 10px 10px 0 rgb(255, 255, 255);
+        .diet-plans {
+            gap: 1.5rem;
+            transition: all 0.5s;
+
+            flex-direction: column;
+            grid-area: 7/9/20/19;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            .plan-card {
+                padding: 0.5rem;
+                box-shadow: 6px 6px 0 black;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                width: 40%;
+                height: 35%;
+                @extend .flex-center;
+                flex-direction: column;
+                border-radius: 1.5rem;
+                color: white;
+                font-size: larger;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(211, 221, 163) 10.8%,
+                    rgba(129, 192, 176, 0.8) 94.3%
+                );
+                gap: 1rem;
+                h4 {
+                    font-size: 2.5vh;
+                }
+            }
+            .plan-card:hover {
+                transform: scale(1.05);
+                transition: all 0.5s;
+                background: linear-gradient(
+                    82.3deg,
+                    rgb(216, 233, 140) 10.8%,
+                    rgba(118, 202, 181, 0.8) 94.3%
+                );
+
+                transition: 0.5s;
+                box-shadow: 10px 10px 0 rgb(255, 255, 255);
+            }
         }
     }
 }
@@ -166,7 +290,11 @@ nav {
     width: 100dvw;
     height: 100dvh;
     gap: 1rem;
-
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
+    );
     h2 {
         color: var(--darkest-color);
         font-size: 6vh;
@@ -371,6 +499,7 @@ nav {
             width: 25vw;
             height: 100%;
             border-radius: 1.5rem;
+
             // border: #000000 1px solid;
 
             h2 {
@@ -438,7 +567,7 @@ nav {
             );
             .title {
                 grid-area: 2/2/6/15;
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -453,7 +582,7 @@ nav {
                 }
             }
             .text {
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 grid-area: 7/2/19/15;
                 display: flex;
                 flex-direction: column;
@@ -478,7 +607,7 @@ nav {
             }
             .level {
                 grid-area: 2/16/8/25;
-                background-color: #cecece;
+                background-color: #c5ddb3;
                 h2 {
                     padding: 2rem 1rem 0rem 2rem;
                     font-size: 3.5vh;
@@ -515,7 +644,7 @@ nav {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    border: #b4b4b4 1px solid;
+                    border: #c5ddb3 1px solid;
                     border-radius: 1.5rem;
                 }
             }
@@ -525,20 +654,22 @@ nav {
 .blog {
     @extend .grid20x5;
     background: linear-gradient(
-        to top,
-        rgb(243, 245, 233) 50%,
-        rgba(193, 233, 223, 0.8) 50%
+        to bottom,
+        rgba(231, 239, 197, 1) 10.8%,
+        rgba(163, 196, 188, 0.8) 94.3%
     );
+
     .blog-box {
         @extend .fullsize;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        grid-area: 3/2/19/20;
-        gap: 2rem;
+        grid-area: 4/2/17/20;
+        gap: 5rem;
 
         .blog-cards {
+            height: 100%;
             cursor: pointer;
             width: 100%;
             display: flex;
@@ -548,6 +679,7 @@ nav {
             gap: 1rem;
             padding: 1rem;
             border-radius: 1.5rem;
+
             background: linear-gradient(
                 82.3deg,
                 rgb(243, 245, 233) 10.8%,
@@ -585,11 +717,6 @@ nav {
         }
     }
     h1 {
-        background: linear-gradient(
-            82.3deg,
-            rgb(237, 243, 206) 10.8%,
-            rgba(140, 233, 210, 0.8) 94.3%
-        );
         border-radius: 1.5rem;
         grid-area: 18/2/20/14;
         @extend .flex-center;
@@ -598,54 +725,55 @@ nav {
         text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
     }
 }
+
 .posts {
-    @extend .flex-center;
+    overflow: hidden;
+    height: 100%;
+    width: 100vw !important;
+    display: flex !important;
+    flex-direction: column;
     background: linear-gradient(
         82.3deg,
         rgba(231, 239, 197, 1) 10.8%,
         rgba(163, 196, 188, 0.8) 94.3%
     );
+
     .posts-box {
-        margin-top: 15vh;
-        padding: 0vh 2.5vh 5vh 2.5vh;
-        @extend .fullsize;
+        margin-top: 12.5vh;
+        padding: 2.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        gap: 2.5vh;
+        gap: 105px;
         .posts-cards {
             cursor: pointer;
-            height: 30vh;
-            width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            gap: 2.5vh;
+            gap: 20px;
             div {
                 background: linear-gradient(
                     82.3deg,
                     rgb(185, 189, 158) 10.8%,
                     rgba(157, 209, 196, 0.8) 94.3%
                 );
-                padding: 1rem;
-                width: 100%;
-                height: 100%;
+
+                height: 300px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
 
                 h4 {
+                    padding: 1rem;
                     font-size: 2.5vh;
                 }
                 p {
                     padding: 1rem;
                     text-align: justify;
-                    object-fit: contain;
                 }
             }
             img {
-                width: 40vw;
-                height: 30vh;
+                height: 300px;
                 object-fit: cover;
             }
         }
@@ -661,22 +789,18 @@ nav {
     height: 100dvh;
     background: linear-gradient(
         82.3deg,
-        rgba(231, 239, 197, 1) 10.8%,
-        rgba(163, 196, 188, 0.8) 94.3%
+        rgba(231, 239, 197, 0.8) 10.8%,
+        rgba(163, 196, 188, 0.5) 94.3%
     );
     .login-container {
         display: flex;
         justify-content: center;
         flex-direction: row;
         align-items: center;
-        margin-top: 10vh;
-        .login-box {
-            background: linear-gradient(
-                82.3deg,
-                rgba(231, 239, 197, 1) 10.8%,
-                rgba(163, 196, 188, 0.8) 94.3%
-            );
+        margin: 10vh 0 0 0;
+        padding: 0;
 
+        .login-box {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -684,6 +808,12 @@ nav {
             height: 90vh;
             flex-direction: column;
             gap: 2rem;
+            background: linear-gradient(
+                82.3deg,
+                rgba(231, 239, 197, 1) 10.8%,
+                rgba(163, 196, 188, 0.8) 94.3%
+            );
+
             .login-inputs {
                 display: flex;
                 flex-direction: column;
@@ -729,12 +859,16 @@ nav {
                 }
             }
         }
-        .bg-login {
-            @extend .bg-img-center-cover;
-
-            width: 40vw;
+        .bg {
+            @extend .flex-center;
+            width: 50vw;
             height: 50vh;
-            background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            .bg-login {
+                @extend .bg-img-center-cover;
+                width: 40vw;
+                height: 50vh;
+                background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            }
         }
     }
 }
@@ -874,11 +1008,11 @@ nav {
         align-items: center;
         width: 100vw;
         height: 90vh;
-        background: linear-gradient(
-            82.3deg,
-            rgba(231, 239, 197, 1) 10.8%,
-            rgba(163, 196, 188, 0.8) 94.3%
-        );
+        // background: linear-gradient(
+        //     82.3deg,
+        //     rgba(231, 239, 197, 1) 10.8%,
+        //     rgba(163, 196, 188, 0.8) 94.3%
+        // );
         .info {
             display: grid;
             grid-template-columns: repeat(2, 20vw);
@@ -1279,63 +1413,78 @@ i {
             }
         }
     }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                div {
+                    p {
+                        font-size: 1.5vh;
+                    }
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
 }
 /* Tablets in landscape mode */
 @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
-    .mainGoal-box {
-        overflow: hidden;
-        .header-box {
-            grid-area: 3/1/7/21;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 70%;
+    .main-box {
+        .mainGoal-box {
+            overflow: hidden;
+            .header-box {
+                grid-area: 3/1/7/21;
+                font-size: 4.5vh;
+                h3 {
+                    top: 75%;
+                    left: 70%;
+                }
             }
-        }
-        .dietChoose-box {
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 1rem;
-            width: 100%;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
+            .dietChoose-box {
+                grid-area: 6/1/12/21;
+                flex-direction: row;
                 gap: 1rem;
-                button {
-                    font-size: 2.5vh;
+                width: 100%;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3.5rem;
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 12/2/21/20;
-            justify-content: center;
-            align-items: center;
-
-            .plan-card {
-                width: 40vw;
-                height: 35%;
+            .diet-plans {
+                gap: 1rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                font-size: 2.5vh;
-                gap: 0.5rem;
-                h4 {
+                grid-area: 12/2/21/20;
+                justify-content: center;
+                align-items: center;
+
+                .plan-card {
+                    width: 40vw;
+                    height: 35%;
+                    flex-direction: column;
                     font-size: 2.5vh;
+                    gap: 0.5rem;
+                    h4 {
+                        font-size: 2.5vh;
+                    }
                 }
             }
         }
     }
-
     .meal-box {
         gap: 1rem;
         .meal-selection {
@@ -1384,10 +1533,57 @@ i {
             }
         }
     }
+    .blog {
+        .blog-box {
+            grid-area: 4/2/16/20;
+            gap: 1rem;
+            .blog-cards {
+                img {
+                    height: 35vh;
+                }
+                div {
+                    p {
+                        font-size: 1.5vh;
+                    }
+                }
+            }
+        }
+    }
+    .posts {
+        .posts-box {
+            gap: 90px;
+            .posts-cards {
+                justify-content: space-around;
+                div {
+                    justify-content: center;
+                    width: 60vw;
+                    height: 70vh;
+                    h4 {
+                        padding: 2rem 0.5rem 2rem 1rem;
+                        font-size: 2vh;
+                    }
+                    p {
+                        padding: 0rem 1rem 2rem 1rem;
+                        text-align: justify;
+                        font-size: 2.1vh;
+                    }
+                }
+                img {
+                    width: 35vw;
+                    height: 70vh;
+                }
+            }
+        }
+    }
 }
 
 /* Tablets in portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
+    .top-nav {
+        .menu {
+            margin-top: 50px;
+        }
+    }
     nav {
         ul {
             li {
@@ -1398,7 +1594,13 @@ i {
         }
     }
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0vh;
             flex-direction: column; /* change */
             .info {
                 grid-template-columns: repeat(2, 50vw); /* change */
@@ -1408,15 +1610,16 @@ i {
             .register-box {
                 width: 100vw; /* change */
                 height: 50vh; /* change */
-                .registration-progress {
-                    padding-top: 1vh;
 
-                    width: 100vw;
+                .registration-progress {
                     background: linear-gradient(
                         82.3deg,
                         rgba(231, 239, 197, 1) 10.8%,
                         rgba(163, 196, 188, 0.8) 94.3%
                     );
+                    padding-top: 1vh;
+
+                    width: 100vw;
 
                     .register-inputs {
                         input {
@@ -1437,6 +1640,7 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 5vh;
             flex-direction: column; /* change */
             .login-box {
                 width: 100vw; /* change */
@@ -1457,10 +1661,13 @@ i {
                     }
                 }
             }
-            .bg-login {
-                z-index: 1;
-                width: 90vw; /* change */
-                height: 40vh; /* change */
+            .bg {
+                width: 90vw;
+                height: 40vh;
+                .bg-login {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -1472,73 +1679,75 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 3/1/3/21; /*change*/
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.25vh; /*change*/
+                }
+                h3 {
+                    position: absolute;
+                    top: 72%;
+                    left: 70%;
+                    margin-top: 0;
+                    font-size: 1.5vh; /*change*/
+                    text-shadow: none !important;
+                }
             }
-            h3 {
-                position: absolute;
-                top: 70%;
-                left: 70%;
-                margin-top: 0;
-                font-size: 1.5vh; /*change*/
-                text-shadow: none !important;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 2.5rem;
-            position: relative;
-            .dietbox {
-                width: 100%;
-                height: 10vh;
-                display: flex;
+            .dietChoose-box {
+                grid-area: 4/1/19/8; /*change*/
                 flex-direction: column; /*change*/
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 0.5rem; /*change*/
-                button {
-                    /*change*/
+                gap: 2.5rem;
+                position: relative;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 7rem; /*change*/
-                    object-fit: contain;
-                    display: none;
+                    height: 10vh;
+                    display: flex;
+                    flex-direction: column; /*change*/
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 0.5rem; /*change*/
+                    button {
+                        /*change*/
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 7rem; /*change*/
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1.5rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 5/10/20/20; /*change*/
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-
-            .plan-card {
-                padding: 0.5rem;
-                box-shadow: 6px 6px 0 black;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                width: 100%;
-                height: 15vh;
+            .diet-plans {
+                gap: 1.5rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                border-radius: 1.5rem;
-                font-size: 1.8vh;
+                grid-area: 4/10/19/20; /*change*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
 
-                gap: 1rem;
-                h4 {
-                    font-size: 2vh;
+                .plan-card {
+                    padding: 0.5rem;
+                    box-shadow: 6px 6px 0 black;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 100%;
+                    height: 15vh;
+                    flex-direction: column;
+                    border-radius: 1.5rem;
+                    font-size: 1.8vh;
+
+                    gap: 1rem;
+                    h4 {
+                        font-size: 2vh;
+                    }
                 }
             }
         }
@@ -1555,7 +1764,11 @@ i {
     }
 
     .workout-box {
+        .top-nav {
+            margin-left: 0.5rem;
+        }
         .intro {
+            margin-top: 0;
             grid-area: 3/1/8/19;
             padding: 1.5rem;
             h1 {
@@ -1567,7 +1780,7 @@ i {
             }
         }
         .image {
-            grid-area: 2/18/6/21;
+            grid-area: 2/18/6/20;
         }
 
         .level-box {
@@ -1611,11 +1824,11 @@ i {
         height: 100%;
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 4vh;
         }
         .exercises-box {
-            margin-top: 1vh;
+            margin-top: 0vh;
             flex-direction: column;
             .role-card {
                 width: 100%;
@@ -1640,6 +1853,8 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
+                height: 90vh;
+                margin-top: 3vh;
                 .title {
                     z-index: 11;
                     width: 100%;
@@ -1690,12 +1905,75 @@ i {
             }
         }
     }
+    .blog {
+        width: 100vw;
+        height: 100%;
+        .blog-box {
+            margin-top: 15vh;
+            display: flex;
+            flex-direction: column;
+            grid-area: 4/2/17/20;
+            .blog-cards {
+                img {
+                    height: 55vh;
+                }
+                div {
+                    height: 15vh;
+                }
+            }
+        }
+        h1 {
+            grid-area: 1/2/3/20;
+            font-size: 2.5vh;
+            margin-top: 2vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            flex-direction: column;
+            justify-content: space-around;
+            .posts-cards {
+                flex-direction: column;
+                gap: 20px;
+                div {
+                    height: 55vh;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    h4 {
+                        font-size: 2.8vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 350px;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 /* Larger smartphones (landscape) */
 @media (max-width: 960px) and (max-height: 480px) {
+    .top-nav {
+        .menu {
+            margin-top: 50px;
+        }
+    }
+
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0;
             flex-direction: row;
             width: 100vw;
             height: 90vh;
@@ -1763,9 +2041,13 @@ i {
                     }
                 }
             }
-            .bg-login {
+            .bg {
                 width: 40vw;
-                height: 50vh;
+                height: 40vh;
+                .bg-login {
+                    width: 90%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -1775,50 +2057,52 @@ i {
     .error-message {
         width: 15vw;
     }
-    .mainGoal-box {
-        overflow: hidden;
-        .header-box {
-            grid-area: 3/1/7/21;
-            h3 {
-                top: 70%;
-                left: 55%;
+    .main-box {
+        .mainGoal-box {
+            overflow: hidden;
+            .header-box {
+                grid-area: 3/1/7/21;
+                h3 {
+                    top: 70%;
+                    left: 55%;
+                }
             }
-        }
-        .dietChoose-box {
-            // @extend .fullsize, .flex-center;
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 1rem;
-
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
+            .dietChoose-box {
+                // @extend .fullsize, .flex-center;
+                grid-area: 6/1/12/21;
+                flex-direction: row;
                 gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                }
-                img {
-                    width: 4rem;
+
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                    }
+                    img {
+                        width: 4rem;
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1rem;
-            flex-direction: column;
-            grid-area: 12/2/21/20;
-            justify-content: center;
-            align-items: center;
-
-            .plan-card {
-                width: 40vw;
-                height: 35%;
+            .diet-plans {
+                gap: 1rem;
                 flex-direction: column;
-                font-size: 2.5vh;
-                gap: 0.5rem;
-                h4 {
+                grid-area: 12/2/21/20;
+                justify-content: center;
+                align-items: center;
+
+                .plan-card {
+                    width: 40vw;
+                    height: 35%;
+                    flex-direction: column;
                     font-size: 2.5vh;
+                    gap: 0.5rem;
+                    h4 {
+                        font-size: 2.5vh;
+                    }
                 }
             }
         }
@@ -1913,7 +2197,7 @@ i {
 
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             color: white;
             font-size: 6vh;
             text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -1942,6 +2226,7 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
+                margin-top: 0vh;
                 .title {
                     grid-area: 2/2/6/15;
                     height: 100%;
@@ -1949,7 +2234,7 @@ i {
 
                     h2 {
                         padding: 2rem;
-                        font-size: 5vh;
+                        font-size: 4vh;
                     }
                     i {
                         padding: 3rem;
@@ -1962,6 +2247,24 @@ i {
                     li {
                         font-size: 1.75vh;
                     }
+                    h2 {
+                        font-size: 1.8vh;
+                        padding: 0.25rem 2rem 0rem 1rem;
+                    }
+                    h3 {
+                        font-size: 2vh;
+                        padding: 0.5rem 2rem 0rem 2rem;
+                    }
+                    p {
+                        font-size: 1.5vh;
+                        padding: 0.2rem 2rem 0rem 2rem;
+                    }
+                    ul {
+                        padding: 0.75rem 0.25rem 0.25rem 1.25rem;
+                        li {
+                            font-size: 2vh;
+                        }
+                    }
                 }
                 .level {
                     grid-area: 2/16/8/25;
@@ -1969,7 +2272,7 @@ i {
                     height: 100%;
                     h2 {
                         padding: 2rem 1rem 0rem 2rem;
-                        font-size: 3.5vh;
+                        font-size: 3.1vh;
                     }
                     p {
                         padding: 0rem 2rem 1rem 2rem;
@@ -1984,6 +2287,59 @@ i {
                     gap: 0.25rem;
                 }
             }
+        }
+    }
+    .blog {
+        height: 100vh;
+        .blog-box {
+            margin-top: 0vh;
+            flex-direction: row;
+            grid-area: 4/2/17/20;
+            gap: 5rem;
+            height: 100%;
+            .blog-cards {
+                div {
+                    div {
+                        font-size: smaller;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+            }
+        }
+        h1 {
+            border-radius: 1.5rem;
+            grid-area: 18/2/20/14;
+            color: white;
+            font-size: 5vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 20px;
+                div {
+                    height: 350px;
+                    h4 {
+                        font-size: 4vh;
+                    }
+                    p {
+                        font-size: 2.25vh;
+                    }
+                }
+                img {
+                    object-fit: cover;
+                    width: 45%;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: row-reverse;
         }
     }
 }
@@ -2001,7 +2357,13 @@ i {
         }
     }
     .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .register-container {
+            margin-top: 0;
             flex-direction: column; /* change */
             .info {
                 grid-template-columns: repeat(2, 50vw); /* change */
@@ -2013,11 +2375,6 @@ i {
                 height: 50vh; /* change */
                 gap: 0;
                 .registration-progress {
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
                     width: 100%;
                     h1 {
                         padding-top: 10px;
@@ -2065,10 +2422,14 @@ i {
                     }
                 }
             }
-            .bg-login {
+            .bg {
+                width: 100vw;
+                height: 40vh;
                 z-index: 1;
-                width: 90vw; /* change */
-                height: 30vh; /* change */
+                .bg-login {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -2080,69 +2441,71 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            // @extend .flex-center;
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 3/1/5/21; /*change*/
+                // @extend .flex-center;
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.5vh; /*change*/
+                }
+                h3 {
+                    position: absolute;
+                    top: 70%;
+                    left: 70%;
+                }
             }
-            h3 {
-                position: absolute;
-                top: 70%;
-                left: 70%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 3rem; /*change*/
-            position: relative;
-            .dietbox {
-                width: 100%;
-                height: 10vh;
-                display: flex;
+            .dietChoose-box {
+                grid-area: 5/1/20/8; /*change*/
                 flex-direction: column; /*change*/
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 1.5rem; /*change*/
-                button {
-                    /*change*/
+                gap: 3rem; /*change*/
+                position: relative;
+                .dietbox {
                     width: 100%;
-                    height: 100%;
-                }
-                img {
-                    width: 4rem; /*change*/
+                    height: 10vh;
+                    display: flex;
+                    flex-direction: column; /*change*/
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 1.5rem; /*change*/
+                    button {
+                        /*change*/
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 4rem; /*change*/
+                    }
                 }
             }
-        }
 
-        .diet-plans {
-            gap: 1.5rem;
-            transition: all 0.5s;
-            flex-direction: column;
-            grid-area: 5/10/20/20; /*change*/
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-
-            .plan-card {
-                padding: 0.5rem;
-                box-shadow: 6px 6px 0 black;
-                border: none;
-                cursor: pointer;
-                text-align: center;
-                width: 100%;
-                height: 15vh;
+            .diet-plans {
+                gap: 1.5rem;
+                transition: all 0.5s;
                 flex-direction: column;
-                border-radius: 1.5rem;
-                font-size: 1.8vh;
+                grid-area: 5/10/20/20; /*change*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
 
-                gap: 1rem;
-                h4 {
-                    font-size: 2vh;
+                .plan-card {
+                    padding: 0.5rem;
+                    box-shadow: 6px 6px 0 black;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 100%;
+                    height: 15vh;
+                    flex-direction: column;
+                    border-radius: 1.5rem;
+                    font-size: 1.8vh;
+
+                    gap: 1rem;
+                    h4 {
+                        font-size: 2vh;
+                    }
                 }
             }
         }
@@ -2160,19 +2523,22 @@ i {
         }
     }
     .workout-box {
+        .top-nav {
+            margin-left: 0.75rem;
+        }
         .intro {
             grid-area: 3/1/8/19;
-            padding: 1.5rem;
+            padding: 1rem;
             h1 {
-                font-size: 3vh;
+                font-size: 2.8vh;
             }
             p {
-                padding: 1.5rem;
-                font-size: 1.5vh;
+                padding: 1rem 0.5rem 0 0;
+                font-size: 1.75vh;
             }
         }
         .image {
-            grid-area: 3/16/6/20;
+            grid-area: 3/18/6/20;
         }
 
         .level-box {
@@ -2203,7 +2569,7 @@ i {
                 }
                 button {
                     width: 100%;
-                    height: 4vh;
+                    height: 30px;
                     margin: 0rem;
                     font-size: small;
                 }
@@ -2217,7 +2583,7 @@ i {
         height: 100%;
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 4vh;
         }
         border-bottom: #888 solid 1px;
@@ -2249,9 +2615,9 @@ i {
     .exercise-box {
         .exercise-card-box {
             .exercise-card {
-                margin: 15vh 5vh 0vh 5vh;
+                margin: 2vh 5vh 0vh 5vh;
                 width: 95vw;
-                height: 82vh;
+                height: 90vh;
                 .title {
                     z-index: 11;
                     width: 100%;
@@ -2305,6 +2671,65 @@ i {
             }
         }
     }
+    .blog {
+        .top-nav {
+            margin-left: 0.5rem;
+        }
+        width: 100vw;
+        height: 100%;
+        .blog-box {
+            margin-top: 16vh;
+            display: flex;
+            flex-direction: column;
+            grid-area: 3/2/17/20;
+            .blog-cards {
+                margin-top: 5vh;
+                img {
+                    height: 50vh;
+                }
+                div {
+                    height: 15vh;
+                }
+            }
+        }
+        h1 {
+            grid-area: 1/2/3/20;
+            font-size: 2.8vh;
+            margin-bottom: 5vh;
+            text-align: center;
+        }
+        P {
+            font-size: smaller;
+        }
+    }
+    .posts {
+        .posts-box {
+            padding-top: 0.5rem !important;
+            margin-top: 0;
+            .posts-cards {
+                flex-direction: column;
+                gap: 10px;
+                div {
+                    height: 60vh;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h4 {
+                        font-size: 2.2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 25vh;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 /* Medium-sized smartphones (landscape) */
@@ -2320,6 +2745,7 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 0vh;
             .login-box {
                 gap: 5vh;
                 .login-inputs {
@@ -2343,34 +2769,43 @@ i {
     .error-message {
         width: 15vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 2/6/7/15;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 81%;
-            }
-        }
-        .dietChoose-box {
-            // @extend .fullsize, .flex-center;
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 0.5rem;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                    width: 100%;
-                    height: 100%;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/6/3/15;
+                font-size: 4vh;
+                h3 {
+                    top: 85%;
+                    left: 75%;
                 }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+            }
+            .dietChoose-box {
+                // @extend .fullsize, .flex-center;
+                grid-area: 4/1/8/21;
+                flex-direction: row;
+                gap: 0.5rem;
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3rem;
+                        object-fit: contain;
+                        display: none;
+                    }
+                }
+            }
+            .diet-plans {
+                grid-area: 8/1/20/21;
+                flex-direction: row;
+                .plan-card {
+                    width: 20vw;
                 }
             }
         }
@@ -2491,10 +2926,36 @@ i {
             }
         }
     }
+    .posts {
+        .posts-box {
+            padding-top: 0.25rem !important;
+            margin-top: 0;
+            .posts-cards {
+                div {
+                    justify-content: center;
+                    height: 250px;
+                    h4 {
+                        padding: 0 1rem 2rem 1rem;
+                    }
+                    p {
+                        padding: 1rem 1rem 0.25rem 1rem;
+                    }
+                }
+                img {
+                    height: 250px;
+                }
+            }
+        }
+    }
 }
 
 /* Medium-sized smartphones (portrait) */
 @media (max-width: 414px) and (max-height: 896px) {
+    .top-nav {
+        .menu {
+            margin-top: 45px;
+        }
+    }
     nav {
         ul {
             gap: 0;
@@ -2507,6 +2968,7 @@ i {
     }
     .register {
         .register-container {
+            margin-top: 2.5vh;
             .register-box {
                 .registration-progress {
                     background: linear-gradient(
@@ -2522,7 +2984,9 @@ i {
     }
     .login {
         .login-container {
+            margin-top: 5vh;
             .login-box {
+                height: 70vh;
                 h1 {
                     text-align: center;
                     width: 100%;
@@ -2534,17 +2998,38 @@ i {
                 }
                 z-index: 11;
             }
-            .bg-login {
-                z-index: 1 !important;
+            .bg {
+                z-index: 1;
+                height: 25vh;
+                .bg-login {
+                    height: 30vh;
+                }
             }
         }
     }
-
-    .mainGoal-box {
-        .dietChoose-box {
-            .dietbox {
-                button {
-                    font-size: 2vh;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/1/3/21;
+                font-size: 4vh;
+                h3 {
+                    top: 80%;
+                    left: 70%;
+                }
+            }
+            .dietChoose-box {
+                grid-area: 3/1/20/8;
+                .dietbox {
+                    button {
+                        font-size: 2vh;
+                    }
+                }
+            }
+            .diet-plans {
+                margin-bottom: 4vh;
+                grid-area: 4/8/20/21;
+                .plan-card {
+                    width: 80%;
                 }
             }
         }
@@ -2605,33 +3090,35 @@ i {
     .error-message {
         width: 20vw;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 2/6/7/15;
-            font-size: 4.5vh;
-            h3 {
-                top: 75%;
-                left: 81%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 6/1/12/21;
-            flex-direction: row;
-            gap: 0.5rem;
-            .dietbox {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                button {
-                    font-size: 2.5vh;
-                    width: 100%;
-                    height: 100%;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/6/3/15;
+                font-size: 4vh;
+                h3 {
+                    top: 100%;
+                    left: 76%;
                 }
-                img {
-                    width: 3.5rem;
-                    object-fit: contain;
-                    display: none;
+            }
+            .dietChoose-box {
+                grid-area: 3/1/12/21;
+                flex-direction: row;
+                gap: 0.5rem;
+                .dietbox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    button {
+                        font-size: 2.5vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 3.5rem;
+                        object-fit: contain;
+                        display: none;
+                    }
                 }
             }
         }
@@ -2679,57 +3166,92 @@ i {
                 }
             }
         }
-    }
-    .exercise-box {
-        .exercise-card-box {
-            .exercise-card {
-                margin: 15vh 5vh 5vh 5vh;
-                width: 95vw;
-                .title {
-                    h2 {
-                        font-size: 4.5vh;
-                    }
-                    i {
-                        font-size: 4.5vh;
-                    }
-                }
-                .text {
-                    font-size: smaller;
-                    h2 {
-                        padding: 0.25rem 1rem 0rem 2rem;
-                        font-size: 2vh;
-                    }
-                    h3 {
-                        padding: 0.5rem 1rem 0rem 2rem;
-                        font-size: 3vh;
-                    }
-                    p {
-                        font-weight: bold;
-                        padding: 0.25rem 1rem 0rem 2rem;
-                        font-size: 2vh;
-                    }
-                    ul {
-                        padding: 0.5rem 1rem 0.25rem 3rem;
-                        text-align: justify;
-                    }
-                    li {
-                        padding: 0rem 0rem 0.35rem 0rem;
-                        font-size: 1.25vh;
-                    }
-                }
-                .level {
-                    h2 {
-                        padding: 1rem 1rem 0rem 2rem;
-                        font-size: 3.5vh;
-                    }
-                    p {
-                        padding: 0rem 2rem 1rem 2rem;
-                        font-size: 3vh;
-                    }
-                }
 
-                .videos {
-                    gap: 0.25rem;
+        .exercise-box {
+            .exercise-card-box {
+                .exercise-card {
+                    margin: 15vh 5vh 5vh 5vh;
+                    width: 95vw;
+                    .title {
+                        h2 {
+                            font-size: 4.5vh;
+                        }
+                        i {
+                            font-size: 4.5vh;
+                        }
+                    }
+                    .text {
+                        font-size: smaller;
+                        h2 {
+                            padding: 0.25rem 1rem 0rem 2rem;
+                            font-size: 2vh;
+                        }
+                        h3 {
+                            padding: 0.5rem 1rem 0rem 2rem;
+                            font-size: 3vh;
+                        }
+                        p {
+                            font-weight: bold;
+                            padding: 0.25rem 1rem 0rem 2rem;
+                            font-size: 2vh;
+                        }
+                        ul {
+                            padding: 0.5rem 1rem 0.25rem 3rem;
+                            text-align: justify;
+                        }
+                        li {
+                            padding: 0rem 0rem 0.35rem 0rem;
+                            font-size: 1.25vh;
+                        }
+                    }
+                    .level {
+                        h2 {
+                            padding: 1rem 1rem 0rem 2rem;
+                            font-size: 3.5vh;
+                        }
+                        p {
+                            padding: 0rem 2rem 1rem 2rem;
+                            font-size: 3vh;
+                        }
+                    }
+
+                    .videos {
+                        gap: 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+    .blog {
+        .blog-box {
+            gap: 1.5rem;
+
+            .blog-cards {
+                div {
+                    div {
+                        font-size: 1.8vh;
+                    }
+                    p {
+                        font-size: 1.6vh;
+                    }
+                }
+            }
+        }
+    }
+    .posts {
+        .posts-box {
+            padding-top: 0.25rem !important;
+            margin-top: 0;
+            .posts-cards {
+                div {
+                    height: 200px;
+                    p {
+                        font-size: 2.1vh;
+                    }
+                }
+                img {
+                    height: 200px;
+                    width: 35%;
                 }
             }
         }
@@ -2749,14 +3271,14 @@ i {
     }
     .register {
         .register-container {
+            .info {
+                margin-top: 2vh;
+            }
             .register-box {
                 margin-bottom: 25px;
                 .registration-progress {
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
+                    margin-bottom: 15vh;
+
                     width: 100%;
                     h1 {
                         padding-top: 1rem;
@@ -2780,18 +3302,14 @@ i {
     .login {
         .login-container {
             .login-box {
+                z-index: 11;
+                height: 60vh; /* change */
+
                 h1 {
                     text-align: center;
                     width: 100%;
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
+                    margin-top: 2vh;
                 }
-                z-index: 11;
-                height: 35vh; /* change */
-
                 .login-inputs {
                     gap: 2vh;
                     input {
@@ -2805,11 +3323,14 @@ i {
                         width: 60vw;
                         height: 5vh;
                     }
+                    margin-bottom: 20vh;
                 }
             }
-            .bg-login {
-                height: 35vh; /* change */
-                z-index: 1 !important;
+            .bg {
+                height: 30vh;
+                .bg-login {
+                    height: 50vh;
+                }
             }
         }
     }
@@ -2821,20 +3342,25 @@ i {
         z-index: 11;
         width: 60vw;
     }
-    .mainGoal-box {
-        .dietChoose-box {
-            gap: 2.5rem;
-            .dietbox {
-                height: 10vh;
-                gap: 1rem;
-                button {
-                    width: 100%;
-                    height: 100%;
-                    font-size: 2vh;
+    .main-box {
+        .mainGoal-box {
+            .dietChoose-box {
+                gap: 2.5rem;
+                .dietbox {
+                    height: 10vh;
+                    gap: 1rem;
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        font-size: 2vh;
+                    }
+                    img {
+                        width: 3rem; /*change*/
+                    }
                 }
-                img {
-                    width: 3rem; /*change*/
-                }
+            }
+            .diet-plans {
+                grid-area: 3/8/20/21;
             }
         }
     }
@@ -2867,7 +3393,7 @@ i {
             }
         }
         .image {
-            grid-area: 3/17/6/20;
+            grid-area: 3/18/6/20;
         }
 
         .level-box {
@@ -2898,7 +3424,7 @@ i {
                 }
                 button {
                     width: 100%;
-                    height: 5vh;
+                    height: 50px;
                     margin: 0rem;
                     font-size: small;
                 }
@@ -2944,7 +3470,43 @@ i {
             }
         }
     }
+    .blog {
+        width: 100vw;
+        height: 100%;
+        .blog-box {
+            margin-top: 12vh;
+            display: flex;
+            flex-direction: column;
+            grid-area: 4/2/17/20;
+            p {
+                font-size: 1.5vh;
+            }
+        }
+        h1 {
+            grid-area: 1/2/3/20;
+            font-size: 2.5vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                div {
+                    height: 62vh;
+                    h4 {
+                        font-size: 2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
+
 @media (max-width: 175px) and (max-height: 333px) {
     nav {
         ul {
@@ -2991,6 +3553,9 @@ i {
             .login-box {
                 height: 35vh; /* change */
                 gap: 2vh;
+                h1 {
+                    font-size: smaller;
+                }
                 .login-inputs {
                     gap: 5vh;
                     input {
@@ -3019,42 +3584,44 @@ i {
         width: 60vw;
         border-radius: 2vh;
     }
-    .mainGoal-box {
-        .header-box {
-            grid-area: 3/1/5/21; /*change*/
-            font-size: 4.5vh;
-            h1 {
-                font-size: 4.5vh; /*change*/
-            }
-            h3 {
-                position: absolute;
-                top: 75%;
-                left: 75%;
-            }
-        }
-        .dietChoose-box {
-            grid-area: 5/1/20/8; /*change*/
-            flex-direction: column; /*change*/
-            gap: 1rem;
-
-            .dietbox {
-                width: 100%;
-                height: 12vh;
-
-                gap: 0.8rem; /*change*/
-                button {
-                    text-align: left;
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 1/1/3/21; /*change*/
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.5vh; /*change*/
                 }
-                img {
-                    width: 1rem; /*change*/
+                h3 {
+                    position: absolute;
+                    top: 75%;
+                    left: 75%;
                 }
             }
-        }
-        .diet-plans {
-            gap: 0.5rem;
-            .plan-card {
-                padding: 0.5rem;
-                gap: 0.25rem;
+            .dietChoose-box {
+                grid-area: 5/1/20/8; /*change*/
+                flex-direction: column; /*change*/
+                gap: 1rem;
+
+                .dietbox {
+                    width: 100%;
+                    height: 12vh;
+
+                    gap: 0.8rem; /*change*/
+                    button {
+                        text-align: left;
+                    }
+                    img {
+                        width: 1rem; /*change*/
+                    }
+                }
+            }
+            .diet-plans {
+                gap: 0.5rem;
+                .plan-card {
+                    padding: 0.5rem;
+                    gap: 0.25rem;
+                }
             }
         }
     }
@@ -3148,7 +3715,7 @@ i {
     .role-box {
         h1 {
             padding-left: 1rem;
-            margin-top: 15vh;
+            margin-top: 5vh;
             font-size: 3vh;
         }
         border-bottom: #888 solid 1px;
@@ -3164,7 +3731,37 @@ i {
             }
         }
     }
+    .blog {
+        .blog-box {
+            margin-top: 20vh;
+            .blog-cards {
+                padding: 0.5rem;
+            }
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            .posts-cards {
+                gap: 0px;
+                div {
+                    height: 70vh;
+
+                    h4 {
+                        font-size: 2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    width: 95vw;
+                }
+            }
+        }
+    }
 }
+
 @media (max-width: 333px) and (max-height: 175px) {
     .register {
         .register-container {
@@ -3312,7 +3909,7 @@ i {
     .role-box {
         h1 {
             padding-left: 2rem;
-            margin-top: 15vh;
+            margin-top: 0vh;
             font-size: 5vh;
         }
         .exercises-box {
@@ -3342,74 +3939,64 @@ i {
             }
         }
     }
-}
-
-/*
-                <div class="grid">
-                    <div class="grid-item1"></div>
-                    <div class="grid-item2"></div>
-                    <div class="grid-item3"></div>
-                    <div class="grid-item4"></div>
-                    <div class="grid-item5"></div>
-                    <div class="grid-item6"></div>
-                    <div class="grid-item7"></div>
-                </div>
-
-                .grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            width: 40vw;
-            height: 50vh;
-            grid-gap: 10px;
-
-            .grid-item1 {
-                @extend.bg-img-center-cover;
-                background-image: url("https://images.pexels.com/photos/6740535/pexels-photo-6740535.jpeg");
-                grid-column: 1/4;
-                grid-row: 1/2;
-            }
-            .grid-item2 {
-                background-image: url("https://images.pexels.com/photos/6740777/pexels-photo-6740777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 1/2;
-                grid-row: 2/5;
-            }
-
-            .grid-item3 {
-                background-image: url("https://images.pexels.com/photos/3060516/pexels-photo-3060516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 1/5;
-                grid-row: 5/5;
-            }
-
-            .grid-item4 {
-                background-image: url("https://images.pexels.com/photos/8844385/pexels-photo-8844385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 2/4;
-                grid-row: 2/5;
-            }
-
-            .grid-item5 {
-                background-image: url("https://images.pexels.com/photos/3743168/pexels-photo-3743168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 4/6;
-                grid-row: 1/3;
-            }
-
-            .grid-item6 {
-                background-image: url("https://images.pexels.com/photos/7195221/pexels-photo-7195221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 4/5;
-                grid-row: 3/5;
-            }
-
-            .grid-item7 {
-                background-image: url("https://images.pexels.com/photos/6294363/pexels-photo-6294363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-                @extend.bg-img-center-cover;
-                grid-column: 5/6;
-                grid-row: 3/6;
+    .blog {
+        height: 100vh;
+        width: 100vw;
+        .blog-box {
+            margin-top: 2.5vh;
+            flex-direction: row;
+            grid-area: 4/2/17/20;
+            gap: 2.5vw;
+            height: 100%;
+            width: 100%;
+            .blog-cards {
+                padding: 0.25rem;
+                div {
+                    padding: 0.15rem;
+                    gap: 0.1rem;
+                    div {
+                        font-size: 2vh;
+                        padding: 0rem;
+                    }
+                    p {
+                        font-size: 1.8vh;
+                    }
+                }
             }
         }
+        h1 {
+            border-radius: 1.5rem;
+            grid-area: 18/2/20/14;
+            color: white;
+            font-size: 5vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            .posts-cards {
+                gap: 0px;
+                width: 95vw;
+                flex-direction: row;
 
-*/
+                div {
+                    justify-content: center;
+                    align-items: center;
+                    width: 60vw;
+                    height: 120px;
+                    h4 {
+                        font-size: 4vh;
+                        padding: 0rem 0.25rem 0.25rem 0.25rem;
+                    }
+                    p {
+                        font-size: 2.25vh;
+                        padding: 0rem 0.25rem 0.25rem 0.25rem;
+                    }
+                }
+                img {
+                    height: 120px;
+                }
+            }
+        }
+    }
+}
