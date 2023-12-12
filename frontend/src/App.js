@@ -26,7 +26,8 @@ function App() {
                 <CookiesContext>
                     <AuthenticationProvider>
                         <Routes>
-                            <Route path="/home" element={<Home />} />
+                            {/* <Route path="/home" element={<Home />} /> */}
+                            <Route path="/home" element={<HomePage/>} />
                             <Route
                                 path="/regular/goal"
                                 element={<MainGoal />}

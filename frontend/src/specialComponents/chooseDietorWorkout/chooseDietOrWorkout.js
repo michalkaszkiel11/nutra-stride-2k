@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./chooseDietOrWorkout.module.scss";
 import { useNavigate } from "react-router-dom";
-import { Navigation } from "../../Navigation.js";
+
 import { useCallback } from "react";
 import { Menu } from "../../Menu.jsx";
 

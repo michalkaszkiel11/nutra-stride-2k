@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+  .container .cards {
+    display: flex; }
+    .container .cards .title {
+      text-align: center; }
+      .container .cards .title h1 {
+        margin-top: -5rem;
+        font-size: 4rem; }
+      .container .cards .title h2 {
+        font-size: 2rem; }
+    .container .cards .cure {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      width: 15rem;
+      height: 20rem;
+      font-size: 4rem;
+      font-family: fantasy;
+      font-weight: bold;
+      border: 1px white solid;
+      background-color: rgba(245, 238, 238, 0.595);
+      margin-top: -15rem;
+      margin-right: 7rem;
+      border-radius: 3rem; }
+    .container .cards .fit {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      width: 15rem;
+      height: 20rem;
+      font-size: 4rem;
+      font-family: fantasy;
+      font-weight: bold;
+      border: 1px white solid;
+      background-color: rgba(245, 238, 238, 0.595);
+      margin-top: -15rem;
+      margin-left: 7rem;
+      border-radius: 3rem; }
