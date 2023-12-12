@@ -662,11 +662,11 @@ nav {
     overflow: hidden;
     width: 100dvw;
     height: 100dvh;
-    // background: linear-gradient(
-    //     82.3deg,
-    //     rgba(231, 239, 197, 1) 10.8%,
-    //     rgba(163, 196, 188, 0.8) 94.3%
-    // );
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 0.8) 10.8%,
+        rgba(163, 196, 188, 0.5) 94.3%
+    );
     .login-container {
         display: flex;
         justify-content: center;
@@ -1288,6 +1288,20 @@ i {
             }
         }
     }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                div {
+                    p {
+                        font-size: 1.5vh;
+                    }
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
 }
 /* Tablets in landscape mode */
 @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
@@ -1405,6 +1419,32 @@ i {
                     p {
                         font-size: 1.5vh;
                     }
+                }
+            }
+        }
+    }
+    .posts {
+        .posts-box {
+            gap: 90px;
+            .posts-cards {
+                justify-content: space-around;
+                div {
+                    justify-content: center;
+                    width: 60vw;
+                    height: 70vh;
+                    h4 {
+                        padding: 2rem 0.5rem 2rem 1rem;
+                        font-size: 2vh;
+                    }
+                    p {
+                        padding: 0rem 1rem 2rem 1rem;
+                        text-align: justify;
+                        font-size: 2.1vh;
+                    }
+                }
+                img {
+                    width: 35vw;
+                    height: 70vh;
                 }
             }
         }
@@ -1595,7 +1635,7 @@ i {
             }
         }
         .image {
-            grid-area: 2/18/6/21;
+            grid-area: 2/18/6/20;
         }
 
         .level-box {
@@ -1726,10 +1766,47 @@ i {
             display: flex;
             flex-direction: column;
             grid-area: 4/2/17/20;
+            .blog-cards {
+                img {
+                    height: 55vh;
+                }
+                div {
+                    height: 15vh;
+                }
+            }
         }
         h1 {
-            grid-area: 2/2/3/20;
+            grid-area: 1/2/3/20;
             font-size: 2.5vh;
+            margin-top: 2vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 8vh;
+            flex-direction: column;
+            justify-content: space-around;
+            .posts-cards {
+                flex-direction: column;
+                gap: 20px;
+                div {
+                    height: 55vh;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    h4 {
+                        font-size: 2.8vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 350px;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: column-reverse;
         }
     }
 }
@@ -2058,6 +2135,33 @@ i {
             font-size: 5vh;
         }
     }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 20px;
+                div {
+                    height: 350px;
+                    h4 {
+                        font-size: 4vh;
+                    }
+                    p {
+                        font-size: 2.25vh;
+                    }
+                }
+                img {
+                    object-fit: cover;
+                    width: 45%;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
 }
 
 /* Larger smartphones (portrait) */
@@ -2240,7 +2344,7 @@ i {
             grid-area: 3/1/8/19;
             padding: 1.5rem;
             h1 {
-                font-size: 3vh;
+                font-size: 2.8vh;
             }
             p {
                 padding: 1.5rem;
@@ -2248,7 +2352,7 @@ i {
             }
         }
         .image {
-            grid-area: 3/16/6/20;
+            grid-area: 3/18/6/20;
         }
 
         .level-box {
@@ -2279,7 +2383,7 @@ i {
                 }
                 button {
                     width: 100%;
-                    height: 4vh;
+                    height: 30px;
                     margin: 0rem;
                     font-size: small;
                 }
@@ -2389,10 +2493,51 @@ i {
             display: flex;
             flex-direction: column;
             grid-area: 4/2/17/20;
+            .blog-cards {
+                margin-top: 5vh;
+                img {
+                    height: 50vh;
+                }
+                div {
+                    height: 15vh;
+                }
+            }
         }
         h1 {
             grid-area: 2/2/3/20;
-            font-size: 2.5vh;
+            font-size: 2.8vh;
+            margin-bottom: 5vh;
+            text-align: center;
+        }
+        P {
+            font-size: smaller;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 8vh;
+            .posts-cards {
+                flex-direction: column;
+                gap: 10px;
+                div {
+                    height: 60vh;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h4 {
+                        font-size: 2.2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 25vh;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: column-reverse;
         }
     }
 }
@@ -2577,6 +2722,26 @@ i {
                         padding: 0rem 2.5rem 1rem 2rem;
                         font-size: 3.5vh;
                     }
+                }
+            }
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 5vh;
+            .posts-cards {
+                div {
+                    justify-content: center;
+                    height: 250px;
+                    h4 {
+                        padding: 0 1rem 2rem 1rem;
+                    }
+                    p {
+                        padding: 1rem 1rem 0.25rem 1rem;
+                    }
+                }
+                img {
+                    height: 250px;
                 }
             }
         }
@@ -2841,6 +3006,23 @@ i {
             }
         }
     }
+    .posts {
+        .posts-box {
+            margin-top: 7vh;
+            .posts-cards {
+                div {
+                    height: 275px;
+                    p {
+                        font-size: 2.1vh;
+                    }
+                }
+                img {
+                    height: 275px;
+                    width: 35%;
+                }
+            }
+        }
+    }
 }
 
 /* Small smartphones (portrait) */
@@ -2974,7 +3156,7 @@ i {
             }
         }
         .image {
-            grid-area: 3/17/6/20;
+            grid-area: 3/18/6/20;
         }
 
         .level-box {
@@ -3068,7 +3250,26 @@ i {
             font-size: 2.5vh;
         }
     }
+    .posts {
+        .posts-box {
+            .posts-cards {
+                div {
+                    height: 62vh;
+                    h4 {
+                        font-size: 2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 20vh;
+                }
+            }
+        }
+    }
 }
+
 @media (max-width: 175px) and (max-height: 333px) {
     nav {
         ul {
@@ -3299,7 +3500,29 @@ i {
             }
         }
     }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            .posts-cards {
+                gap: 0px;
+                div {
+                    height: 70vh;
+
+                    h4 {
+                        font-size: 2vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    width: 95vw;
+                }
+            }
+        }
+    }
 }
+
 @media (max-width: 333px) and (max-height: 175px) {
     .register {
         .register-container {
@@ -3507,6 +3730,34 @@ i {
             grid-area: 18/2/20/14;
             color: white;
             font-size: 5vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            .posts-cards {
+                gap: 0px;
+                width: 95vw;
+                flex-direction: row;
+
+                div {
+                    justify-content: center;
+                    align-items: center;
+                    width: 60vw;
+                    height: 120px;
+                    h4 {
+                        font-size: 4vh;
+                        padding: 0rem 0.25rem 0.25rem 0.25rem;
+                    }
+                    p {
+                        font-size: 2.25vh;
+                        padding: 0rem 0.25rem 0.25rem 0.25rem;
+                    }
+                }
+                img {
+                    height: 120px;
+                }
+            }
         }
     }
 }
