@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./diet.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
-import { Navigation } from "../../Navigation.js";
+import apiInstance from "../../utils/axiosInstance";
 
 const DietPage = () => {
     const { conditionId } = useParams();
@@ -11,12 +11,12 @@ const DietPage = () => {
     const [selectedMealType, setSelectedMealType] = useState(null);
     const [mealPlans, setMealPlans] = useState([]);
     const [selectedMeal, setSelectedMeal] = useState(null);
-
+    const inst = apiInstance();
     useEffect(() => {
         const getSpecialDiets = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:10000/api/ns/special/diet/diets/${conditionId}`
+                const response = await inst.get(
+                    `/special/diet/diets/${conditionId}`
                 );
                 setDietInfo(response.data.data);
             } catch (error) {
@@ -40,10 +40,7 @@ const DietPage = () => {
 
     const fetchMealDetails = async (mealIds) => {
         try {
-            const response = await axios.post(
-                `http://localhost:10000/api/ns/special/meals`,
-                { mealIds }
-            );
+            const response = await inst.post(`/special/meals`, { mealIds });
             setMealPlans(response.data.data);
         } catch (error) {
             console.error("Error fetching meal details:", error);
@@ -62,7 +59,6 @@ const DietPage = () => {
     return (
         <>
             {" "}
-            <Navigation />
             <div className={styles.dietPage}>
                 <header className={styles.healthCondition}>
                     <h1>{dietInfo.healthCondition}</h1>
@@ -102,12 +98,24 @@ const DietPage = () => {
                         )}
                         {/* Display the content of the selected meal */}
                         {selectedMeal && (
-                            <div className={styles.selectedMealContent}>
-                                <img
-                                    src={selectedMeal.image}
-                                    alt="Meal"
-                                    className={styles.imagefood}
-                                />
+                            <div
+                                className={styles.selectedMealContent}
+                                style={{
+                                    height: "400px",
+                                    marginBottom: "400px",
+                                    position: "absolute",
+                                    width: "600px",
+                                    right: "15%",
+                                    bottom: "-28%",
+                                }}
+                            >
+                                <div>
+                                    <img
+                                        src={selectedMeal.image}
+                                        alt="Meal"
+                                        className={styles.imagefood}
+                                    />
+                                </div>
                                 <h3 className={styles.cardTitle}>
                                     {selectedMeal.title}
                                 </h3>
