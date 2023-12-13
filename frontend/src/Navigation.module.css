@@ -18,7 +18,7 @@ body {
   position: relative;
   z-index: 1; }
   .nav:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 0;
@@ -40,7 +40,8 @@ body {
     gap: 1rem;
     margin-right: 20px;
     list-style: none; }
-    .nav .navItem a, .nav .navItem .navLink {
+    .nav .navItem a,
+    .nav .navItem .navLink {
       text-decoration: none;
       color: #1f1e1e;
       font-size: 1.5rem;
@@ -48,5 +49,7 @@ body {
       padding: 0.5rem 1rem;
       transition: color 0.3s ease;
       display: block; }
-      .nav .navItem a:hover, .nav .navItem a:focus, .nav .navItem .navLink:hover, .nav .navItem .navLink:focus {
+      .nav .navItem a:hover, .nav .navItem a:focus,
+      .nav .navItem .navLink:hover,
+      .nav .navItem .navLink:focus {
         color: #b0f1b0; }

@@ -15,9 +15,10 @@ const HomePage = () => {
     <>
       <Menu />
       <main className={styles.container}>
-        <div className={styles.logo}>
+        <div className={styles.logo1}>
           <video src={logoImage} autoPlay loop muted playsInline alt="NutraStride Logo" />
         </div>
+        
 
         <div className={styles.cards}>
           <div className={styles.cure} onClick={() => handleCardClick('/special')}

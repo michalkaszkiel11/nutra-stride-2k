@@ -62,7 +62,7 @@ const DietPage = () => {
     return (
         <>
             {" "}
-            <Navigation />
+           
             <div className={styles.dietPage}>
                 <header className={styles.healthCondition}>
                     <h1>{dietInfo.healthCondition}</h1>
