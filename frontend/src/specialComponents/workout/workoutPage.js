@@ -4,17 +4,19 @@ import styles from "./workout.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { getVideoId } from "../helper/getVideo.js";
 import YouTube from 'react-youtube';
-
+import apiInstance from "../../utils/axiosInstance";
 
 const WorkoutPage = () => {
   const [workout, setWorkout] = useState(null);
   const { conditionId } = useParams();
   const navigate = useNavigate();
+const inst = apiInstance();
+
   useEffect(() => {
     const getWorkouts = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:10000/api/ns/special/conditions-with-workouts/${conditionId}`
+        const response = await inst.get(
+          `/special/conditions-with-workouts/${conditionId}`
         );
 
         const pairs = response.data.data;

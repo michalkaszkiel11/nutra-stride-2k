@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./chooseDietOrWorkout.module.scss";
 import { useNavigate } from "react-router-dom";
-
+import apiInstance from "../../utils/axiosInstance";
 import { useCallback } from "react";
 import { Menu } from "../../Menu.jsx";
 
 const ChooseDietOrWorkout = () => {
     let navigate = useNavigate();
-
+const inst = apiInstance();
     const [selectedCondition, setSelectedCondition] = useState(null);
     const [healthConditions, setHealthConditions] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -19,8 +19,8 @@ const ChooseDietOrWorkout = () => {
 
     const getConditions = async () => {
         try {
-            const response = await axios.get(
-                "http://localhost:10000/api/ns/special/health-conditions"
+            const response = await inst.get(
+                "/special/health-conditions"
             );
             setHealthConditions(response.data.data);
         } catch (error) {
@@ -30,8 +30,8 @@ const ChooseDietOrWorkout = () => {
 
     const getConditionsById = useCallback(async (conditionId) => {
         try {
-            const response = await axios.get(
-                `http://localhost:10000/api/ns/special/health-conditions/${conditionId}`
+            const response = await inst.get(
+                `/special/health-conditions/${conditionId}`
             );
             setSelectedCondition(response.data.data);
         } catch (error) {
