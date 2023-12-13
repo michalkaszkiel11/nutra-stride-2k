@@ -842,7 +842,7 @@ nav {
                     }
                     .fa-lock,
                     .fa-lock-open {
-                        right: 23%;
+                        right: 18%;
                         position: absolute;
                     }
                 }
@@ -922,6 +922,11 @@ nav {
         justify-content: center;
         align-items: center;
         gap: 10vh;
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
         .welcome-msg {
             width: 100%;
             height: fit-content;
@@ -929,7 +934,7 @@ nav {
         .successful-rg {
             text-align: center;
             gap: 0.5rem;
-            margin-bottom: 10vh;
+            margin-bottom: 15vh;
             font-size: 3vh;
             padding: 2rem;
             i {
@@ -1008,11 +1013,7 @@ nav {
         align-items: center;
         width: 100vw;
         height: 90vh;
-        // background: linear-gradient(
-        //     82.3deg,
-        //     rgba(231, 239, 197, 1) 10.8%,
-        //     rgba(163, 196, 188, 0.8) 94.3%
-        // );
+
         .info {
             display: grid;
             grid-template-columns: repeat(2, 20vw);
@@ -1135,23 +1136,6 @@ nav {
                 justify-content: center;
                 align-items: center;
             }
-            .loading-spinner {
-                border: 4px solid rgba(0, 0, 0, 0.1);
-                border-top: 4px solid #3498db;
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
-                animation: spin 1s linear infinite;
-                margin: 20px auto; /* Adjust the margin based on your layout */
-            }
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
 
             .registration-progress {
                 @extend .flex-center;
@@ -1211,6 +1195,26 @@ nav {
 i {
     cursor: pointer;
 }
+/*Visuals*/
+
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; /* Adjust the margin based on your layout */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /*Templates styles*/
 .grid20x5 {
     width: 100dvw;
@@ -1652,6 +1656,13 @@ i {
                     input {
                         width: 60vw; /* change */
                     }
+                    .password-box {
+                        .fa-lock,
+                        .fa-lock-open {
+                            right: 21%;
+                            position: absolute;
+                        }
+                    }
                 }
                 .login-buttons {
                     font-size: larger;
@@ -2033,6 +2044,13 @@ i {
                     i {
                         font-size: smaller;
                     }
+                    .password-box {
+                        .fa-lock,
+                        .fa-lock-open {
+                            right: 23%;
+                            font-size: small;
+                        }
+                    }
                 }
                 .login-buttons {
                     font-size: smaller;
@@ -2412,6 +2430,13 @@ i {
                     gap: 2rem;
                     input {
                         width: 60vw; /* change */
+                    }
+                    .password-box {
+                        .fa-lock,
+                        .fa-lock-open {
+                            right: 21%;
+                            position: absolute;
+                        }
                     }
                 }
                 .login-buttons {
@@ -3978,7 +4003,6 @@ i {
                 gap: 0px;
                 width: 95vw;
                 flex-direction: row;
-
                 div {
                     justify-content: center;
                     align-items: center;

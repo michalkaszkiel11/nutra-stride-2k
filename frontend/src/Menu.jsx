@@ -96,18 +96,21 @@ export const Menu = () => {
                                 "linear-gradient(82.3deg, var(--darker-color) 60%, var(--darkest-color) 99%)",
                         }}
                     >
-                        <li>
-                            <Link>
-                                <i className="fa-solid fa-circle-user"></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>Storage</Link>
-                        </li>
                         {isLogged && (
-                            <li onClick={handleLogout}>
-                                <Link>Logout</Link>
-                            </li>
+                            <>
+                                <li>
+                                    <Link>
+                                        <i className="fa-solid fa-circle-user"></i>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link>Storage</Link>
+                                </li>
+
+                                <li onClick={handleLogout}>
+                                    <Link>Logout</Link>
+                                </li>
+                            </>
                         )}
                     </ul>
                     <ul

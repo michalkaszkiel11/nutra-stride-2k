@@ -57,7 +57,6 @@ export const Login = () => {
     const handleOk = () => {
         setError(null);
     };
-
     return (
         <div className="login">
             <Menu />
@@ -66,48 +65,54 @@ export const Login = () => {
                 <div className="bg">
                     <div className="bg-login"></div>
                 </div>
-                {loading ? (
-                    <div className="loading-spinner"></div>
-                ) : (
-                    <form className="login-box" onSubmit={handleLogin}>
-                        {error && <LoginFailed error={error} ok={handleOk} />}
-                        <h1>Login</h1>
-                        <div className="login-inputs">
-                            <input
-                                type="email"
-                                placeholder="E-mail"
-                                minLength="3"
-                                maxLength="36"
-                                name="email"
-                            />
-                            <div className="password-box">
+                <form className="login-box" onSubmit={handleLogin}>
+                    {loading ? (
+                        <div className="loading-spinner"></div>
+                    ) : (
+                        <>
+                            {error && (
+                                <LoginFailed error={error} ok={handleOk} />
+                            )}
+                            <h1>Login</h1>
+                            <div className="login-inputs">
                                 <input
-                                    placeholder="Password"
-                                    name="password"
-                                    type={showPassword ? "text" : "password"}
+                                    type="email"
+                                    placeholder="E-mail"
+                                    minLength="3"
+                                    maxLength="36"
+                                    name="email"
                                 />
-                                {!showPassword ? (
-                                    <i
-                                        class="fa-solid fa-lock"
-                                        onClick={() => handleShowPassword()}
-                                    ></i>
-                                ) : (
-                                    <i
-                                        class="fa-solid fa-lock-open"
-                                        onClick={() => handleShowPassword()}
-                                    ></i>
-                                )}
+                                <div className="password-box">
+                                    <input
+                                        placeholder="Password"
+                                        name="password"
+                                        type={
+                                            showPassword ? "text" : "password"
+                                        }
+                                    />
+                                    {!showPassword ? (
+                                        <i
+                                            class="fa-solid fa-lock"
+                                            onClick={() => handleShowPassword()}
+                                        ></i>
+                                    ) : (
+                                        <i
+                                            class="fa-solid fa-lock-open"
+                                            onClick={() => handleShowPassword()}
+                                        ></i>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="login-buttons">
-                            <p>No account?</p>
-                            <Link to="/register">Join us!</Link>
-                            <button type="submit" className="button">
-                                Login
-                            </button>
-                        </div>
-                    </form>
-                )}
+                            <div className="login-buttons">
+                                <p>No account?</p>
+                                <Link to="/register">Join us!</Link>
+                                <button type="submit" className="button">
+                                    Login
+                                </button>
+                            </div>
+                        </>
+                    )}
+                </form>
             </div>
         </div>
     );
