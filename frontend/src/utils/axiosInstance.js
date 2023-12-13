@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiInstance = (token) => {
     return axios.create({
-        baseURL: "http://localhost:10000/api/ns",
+        baseURL: "https://nutrastride.onrender.com/api/ns",
         headers: {
             Authorization: `Bearer ${token}`,
         },
