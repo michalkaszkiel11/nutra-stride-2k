@@ -6,9 +6,10 @@ import Cookies from "js-cookie";
 import { useAuth } from "../context/LoginAuthContext";
 import { useNavigate } from "react-router-dom";
 import { LoginFailed } from "./actionMessages/LoginFailed";
+import axios from "axios";
 
 export const Login = () => {
-    const inst = apiInstance();
+
     const { login } = useAuth();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,7 @@ export const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await inst.post("/user/login", {
+            const response = await axios.post("https://nutrastride.onrender.com/api/ns/user/login", {
                 email: document.querySelector("input[name=email]").value,
                 password: document.querySelector("input[name=password]").value,
             });

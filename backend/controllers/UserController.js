@@ -70,7 +70,7 @@ export const loginUser = async (req, res) => {
         if (checkPassword) {
             const token = jwt.sign(
                 { name: user.username },
-                "process.env.JWT_SECRET",
+                process.env.JWT_SECRET,
                 // "secret",
                 {
                     expiresIn: "1h",

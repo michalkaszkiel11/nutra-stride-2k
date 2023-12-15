@@ -30,6 +30,9 @@ import {
 
 const router = express.Router();
 
+router.get("/check", (req, res) => {
+    res.send({ message: "Server is awake!" });
+});
 router.post("/user/register", validationRules, validator, createUser);
 router.post("/user/login", loginUser);
 router.post("/user/logout", logoutUser);

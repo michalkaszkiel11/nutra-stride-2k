@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { Menu } from "../Menu";
 import { useState } from "react";
-import apiInstance from "../utils/axiosInstance";
 import { RegFailure } from "./actionMessages/RegFailure";
 import { RegCompleted } from "./actionMessages/RegCompleted";
+import axios from "axios";
 
 export const Register = () => {
-    const inst = apiInstance();
-
     const [passwordMismatch, setPasswordMismatch] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState(false);
@@ -43,11 +41,14 @@ export const Register = () => {
                 setLoadings(false);
                 return;
             } else {
-                const newUser = await inst.post("/user/register", {
-                    username: formData.username,
-                    email: formData.email,
-                    password: formData.password,
-                });
+                const newUser = await axios.post(
+                    "https://nutrastride.onrender.com/api/ns/user/register",
+                    {
+                        username: formData.username,
+                        email: formData.email,
+                        password: formData.password,
+                    }
+                );
                 console.log("User registered successfully:", newUser.data);
                 setRegisteredUser(true);
             }
