@@ -7,6 +7,7 @@ import { MainGoal } from "./regularComponents/MainGoal.jsx";
 import { Meals } from "./regularComponents/Meals.jsx"; // Import the new Meals component
 import { WorkoutLevel } from "./regularComponents/WorkoutLevel.jsx"; // Import the new Workout component
 import "../src/regularComponents/regular.scss";
+import "../src/specialComponents/special.scss";
 import { WorkoutRoles } from "./regularComponents/WorkoutRoles.jsx";
 import { Exercises } from "./regularComponents/Exercises.jsx";
 import { Blog } from "./blog/Blog.jsx";
@@ -27,7 +28,7 @@ function App() {
                     <AuthenticationProvider>
                         <Routes>
                             {/* <Route path="/home" element={<Home />} /> */}
-                            <Route path="/home" element={<HomePage/>} />
+                            <Route path="/home" element={<HomePage />} />
                             <Route
                                 path="/regular/goal"
                                 element={<MainGoal />}

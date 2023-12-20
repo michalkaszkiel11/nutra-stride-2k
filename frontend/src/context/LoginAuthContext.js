@@ -42,11 +42,11 @@ export const AuthenticationProvider = ({ children }) => {
 
 export const useAuth = () => useContext(AuthContext);
 
-const isValidToken = (token) => {
+function isValidToken(token) {
     try {
         const decodedToken = jwtDecode(token);
         return decodedToken.exp * 1000 > Date.now();
     } catch (error) {
         return false;
     }
-};
+}

@@ -9,7 +9,6 @@ import { LoginFailed } from "./actionMessages/LoginFailed";
 import axios from "axios";
 
 export const Login = () => {
-
     const { login } = useAuth();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
@@ -22,10 +21,14 @@ export const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await axios.post("https://nutrastride.onrender.com/api/ns/user/login", {
-                email: document.querySelector("input[name=email]").value,
-                password: document.querySelector("input[name=password]").value,
-            });
+            const response = await axios.post(
+                "https://nutrastride.onrender.com/api/ns/user/login",
+                {
+                    email: document.querySelector("input[name=email]").value,
+                    password: document.querySelector("input[name=password]")
+                        .value,
+                }
+            );
 
             if (response.status === 200) {
                 const token = response.data.token;
@@ -61,7 +64,6 @@ export const Login = () => {
     return (
         <div className="login">
             <Menu />
-
             <div className="login-container">
                 <div className="bg">
                     <div className="bg-login"></div>

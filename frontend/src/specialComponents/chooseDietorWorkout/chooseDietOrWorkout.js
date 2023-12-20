@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./chooseDietOrWorkout.module.scss";
 import { useNavigate } from "react-router-dom";
 import apiInstance from "../../utils/axiosInstance";
 import { useCallback } from "react";
@@ -63,10 +62,16 @@ const ChooseDietOrWorkout = () => {
         }
     };
 
+    const insetOne = document.querySelector(".dowBtnchoose1");
+    const insetTwo = document.querySelector(".dowBtnchoose2");
     const nextSlide = () => {
         setActiveIndex(
             (prevIndex) => (prevIndex + 1) % healthConditions.length
         );
+        insetTwo.classList.add("insetBtn");
+        setTimeout(() => {
+            insetTwo.classList.remove("insetBtn");
+        }, 100);
     };
 
     const prevSlide = () => {
@@ -75,6 +80,11 @@ const ChooseDietOrWorkout = () => {
                 (prevIndex - 1 + healthConditions.length) %
                 healthConditions.length
         );
+
+        insetOne.classList.add("insetBtn");
+        setTimeout(() => {
+            insetOne.classList.remove("insetBtn");
+        }, 100);
     };
 
     useEffect(() => {
@@ -84,27 +94,27 @@ const ChooseDietOrWorkout = () => {
     }, [activeIndex, healthConditions.length, handleSelectCondition]);
 
     return (
-        <div className={styles.main}>
+        <div className="dowMain">
             <Menu />
 
-            <div className={styles.rest}>
+            <div className="dowRest">
                 {/* Search */}
-                <section className={styles.welcome}>
-                    <h1 className={styles.title}>
-                        Personalize Your Wellness Adventure
+                <section className="dowWelcome">
+                    <h1 className="dowTitle">
+                        Personalize Your Wellness Experience
                     </h1>
-                    <p className={styles.text}>
+                    <p className="dowText">
                         Start your adventure today – every step is a step
                         towards a better you!
                     </p>
                 </section>
                 {/* Custom Carousel */}
-                <section className={styles.carouselContainer}>
-                    <div className={styles.carouselSlides}>
+                <section className="dowCarouselContainer">
+                    <div className="dowCarouselSlides">
                         {healthConditions.map((condition, index) => (
                             <div
                                 key={condition._id}
-                                className={styles.slide}
+                                className="dowSlide"
                                 style={{
                                     display:
                                         index === activeIndex
@@ -116,68 +126,30 @@ const ChooseDietOrWorkout = () => {
                                 <img
                                     src={condition.image}
                                     alt="Health Condition"
-                                    className={styles.condImage}
+                                    className="dowCondImage"
                                 />
-                                <h2 className={styles.condTitle}>
+                                <h2 className="dowCondTitle">
                                     {condition.title}
                                 </h2>
                             </div>
                         ))}
                     </div>
-                    <div>
-                        <button
-                            onClick={prevSlide}
-                            className={styles.btnchoose}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className={styles.arrow}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
-                                />
-                            </svg>
+                    <div className="dowBtnContainer">
+                        <button onClick={prevSlide} className="dowBtnchoose1">
+                            <i class="fa-solid fa-left-long"></i>
                         </button>
-                        <button
-                            onClick={nextSlide}
-                            className={styles.btnchoose}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className={styles.arrow}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                                />
-                            </svg>
+                        <button onClick={nextSlide} className="dowBtnchoose2">
+                            <i class="fa-solid fa-right-long"></i>
                         </button>
                     </div>
                 </section>
                 {/* Conditional rendering for Diet and Workout buttons */}
                 {selectedCondition && (
-                    <div className={styles.buttons}>
-                        <button
-                            onClick={goToDiet}
-                            className={styles.optionButton}
-                        >
+                    <div className="dowButtons">
+                        <button onClick={goToDiet} className="button">
                             Diet Plan
                         </button>
-                        <button
-                            onClick={goToWorkout}
-                            className={styles.optionButton}
-                        >
+                        <button onClick={goToWorkout} className="button">
                             Workout
                         </button>
                     </div>

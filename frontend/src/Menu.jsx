@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../src/context/LoginAuthContext";
 import Cookies from "js-cookie";
 export const Menu = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 860);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 960);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 860);
+            setIsMobile(window.innerWidth <= 960);
         };
 
         window.addEventListener("resize", handleResize);

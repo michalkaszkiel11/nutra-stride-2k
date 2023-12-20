@@ -2390,8 +2390,9 @@ i {
             }
             .register-box {
                 width: 100vw; /* change */
-                height: 50vh; /* change */
-                gap: 0;
+                height: 60vh; /* change */
+                gap: 0rem;
+                margin-bottom: 2px;
                 .registration-progress {
                     width: 100%;
                     h1 {
@@ -2407,10 +2408,13 @@ i {
                         }
                     }
                     .register-buttons {
+                        p {
+                            margin-top: 5px;
+                        }
                         gap: 0.5rem;
                         button {
                             width: 45vw; /* change */
-                            height: 50px; /* change */
+                            height: 30px; /* change */
                         }
                         margin-bottom: 25px;
                     }
@@ -2424,7 +2428,7 @@ i {
             .login-box {
                 width: 100vw; /* change */
                 height: 50vh; /* change */
-
+                margin-bottom: 2px;
                 gap: 2rem;
                 .login-inputs {
                     gap: 2rem;
@@ -2445,6 +2449,7 @@ i {
                         width: 60vw;
                         height: 30px;
                     }
+                    margin-bottom: 2px;
                 }
             }
             .bg {
@@ -2993,7 +2998,7 @@ i {
     }
     .register {
         .register-container {
-            margin-top: 2.5vh;
+            margin-top: 0.25vh;
             .register-box {
                 .registration-progress {
                     background: linear-gradient(
@@ -3297,7 +3302,7 @@ i {
     .register {
         .register-container {
             .info {
-                margin-top: 2vh;
+                margin-top: 0vh;
             }
             .register-box {
                 margin-bottom: 25px;
@@ -3346,7 +3351,7 @@ i {
                     font-size: 2vh;
                     button {
                         width: 60vw;
-                        height: 5vh;
+                        height: 30px;
                     }
                     margin-bottom: 20vh;
                 }
