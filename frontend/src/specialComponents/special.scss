@@ -58,6 +58,7 @@
             &:hover {
                 cursor: pointer;
             }
+
             .dowBtnContainer {
                 display: flex;
                 justify-content: center;
@@ -336,10 +337,19 @@
 
             .dowCarouselContainer {
                 width: 90vw;
-                height: fit-content;
+                height: 55vh;
                 margin: 1rem auto;
                 padding: 1rem;
                 gap: 1rem;
+                .dowCarouselSlides {
+                    .dowSlide {
+                        height: 16rem;
+                        h2 {
+                            font-size: 1.6rem;
+                            text-align: center;
+                        }
+                    }
+                }
                 .dowBtnContainer {
                     gap: 1rem;
                 }
@@ -355,12 +365,12 @@
                 }
             }
             .dowButtons {
-                margin: 3rem 1rem 1rem 1rem;
+                margin: 1.5rem 1rem 1rem 1rem;
                 gap: 1rem;
                 button {
                     font-size: 1.5rem;
                     width: 15rem;
-                    height: 6rem;
+                    height: 4.5rem;
                 }
             }
         }
@@ -393,7 +403,7 @@
                 height: 53vh;
 
                 .dowBtnContainer {
-                    gap: 0rem;
+                    gap: 0;
                     margin: 0;
                     .dowBtnchoose1,
                     .dowBtnchoose2 {
@@ -443,10 +453,18 @@
 
             .dowCarouselContainer {
                 width: 95vw;
-                height: fit-content;
-
+                height: 55vh;
+                gap: 1.5rem;
+                .dowCarouselSlides {
+                    .dowSlide {
+                        height: 15rem;
+                        h2 {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
                 .dowBtnContainer {
-                    gap: 2rem;
+                    gap: 0.75rem;
                     height: fit-content;
                     button {
                         margin-bottom: 1rem;
@@ -521,9 +539,9 @@
             .dowWelcome {
                 gap: 0px;
                 margin-top: 1rem;
-                margin-bottom: 20px;
+                margin-bottom: 5px;
                 .dowTitle {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                 }
 
                 .dowText {
@@ -535,10 +553,15 @@
 
             .dowCarouselContainer {
                 width: 90vw;
-                height: 45vh;
+                height: 50vh;
                 margin: 1rem auto;
                 padding: 1rem;
                 gap: 0.5rem;
+                .dowCarouselSlides {
+                    .dowSlide {
+                        height: 15rem;
+                    }
+                }
                 .dowBtnContainer {
                     gap: 0.5rem;
                     .dowBtnchoose1,
@@ -558,12 +581,12 @@
                 }
             }
             .dowButtons {
-                margin: 3rem 1rem 1rem 1rem;
+                margin: 1.5rem 1rem 1rem 1rem;
                 gap: 1.5rem;
                 button {
-                    font-size: 1.25rem;
-                    width: 10rem;
-                    height: 4.5rem;
+                    font-size: 1rem;
+                    width: 12rem;
+                    height: 3.5rem;
                 }
             }
         }
@@ -574,7 +597,7 @@
         .dowRest {
             margin-top: 0vh;
             .dowWelcome {
-                gap: 5px;
+                gap: 2.5px;
                 margin-top: 0rem;
                 margin-bottom: 8px;
 
@@ -586,12 +609,12 @@
                 .dowText {
                     font-size: 0.75rem;
                     font-weight: 500;
-                    padding: 0.25rem;
+                    padding: 0rem;
                 }
             }
             .dowCarouselContainer {
                 width: 50vw;
-                height: 54vh;
+                height: 55vh;
 
                 .dowBtnContainer {
                     gap: 1rem;
@@ -615,7 +638,7 @@
         }
     }
 }
-@media (max-width: 320px) and (max-height: 470px) {
+@media (max-width: 320px) and (max-height: 570px) {
     .dowMain {
         .dowRest {
             margin-top: 0vh;
@@ -636,11 +659,15 @@
 
             .dowCarouselContainer {
                 width: 90vw;
-                height: fit-content;
+                height: 55vh;
                 margin: 0.25rem auto;
                 padding: 0.25rem;
                 gap: 0.5rem;
-
+                .dowCarouselSlides {
+                    .dowSlide {
+                        height: 12rem;
+                    }
+                }
                 .dowBtnContainer {
                     gap: 0.5rem;
                     .dowBtnchoose1,
@@ -663,7 +690,7 @@
                 }
             }
             .dowButtons {
-                margin: 1rem auto;
+                margin: 2rem auto;
                 gap: 1rem;
                 button {
                     font-size: 1.25rem;

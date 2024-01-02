@@ -5,15 +5,18 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../src/context/LoginAuthContext";
 import Cookies from "js-cookie";
 export const Menu = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 960);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 960);
+            if (window.innerWidth <= 960) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
         };
-
+        handleResize(); // set initial state
         window.addEventListener("resize", handleResize);
-
         return () => {
             window.removeEventListener("resize", handleResize);
         };
@@ -45,7 +48,7 @@ export const Menu = () => {
                     </label>
                     <ul class="menu">
                         <li>
-                            <Link to="/home">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         {!isLogged && (
                             <>
@@ -120,7 +123,7 @@ export const Menu = () => {
                         }}
                     >
                         <li>
-                            <Link to="/home">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         {!isLogged && (
                             <>

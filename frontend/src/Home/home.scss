@@ -1,0 +1,212 @@
+/*Templates styles*/
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    .home-box {
+        margin-top: 15vh;
+        width: 95vw;
+        height: 85vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .hpLogo {
+            width: 45vw;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(10, 10%);
+            grid-template-rows: repeat(10, 10%);
+            .hpChoose {
+                grid-area: 6/2/11/10;
+                display: flex;
+                justify-content: space-around;
+                gap: 10rem;
+                .hpCure {
+                    text-decoration: none;
+                    color: #000;
+                    @extend .flex-center;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 20rem;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    transform: scale(1);
+                    transition: all 350ms ease-in-out;
+                    background: linear-gradient(
+                        82.3deg,
+                        rgba(231, 239, 197, 0.4) 10.8%,
+                        rgba(163, 196, 188, 0.3) 94.3%
+                    );
+                    .cureBg {
+                        @extend .flex-center;
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            height: 10rem;
+                            width: fit-content;
+                        }
+                    }
+                    .cureTxt {
+                        text-align: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-bottom: 1rem;
+                    }
+                    &:hover {
+                        background-color: rgba(164, 191, 153, 0.5);
+                        transform: scale(1.1);
+                        transition: all 200ms ease-in-out;
+                    }
+                }
+                .hpBeFit {
+                    color: #000;
+                    text-decoration: none;
+                    @extend .flex-center;
+                    flex-direction: column;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    height: 100%;
+                    width: 20rem;
+                    transform: scale(1);
+                    transition: all 350ms ease-in-out;
+                    background: linear-gradient(
+                        82.3deg,
+                        rgba(231, 239, 197, 0.4) 10.8%,
+                        rgba(163, 196, 188, 0.3) 94.3%
+                    );
+                    .befitBg {
+                        @extend .flex-center;
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            height: 10rem;
+                            width: fit-content;
+                        }
+                    }
+                    .befitTxt {
+                        text-align: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-bottom: 1rem;
+                    }
+                    &:hover {
+                        background-color: rgba(164, 191, 153, 0.5);
+                        transform: scale(1.1);
+                        transition: all 200ms ease-in-out;
+                    }
+                }
+            }
+            .hpLogo-box {
+                width: 100%;
+                height: 100%;
+                grid-area: 1/1/5/11;
+                .hpLogoImg {
+                    width: 100%;
+                    height: 100%;
+                    background-image: url(./green.png);
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        .hpOverview {
+            @extend .flex-center;
+            width: 25vw;
+            flex-direction: column;
+            gap: 1rem;
+            transform: scale(1);
+            transition: all 200ms ease;
+            padding: 1rem;
+            .hpOverviewBox {
+                gap: 1rem;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                div {
+                    background-color: rgba(129, 128, 128, 0.15);
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    height: 6rem;
+                    width: 6rem;
+                    text-align: center;
+                }
+            }
+            &:hover {
+                background-color: rgba(185, 185, 185, 0.15);
+                transform: scale(1.1);
+                transition: all 200ms ease-in-out;
+            }
+        }
+        .hpOverviewSec {
+            color: #000;
+            text-decoration: none;
+            @extend .flex-center;
+            width: 25vw;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            background-image: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0),
+                rgba(129, 128, 128, 0.15)
+            );
+            transform: scale(1);
+            transition: all 350ms ease-in-out;
+            .hpOverviewBoxx {
+                gap: 1rem;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                div {
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    height: 6rem;
+                    width: 6rem;
+                    text-align: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                div:nth-child(1) {
+                    background-image: url(../images/onee.jpg);
+                }
+                div:nth-child(2) {
+                    background-image: url(../images/twoo.jpg);
+                }
+                div:nth-child(3) {
+                    background-image: url(../images/threee.jpg);
+                }
+                div:nth-child(4) {
+                    background-image: url(../images/fourr.jpg);
+                }
+            }
+            &:hover {
+                background-color: rgba(185, 185, 185, 0.15);
+                transform: scale(1.1);
+                transition: all 200ms ease-in-out;
+            }
+        }
+    }
+}
