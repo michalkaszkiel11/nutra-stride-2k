@@ -24,11 +24,12 @@
             display: grid;
             grid-template-columns: repeat(10, 10%);
             grid-template-rows: repeat(10, 10%);
+
             .hpChoose {
                 grid-area: 6/2/11/10;
                 display: flex;
                 justify-content: space-around;
-                gap: 10rem;
+
                 .hpCure {
                     text-decoration: none;
                     color: #000;
@@ -151,7 +152,6 @@
                     color: #000;
 
                     p {
-                        font-style: oblique;
                         border-left: #000 solid 8px;
                     }
                 }
@@ -168,6 +168,7 @@
                 transform: scale(1);
                 transition: all 200ms ease;
                 padding: 1rem;
+                text-align: center;
                 &:hover {
                     background-color: rgba(185, 185, 185, 0.15);
                     transform: scale(1.1);
@@ -204,9 +205,12 @@
             height: 100%;
 
             .hpOverview-sub {
+                text-align: center;
+                width: 100%;
+                height: 100%;
                 @extend .flex-center;
                 flex-direction: column;
-                grid-area: 5/1/8/11;
+                grid-area: 1/1/8/11;
                 gap: 1rem;
                 padding: 1rem;
                 color: #000;
@@ -223,41 +227,263 @@
                     justify-content: space-around;
                     align-items: center;
                     width: 100%;
+                    height: 100%;
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     flex-wrap: wrap;
-
-                    div {
-                        justify-content: space-around;
-                        align-items: center;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        height: 6rem;
-                        width: 6rem;
-                        text-align: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        background-position: center;
-                    }
-
-                    div:nth-child(1) {
-                        background-image: url(../images/onee.jpg);
-                    }
-                    div:nth-child(2) {
-                        background-image: url(../images/twoo.jpg);
-                    }
-                    div:nth-child(3) {
-                        background-image: url(../images/threee.jpg);
-                    }
-                    div:nth-child(4) {
-                        background-image: url(../images/fourr.jpg);
+                    .over-zoom {
+                        .linked {
+                            @extend .flex-center;
+                            flex-direction: column;
+                            transform: scale(1);
+                            transition: all 200ms ease;
+                            width: 100%;
+                            height: 100%;
+                            text-decoration: none !important;
+                            color: #000;
+                            img {
+                                width: 50%;
+                            }
+                            p {
+                                padding: 0.5rem 0 0.5rem 0;
+                                width: 50%;
+                                text-align: center;
+                                font-weight: bold;
+                                background-color: rgba(164, 191, 153, 0.7);
+                            }
+                            &:hover {
+                                transform: scale(1.1);
+                                transition: all 200ms ease-in-out;
+                            }
+                        }
                     }
                 }
                 &:hover {
                     background-color: rgba(185, 185, 185, 0.15);
                     transform: scale(1.1);
                     transition: all 200ms ease-in-out;
+                }
+                .hpOverviewBoxx-mobile {
+                    gap: 1rem;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    .show-first {
+                        display: none;
+                    }
+                    .over-zoom {
+                        .linked {
+                            @extend .flex-center;
+                            flex-direction: column;
+                            transform: scale(1);
+                            transition: all 200ms ease;
+                            width: 100%;
+                            height: 100%;
+                            text-decoration: none !important;
+                            color: #000;
+                            img {
+                                width: 100%;
+                            }
+                            p {
+                                padding: 0.5rem 0 0.5rem 0;
+                                width: 100%;
+                                text-align: center;
+                                font-weight: bold;
+                                background-color: rgba(164, 191, 153, 0.7);
+                            }
+                            &:hover {
+                                transform: scale(1.1);
+                                transition: all 200ms ease-in-out;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Laptops and desktops with wide screens */
+@media (min-width: 1281px) and (min-height: 800px) {
+    .home {
+        .home-box {
+            .hpLogo {
+                .hpChoose {
+                    gap: 0rem;
+                    .hpCure {
+                        .cureBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                    .hpBeFit {
+                        .befitBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .hpOverview {
+                .home-start {
+                    width: 31vw;
+                    height: 250px;
+                    .animation-start {
+                        p {
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .hpOverview-sub {
+                    grid-area: 6/1/9/11;
+                }
+            }
+            .hpOverviewSec {
+                .hpOverview-sub {
+                    .hpOverviewBoxx {
+                        .over-zoom {
+                            div {
+                                img {
+                                    width: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Tablets in landscape mode */
+@media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
+    .home {
+        .home-box {
+            .hpLogo {
+                .hpChoose {
+                    gap: 0.5rem;
+                    .hpCure {
+                        .cureBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                    .hpBeFit {
+                        .befitBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .hpOverview {
+                .home-start {
+                    width: 28vw;
+                    height: 280px;
+                    .animation-start {
+                        p {
+                            font-size: 1rem;
+                            font-weight: 400;
+                            padding: 0.25rem 40% 0.25rem 0.25rem !important;
+                        }
+                    }
+                }
+                .hpOverview-sub {
+                    grid-area: 6/1/9/11;
+                }
+            }
+        }
+    }
+}
+/* Tablets in portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
+    .home {
+        margin: 0;
+        .home-box {
+            margin-top: 2vh;
+            .hpLogo {
+                align-self: flex-end;
+                height: 70vh;
+                .hpLogo-box {
+                    grid-area: 1/2/6/10;
+                }
+                .hpChoose {
+                    grid-area: 7/1/11/11;
+                    gap: 0.5rem;
+                    .hpCure {
+                        .cureBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                    .hpBeFit {
+                        .befitBg {
+                            img {
+                                height: 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .hpOverview {
+                .home-start {
+                    width: 55vw;
+                    height: 320px;
+                    .animation-start {
+                        p {
+                            font-size: 1.4rem;
+                            padding: 0.25rem 45% 0.25rem 0.25rem !important;
+                        }
+                    }
+                }
+                .hpOverview-sub {
+                    grid-area: 6/1/9/11;
+                }
+            }
+            .hpOverviewSec {
+                width: 25vw;
+                height: 100%;
+
+                .hpOverview-sub {
+                    flex-direction: column;
+                    grid-area: 1/1/8/11;
+                    gap: 1rem;
+                    padding: 0.1rem;
+
+                    .hpOverviewBoxx {
+                        gap: 0rem;
+
+                        .over-zoom {
+                            div {
+                                img {
+                                    width: 100%;
+                                }
+                                p {
+                                    padding: 1rem 0 1rem 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        // .over-zoom-mobile {
+                        //     div {
+                        //         img {
+                        //             width: 100%;
+                        //         }
+                        //         p {
+                        //             padding: 1rem 0 1rem 0;
+                        //             width: 100%;
+                        //         }
+                        //     }
+                        // }
+                    }
                 }
             }
         }

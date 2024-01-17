@@ -1,13 +1,47 @@
 import { Link } from "react-router-dom";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
 import { Menu } from "../Menu";
 import { useState, useEffect } from "react";
 import cureImg from "./cure.png";
 import befitImg from "./heartrate.png";
 import heal from "./heal.png";
 import heal11 from "./heal11.png";
+import apiInstance from "../utils/axiosInstance";
+
 export const Home = () => {
-    const [index, setIndex] = useState(0);
+    const [indexed, setIndex] = useState(0);
+    const [blog, setBlog] = useState([]);
+    const inst = apiInstance();
+    const [isMobile, setIsMobile] = useState(false);
+    const [rolled, isRolled] = useState(false);
+    const blogClass = isMobile ? "hpOverviewBoxx-mobile" : "hpOverviewBoxx";
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 960) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        };
+        handleResize(); // set initial state
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+    useEffect(() => {
+        getBlog();
+    }, []);
+
+    const getBlog = async () => {
+        try {
+            const blogData = await inst.get("/blog");
+            const blog = blogData.data.data;
+            setBlog(blog);
+        } catch (e) {
+            console.error(e);
+        }
+    };
     const startTxt = [
         "Do you want to have a real impact on your life?",
         "We help people to find best diets related to their issues and we match it with effective physical therapy.",
@@ -20,10 +54,18 @@ export const Home = () => {
 
         return () => clearInterval(intervalId);
     }, []);
-    const changeImg = `${index === 0 ? startImg[0] : startImg[1]}`;
+    const changeImg = `${indexed === 0 ? startImg[0] : startImg[1]}`;
     const pPadd = `${
-        index === 0 ? "2rem 35% 2rem 2rem" : "2rem 26% 2rem 2rem"
+        indexed === 0 ? "2rem 35% 2rem 2rem" : "2rem 26% 2rem 2rem"
     }`;
+
+    const chevronDown = () => {
+        isRolled(false);
+    };
+
+    const chevronUp = () => {
+        isRolled(true);
+    };
     return (
         <div className="home">
             <Menu />
@@ -31,7 +73,7 @@ export const Home = () => {
                 <div className="hpOverview">
                     <div className="home-start">
                         <Fade
-                            key={index}
+                            key={indexed}
                             duration={1000}
                             direction="left"
                             className="animation-start"
@@ -40,7 +82,7 @@ export const Home = () => {
                             }}
                         >
                             <p style={{ padding: `${pPadd}` }}>
-                                {index === 0 ? startTxt[0] : startTxt[1]}
+                                {indexed === 0 ? startTxt[0] : startTxt[1]}
                             </p>
                         </Fade>
                     </div>
@@ -51,22 +93,30 @@ export const Home = () => {
                             authenticity
                         </p>
                         <div className="hpOverviewBox">
-                            <div>
-                                <h2>+100</h2>
-                                <p>diets</p>
-                            </div>
-                            <div>
-                                <h2>+1000</h2>
-                                <p>exercises</p>
-                            </div>
-                            <div>
-                                <h2>+30</h2>
-                                <p>specialists</p>
-                            </div>
-                            <div>
-                                <h2>+1</h2>
-                                <p>who wants changes</p>
-                            </div>
+                            <Zoom delay={200}>
+                                <div>
+                                    <h2>+100</h2>
+                                    <p>diets</p>
+                                </div>
+                            </Zoom>
+                            <Zoom delay={400}>
+                                <div>
+                                    <h2>+1000</h2>
+                                    <p>exercises</p>
+                                </div>
+                            </Zoom>
+                            <Zoom delay={600}>
+                                <div>
+                                    <h2>+30</h2>
+                                    <p>specialists</p>
+                                </div>
+                            </Zoom>
+                            <Zoom delay={800}>
+                                <div>
+                                    <h2>+1</h2>
+                                    <p>who wants changes</p>
+                                </div>
+                            </Zoom>
                         </div>
                     </div>
                 </div>
@@ -74,8 +124,9 @@ export const Home = () => {
                     <div className="hpLogo-box">
                         <Fade
                             className="hpLogoFade"
-                            delay={500}
-                            duration={2800}
+                            delay={400}
+                            duration={1200}
+                            direction="down"
                         >
                             <div className="hpLogoImg"></div>
                         </Fade>
@@ -97,16 +148,46 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="hpOverviewSec">
-                    <Link to="/blog" className="hpOverview-sub">
+                    <div className="hpOverview-sub">
                         <h3>Latest News</h3>
                         <p>Be up to date with the latest nutrition news</p>
-                        <div className="hpOverviewBoxx">
-                            <div className="onee"></div>
-                            <div className="twoo"></div>
-                            <div className="threee"></div>
-                            <div className="fourr"></div>
+                        <div className={blogClass}>
+                            {blog.map((category, index) => (
+                                <Zoom
+                                    className={`over-zoom ${
+                                        index === 0 ? "" : "show-first"
+                                    }`}
+                                    key={index}
+                                >
+                                    <Link to="/blog" className="linked">
+                                        <img
+                                            src={category.image}
+                                            alt={index}
+                                            key={index}
+                                        ></img>
+                                        <p>{category.title}</p>
+                                    </Link>
+                                </Zoom>
+                            ))}
                         </div>
-                    </Link>
+                        {isMobile && (
+                            <>
+                                {rolled ? (
+                                    <i
+                                        style={{ fontSize: "3rem" }}
+                                        className="fa-solid fa-chevron-up"
+                                        onClick={chevronDown}
+                                    ></i>
+                                ) : (
+                                    <i
+                                        style={{ fontSize: "3rem" }}
+                                        className="fa-solid fa-chevron-down"
+                                        onClick={chevronUp}
+                                    ></i>
+                                )}
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
