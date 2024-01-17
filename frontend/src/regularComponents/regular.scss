@@ -143,28 +143,34 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
-
             a {
                 text-decoration: none;
                 color: white;
                 font-size: 2.8vh;
                 font-weight: bold;
-                text-shadow: 2px 2px 0px #000000,
-                    5px 4px 0px rgba(0, 0, 0, 0.15);
                 height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 0 1rem;
-                transition: all 0.5s;
-                &:hover {
-                    background: linear-gradient(
-                        82.3deg,
-                        rgba(231, 239, 197, 1) 10.8%,
-                        rgba(163, 196, 188, 0.8) 94.3%
-                    );
-                    transition: all 0.5s;
-                }
+
+                --b: 0.2em; /* the thickness of the line */
+                --c: var(--darker-color); /* the color */
+
+                color: #ffffff00;
+                padding-block: var(--b);
+                background: linear-gradient(var(--c) 50%, #ffffff 0) 0%
+                        calc(100% - var(--_p, 0%)) / 100% 200%,
+                    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) /
+                        var(--_p, 0%) var(--b) no-repeat;
+                -webkit-background-clip: text, padding-box;
+                background-clip: text, padding-box;
+                transition: 0.25s var(--_s, 0s) linear,
+                    background-size 0.3s calc(0.3s - var(--_s, 0s));
+            }
+            a:hover {
+                --_p: 100%;
+                --_s: 0.3s;
             }
         }
     }
@@ -2740,7 +2746,7 @@ i {
                 flex-direction: column;
                 gap: 10px;
                 div {
-                    height: 60vh;
+                    height: fit-content;
                     flex-direction: column;
                     justify-content: center;
 
@@ -2748,11 +2754,11 @@ i {
                         font-size: 2.2vh;
                     }
                     p {
-                        font-size: 1.4vh;
+                        font-size: 1.6vh;
                     }
                 }
                 img {
-                    height: 25vh;
+                    height: fit-content;
                 }
             }
         }
