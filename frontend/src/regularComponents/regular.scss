@@ -6,6 +6,7 @@
     color: #ffffff;
     height: 50px;
     padding: 1em;
+    background-color: var(--darker-color) !important;
     a {
         text-decoration: none;
         color: white !important;
@@ -2037,6 +2038,7 @@ i {
     .login {
         .login-container {
             flex-direction: row;
+
             .login-box {
                 width: 50vw;
                 height: 90vh;
@@ -2387,6 +2389,9 @@ i {
             rgba(163, 196, 188, 0.8) 94.3%
         );
         .register-container {
+            .info {
+                margin-top: 5vh;
+            }
             margin-top: 0;
             flex-direction: column; /* change */
             .info {
@@ -2460,7 +2465,7 @@ i {
             }
             .bg {
                 width: 100vw;
-                height: 40vh;
+                height: 35vh;
                 z-index: 1;
                 .bg-login {
                     width: 100%;
@@ -2560,7 +2565,7 @@ i {
     }
     .workout-box {
         .top-nav {
-            margin-left: 0.75rem;
+            width: 100vw;
         }
         .intro {
             grid-area: 3/1/8/19;
@@ -2709,7 +2714,7 @@ i {
     }
     .blog {
         .top-nav {
-            margin-left: 0.5rem;
+            width: 100vw;
         }
         width: 100vw;
         height: 100%;
@@ -3004,7 +3009,10 @@ i {
     }
     .register {
         .register-container {
-            margin-top: 0.25vh;
+            .info {
+                margin-top: 10vh;
+            }
+
             .register-box {
                 .registration-progress {
                     background: linear-gradient(
@@ -3020,9 +3028,9 @@ i {
     }
     .login {
         .login-container {
-            margin-top: 5vh;
+            margin-top: 10vh;
             .login-box {
-                height: 70vh;
+                height: 60vh;
                 h1 {
                     text-align: center;
                     width: 100%;
@@ -3308,12 +3316,13 @@ i {
     .register {
         .register-container {
             .info {
-                margin-top: 0vh;
+                margin-top: 5vh;
             }
+            margin-top: 5vh;
             .register-box {
                 margin-bottom: 25px;
                 .registration-progress {
-                    margin-bottom: 15vh;
+                    margin-bottom: 25vh;
 
                     width: 100%;
                     h1 {
@@ -3363,9 +3372,9 @@ i {
                 }
             }
             .bg {
-                height: 30vh;
+                height: 25vh;
                 .bg-login {
-                    height: 50vh;
+                    height: 40vh;
                 }
             }
         }

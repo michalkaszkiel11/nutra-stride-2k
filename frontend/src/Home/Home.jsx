@@ -136,7 +136,7 @@ export const Home = () => {
                             <div className="hpLogoImg"></div>
                         </Fade>
                     </div>
-
+                    <div className="healthyIcon"></div>
                     <div className="hpChoose">
                         <Link className="hpCure" to="/special">
                             <div className="cureBg">
