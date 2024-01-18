@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import styles from "./diet.module.scss";
+import styles from "./diet.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import apiInstance from "../../utils/axiosInstance";
+import { Menu } from "../../Menu";
 
 const DietPage = () => {
     const { conditionId } = useParams();
@@ -52,23 +52,19 @@ const DietPage = () => {
         setSelectedMeal(meal); // Set the selected meal to display its content
     };
 
-    const backToChoose = () => {
-        navigate("/"); //back to choose diet or workout
-    };
-
     return (
-        <>
-            {" "}
-            <div className={styles.dietPage}>
-                <header className={styles.healthCondition}>
+        <div className="diet-page">
+            <Menu />
+            <div className="diet-main">
+                <header>
                     <h1>{dietInfo.healthCondition}</h1>
                     <p>{dietInfo.description}</p>
                 </header>
-                <div className={styles.wrapcontent}>
-                    <div className={styles.mealTypes}>
-                        {mealTypes.map((mealType) => (
+                <div className="meal-types-main">
+                    <div className="meal-types-sub">
+                        {mealTypes.map((mealType, index) => (
                             <button
-                                key={mealType}
+                                key={index}
                                 className={
                                     selectedMealType === mealType
                                         ? styles.activeTab
@@ -81,14 +77,13 @@ const DietPage = () => {
                         ))}
                     </div>
 
-                    <div className={styles.rightContent}>
-                        {/* Only display meal options if a meal type is selected */}
+                    <div className="meal-options-main">
                         {selectedMealType && (
-                            <div className={styles.mealOptions}>
+                            <div className="meal-options-sub">
                                 {mealPlans.map((meal, index) => (
                                     <div
                                         key={meal._id || index}
-                                        className={styles.mealCard}
+                                        className="meal-card"
                                         onClick={() => handleMealClick(meal)}
                                     >
                                         <h3>{meal.title}</h3>
@@ -96,30 +91,19 @@ const DietPage = () => {
                                 ))}
                             </div>
                         )}
-                        {/* Display the content of the selected meal */}
                         {selectedMeal && (
-                            <div
-                                className={styles.selectedMealContent}
-                                style={{
-                                    height: "400px",
-                                    marginBottom: "400px",
-                                    position: "absolute",
-                                    width: "600px",
-                                    right: "15%",
-                                    bottom: "-28%",
-                                }}
-                            >
+                            <div className="selected-meal">
                                 <div>
                                     <img
                                         src={selectedMeal.image}
                                         alt="Meal"
-                                        className={styles.imagefood}
+                                        className="food-img"
                                     />
                                 </div>
-                                <h3 className={styles.cardTitle}>
+                                <h3 className="card-title">
                                     {selectedMeal.title}
                                 </h3>
-                                <p className={styles.cardContent}>
+                                <p className="card-content">
                                     {selectedMeal.content}
                                 </p>
                                 <span>
@@ -130,12 +114,8 @@ const DietPage = () => {
                         )}
                     </div>
                 </div>
-
-                <button className={styles.backToChoose} onClick={backToChoose}>
-                    Back
-                </button>
             </div>
-        </>
+        </div>
     );
 };
 
