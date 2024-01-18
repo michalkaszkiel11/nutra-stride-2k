@@ -14,10 +14,10 @@ export const Home = () => {
     const inst = apiInstance();
     const [isMobile, setIsMobile] = useState(false);
     const [rolled, isRolled] = useState(false);
-    const blogClass = isMobile ? "hpOverviewBoxx-mobile" : "hpOverviewBoxx";
+
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth <= 960) {
+            if (window.innerWidth <= 1024) {
                 setIsMobile(true);
             } else {
                 setIsMobile(false);
@@ -29,6 +29,7 @@ export const Home = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
     useEffect(() => {
         getBlog();
     }, []);
@@ -59,13 +60,17 @@ export const Home = () => {
         indexed === 0 ? "2rem 35% 2rem 2rem" : "2rem 26% 2rem 2rem"
     }`;
 
+    const mother = document.querySelector(".hpOverviewBoxx");
     const chevronDown = () => {
         isRolled(false);
+        mother.style.height = "20%";
     };
 
     const chevronUp = () => {
         isRolled(true);
+        mother.style.height = "100%";
     };
+
     return (
         <div className="home">
             <Menu />
@@ -151,14 +156,9 @@ export const Home = () => {
                     <div className="hpOverview-sub">
                         <h3>Latest News</h3>
                         <p>Be up to date with the latest nutrition news</p>
-                        <div className={blogClass}>
+                        <div className="hpOverviewBoxx">
                             {blog.map((category, index) => (
-                                <Zoom
-                                    className={`over-zoom ${
-                                        index === 0 ? "" : "show-first"
-                                    }`}
-                                    key={index}
-                                >
+                                <Zoom className="over-zoom" key={index}>
                                     <Link to="/blog" className="linked">
                                         <img
                                             src={category.image}
