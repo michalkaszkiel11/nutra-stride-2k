@@ -6,9 +6,22 @@ import breakfast from "./images/breakfast.png";
 import lunch from "./images/lunch.png";
 import dinner from "./images/dinner.png";
 import { Range } from "../../utils/Range";
+// import {
+//     Bounce,
+//     Fade,
+//     Flip,
+//     Hinge,
+//     JackInTheBox,
+//     Roll,
+//     Rotate,
+//     Slide,
+//     Zoom,
+// } from "react-awesome-reveal";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import menup from "./images/menup.png";
 const DietPage = () => {
     const { conditionId } = useParams();
-    const navigate = useNavigate();
+
     const [dietInfo, setDietInfo] = useState({});
     const [selectedMealType, setSelectedMealType] = useState(null);
     const [mealPlans, setMealPlans] = useState([]);
@@ -65,7 +78,8 @@ const DietPage = () => {
     };
     const btnImgarray = [breakfast, lunch, dinner];
     const btnImg = btnImgarray.map((img) => img);
-
+    const stpbox = selectedMealType ? "4/2/8/20" : "4/2/16/20";
+    const stpimg = selectedMealType ? "8rem" : "12rem";
     return (
         <div className="diet-page">
             <Menu />
@@ -75,53 +89,80 @@ const DietPage = () => {
                     <p>{dietInfo.description}</p>
                 </header>
 
-                <div className="meal-types">
-                    {mealTypes.map((mealType, index) => (
-                        <div key={index}>
-                            <button
-                                style={{
-                                    backgroundImage: `url(${btnImg[index]})`,
-                                }}
-                                onClick={() => handleMealTypeClick(mealType)}
-                            ></button>
-                            <p> {mealType.toUpperCase()}</p>
-                        </div>
-                    ))}
-                </div>
-                <h2>Options</h2>
-                {selectedMealType && (
-                    <div className="meal-options">
-                        {mealPlans.map((meal, index) => (
+                <div className="meal-types" style={{ gridArea: stpbox }}>
+                    <Zoom duration={1800}>
+                        {mealTypes.map((mealType, index) => (
                             <div
-                                key={meal._id || index}
-                                className="meal-card"
-                                onClick={() => handleMealClick(meal)}
+                                key={index}
+                                onClick={() => handleMealTypeClick(mealType)}
                             >
-                                {meal.title}
+                                <img
+                                    src={btnImg[index]}
+                                    alt="index"
+                                    style={{ width: stpimg }}
+                                ></img>
+                                <p> {mealType.toUpperCase()}</p>
                             </div>
                         ))}
-                    </div>
-                )}
-                {selectedMeal && (
-                    <div className="selected-meal">
-                        <h2>Meals suggestion</h2>
-                        <div
-                            className="smMeal"
-                            style={{
-                                backgroundImage: `url(${selectedMeal.image})`,
-                            }}
-                        ></div>
-                        <div className="smTxt">
-                            <h2 className="card-title">{selectedMeal.title}</h2>
-                            <p className="card-content">
-                                {selectedMeal.content}
-                            </p>
-                            <div className="health-impact">
-                                <h5>Health Impact Range:</h5>
-                                <Range value={healthImpactRange} />
-                                <span>{selectedMeal.healthImpactRange}%</span>
+                    </Zoom>
+                </div>
+                {selectedMealType && (
+                    <div className="options-box">
+                        {/* {selectedMealType && <h2>Options</h2>} */}
+
+                        <div className="meal-options">
+                            <Fade
+                                className="options-img"
+                                direction="down"
+                                duration={2000}
+                            >
+                                <img src={menup} alt="menu"></img>
+                            </Fade>
+                            <div className="menu-meal">
+                                <Fade duration={2000}>
+                                    {mealPlans.map((meal, index) => (
+                                        <div
+                                            key={meal._id || index}
+                                            className="meal-card"
+                                            onClick={() =>
+                                                handleMealClick(meal)
+                                            }
+                                        >
+                                            {meal.title}
+                                        </div>
+                                    ))}
+                                </Fade>
                             </div>
                         </div>
+
+                        {selectedMeal && (
+                            <Slide className="faded" direction="right">
+                                <div className="selected-meal">
+                                    <div
+                                        className="smMeal"
+                                        style={{
+                                            backgroundImage: `url(${selectedMeal.image})`,
+                                        }}
+                                    ></div>
+                                    <div className="smTxt">
+                                        <h2 className="card-title">
+                                            {selectedMeal.title}
+                                        </h2>
+                                        <p className="card-content">
+                                            {selectedMeal.content}
+                                        </p>
+                                        <div className="health-impact">
+                                            <h5>Health Impact Range:</h5>
+                                            <Range value={healthImpactRange} />
+                                            <span>
+                                                {selectedMeal.healthImpactRange}
+                                                %
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Slide>
+                        )}
                     </div>
                 )}
             </div>

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Fade, Zoom } from "react-awesome-reveal";
 import { Menu } from "../Menu";
 import { useState, useEffect } from "react";
-import cureImg from "./cure.png";
-import befitImg from "./heartrate.png";
-import heal from "./heal.png";
-import heal11 from "./heal11.png";
+import cureImg from "./images/cure.png";
+import befitImg from "./images/heartrate.png";
+import heal from "./images/heal.png";
+import heal11 from "./images/heal11.png";
 import apiInstance from "../utils/axiosInstance";
 
 export const Home = () => {

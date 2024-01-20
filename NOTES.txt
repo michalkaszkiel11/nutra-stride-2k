@@ -1,0 +1,2 @@
+write function which moves the option-box with menu img and options accordingly to option (breakfast, lunch, menu).
+Inset btn from special.scss
