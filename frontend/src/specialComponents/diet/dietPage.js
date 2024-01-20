@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import styles from "./diet.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import apiInstance from "../../utils/axiosInstance";
 import { Menu } from "../../Menu";
-
+import breakfast from "./images/breakfast.png";
+import lunch from "./images/lunch.png";
+import dinner from "./images/dinner.png";
+import { Range } from "../../utils/Range";
 const DietPage = () => {
     const { conditionId } = useParams();
     const navigate = useNavigate();
@@ -11,7 +13,17 @@ const DietPage = () => {
     const [selectedMealType, setSelectedMealType] = useState(null);
     const [mealPlans, setMealPlans] = useState([]);
     const [selectedMeal, setSelectedMeal] = useState(null);
+    const [healthImpactRange, setHealthImpactRange] = useState(0);
     const inst = apiInstance();
+
+    useEffect(() => {
+        if (selectedMeal) {
+            const newHealthImpactRange = selectedMeal.healthImpactRange / 100;
+            console.log("New Health Impact Range:", newHealthImpactRange);
+            setHealthImpactRange(newHealthImpactRange);
+        }
+    }, [selectedMeal]);
+
     useEffect(() => {
         const getSpecialDiets = async () => {
             try {
@@ -51,6 +63,8 @@ const DietPage = () => {
     const handleMealClick = (meal) => {
         setSelectedMeal(meal); // Set the selected meal to display its content
     };
+    const btnImgarray = [breakfast, lunch, dinner];
+    const btnImg = btnImgarray.map((img) => img);
 
     return (
         <div className="diet-page">
@@ -60,60 +74,56 @@ const DietPage = () => {
                     <h1>{dietInfo.healthCondition}</h1>
                     <p>{dietInfo.description}</p>
                 </header>
-                <div className="meal-types-main">
-                    <div className="meal-types-sub">
-                        {mealTypes.map((mealType, index) => (
+
+                <div className="meal-types">
+                    {mealTypes.map((mealType, index) => (
+                        <div key={index}>
                             <button
-                                key={index}
-                                className={
-                                    selectedMealType === mealType
-                                        ? styles.activeTab
-                                        : ""
-                                }
+                                style={{
+                                    backgroundImage: `url(${btnImg[index]})`,
+                                }}
                                 onClick={() => handleMealTypeClick(mealType)}
+                            ></button>
+                            <p> {mealType.toUpperCase()}</p>
+                        </div>
+                    ))}
+                </div>
+                <h2>Options</h2>
+                {selectedMealType && (
+                    <div className="meal-options">
+                        {mealPlans.map((meal, index) => (
+                            <div
+                                key={meal._id || index}
+                                className="meal-card"
+                                onClick={() => handleMealClick(meal)}
                             >
-                                {mealType.toUpperCase()}
-                            </button>
+                                {meal.title}
+                            </div>
                         ))}
                     </div>
-
-                    <div className="meal-options-main">
-                        {selectedMealType && (
-                            <div className="meal-options-sub">
-                                {mealPlans.map((meal, index) => (
-                                    <div
-                                        key={meal._id || index}
-                                        className="meal-card"
-                                        onClick={() => handleMealClick(meal)}
-                                    >
-                                        <h3>{meal.title}</h3>
-                                    </div>
-                                ))}
+                )}
+                {selectedMeal && (
+                    <div className="selected-meal">
+                        <h2>Meals suggestion</h2>
+                        <div
+                            className="smMeal"
+                            style={{
+                                backgroundImage: `url(${selectedMeal.image})`,
+                            }}
+                        ></div>
+                        <div className="smTxt">
+                            <h2 className="card-title">{selectedMeal.title}</h2>
+                            <p className="card-content">
+                                {selectedMeal.content}
+                            </p>
+                            <div className="health-impact">
+                                <h5>Health Impact Range:</h5>
+                                <Range value={healthImpactRange} />
+                                <span>{selectedMeal.healthImpactRange}%</span>
                             </div>
-                        )}
-                        {selectedMeal && (
-                            <div className="selected-meal">
-                                <div>
-                                    <img
-                                        src={selectedMeal.image}
-                                        alt="Meal"
-                                        className="food-img"
-                                    />
-                                </div>
-                                <h3 className="card-title">
-                                    {selectedMeal.title}
-                                </h3>
-                                <p className="card-content">
-                                    {selectedMeal.content}
-                                </p>
-                                <span>
-                                    Health Impact Range:{" "}
-                                    {selectedMeal.healthImpactRange}
-                                </span>
-                            </div>
-                        )}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );

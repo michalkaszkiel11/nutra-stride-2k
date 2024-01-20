@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-
-import styles from "./workout.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { getVideoId } from "../helper/getVideo.js";
 import YouTube from "react-youtube";

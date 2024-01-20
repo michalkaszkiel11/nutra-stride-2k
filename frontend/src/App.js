@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthenticationProvider } from "./context/LoginAuthContext.js";
 import { CookiesContext } from "./context/CookiesContext.js";
 import "./Home/home.scss";
+import "./specialComponents/diet/diet.scss";
+import "./specialComponents/workout/workout.scss";
 import { MainGoal } from "./regularComponents/MainGoal.jsx";
 import { Meals } from "./regularComponents/Meals.jsx"; // Import the new Meals component
 import { WorkoutLevel } from "./regularComponents/WorkoutLevel.jsx"; // Import the new Workout component
