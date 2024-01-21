@@ -1,458 +1,124 @@
-.workoutPage {
-  width: 90%;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  padding: 2rem 0;
-  .workoutContainer {
-    flex-grow: 1;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bgGreen {
+    background-color: #dae7c4;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.workout-page {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid rgb(197, 188, 129);
-    background-color: rgba(203, 223, 215, 0.613);
-    border-radius: 5rem 5rem;
-    text-align: center;
-    width: 90%;
-    height: 10%;
-    margin-bottom: 1rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3),
-      0 15px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background: linear-gradient(
+        82.3deg,
+        rgba(231, 239, 197, 0.5) 10.8%,
+        rgba(163, 196, 188, 1) 94.3%
+    );
+    border-bottom: solid 25px var(--darker-color);
+    @extend .flex-center;
+    .workout-container {
+        margin-top: 10vh;
+        width: 90%;
+        height: 80%;
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      text-align: center;
-      padding-top: 3.5rem;
-    }
-    p {
-      font-size: 1.6rem;
-      font-weight: 500;
-
-      padding: 2rem 3rem;
-    }
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      .workoutVideo {
-        width: 80%;
-        overflow: hidden;
-        border-radius: 4rem;
-        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
-        margin: 2rem 3rem 4rem 4rem;
-      }
-      .imageWrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40%;
-        .workoutImage {
-          width: 100%;
-          max-width: 300px;
-          border-radius: 4rem;
-          box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .advice {
-          font-size: 1.9rem;
-          width: 80%;
-          text-align: center;
-          padding: 1rem;
-        }
-      }
-    }
-  }
-  .backToChoose {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    font-family: fantasy;
-    justify-content: center;
-    border: 5px solid rgb(147, 195, 99);
-    background-color: rgba(255, 255, 255, 0.53);
-    border-radius: 6rem 6rem;
-    text-align: center;
-    width: 12rem;
-    height: 3rem;
-
-    transition: transform 0.8s ease-in-out;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3),
-      0 15px 30px rgba(0, 0, 0, 0.3);
-
-    &:hover {
-      background-color: #15693f;
-      color: white;
-      transition: transform 0.8s ease-in-out;
-    }
-  }
-}
-
-//-------------------------------------------
-
-/* Small smartphones (portrait) */
-@media (max-width: 375px) and (max-height: 667px) {
-  .workoutPage {
-    width: 100vw;
-
-    .workoutContainer {
-      width: 80%;
-      height: 8%;
-      h1 {
-       
-        margin-top: 8rem;
-        font-size: 1rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 0.6rem;
-      }
-    .content {
-        flex-direction: column;
-     
-        .workoutVideo {
-          width: 70%;
-          height: 38%;
-          margin-top: -11rem;
-        }
-        .imageWrapper {
-          width: 60%;
-          margin-top: -5rem;
-          .workoutImage {
-            width: 80px;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-          }
-          .advice {
-          
+        .workout-main {
             width: 100%;
-            height: 30%;
-            font-size: 0.6rem;
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.1rem;
-      width: 6rem;
-      height: 2rem;
-    }
-  }
-}
-/* Small smartphones (landscape) */
-@media (max-width: 667px) and (max-height: 375px) {
-  .workoutPage {
-    width: 100vw;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(20, 5%);
+            grid-template-rows: repeat(20, 5%);
+            .workout-background1 {
+                @extend .bgGreen;
 
-    .workoutContainer {
-      width: 80%;
-      height: 8%;
-      h1 {
-       
-        margin-top: 12rem;
-        font-size: 1rem;
-      }
-      p {
-        margin-top: -2rem;
-        font-size: 0.6rem;
-      }
-    .content {
-        flex-direction: row;
-     
-        .workoutVideo {
-          width: 70%;
-          height: 40%;
-          margin-top: -12rem;
-          margin-right: 1rem;
-        }
-        .imageWrapper {
-          width: 60%;
-          margin-top: -15rem;
-        
-          .workoutImage {
-            width: 80px;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-          }
-          .advice {
-            font-size: 0.6rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.1rem;
-      width: 6rem;
-      height: 2rem;
-    }
-  }
-}
-/* Medium-sized smartphones (portrait) */
-@media (max-width: 414px) and (max-height: 896px) {
-  .workoutPage {
-    width: 100vw;
+                grid-area: 14/1/15/9;
+            }
+            .workout-background2 {
+                @extend .bgGreen;
+                grid-area: 1/2/13/9;
+            }
+            .workout-background3 {
+                @extend .bgGreen;
+                background-color: var(--darker-color) !important;
+                grid-area: 16/1/20/2;
+            }
+            .workout-background4 {
+                @extend .bgGreen;
+                background-color: var(--darker-color) !important;
+                grid-area: 1/1/13/2;
+            }
 
-    .workoutContainer {
-      width: 70%;
-      
-      h1 {
-       margin-top: 8rem;
-          font-size: 1.4rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 0.8rem;
-      }
-    .content {
-        flex-direction: column;
-     
-        .workoutVideo {
-          width: 70%;
-          height: 30%;
-          margin-top: -10rem;
-          margin-bottom: 1rem;
-          
-        }
-        .imageWrapper {
-          width: 60%;
-         
-        
-          .workoutImage {
-            width: 110px;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-          }
-          .advice {
-            font-size: 0.6rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.1rem;
-      width: 6rem;
-      height: 2rem;
-    }
-  }
-}
+            .workout-header {
+                @extend .flex-center;
+                padding: 1rem;
+                grid-area: 1/2/9/5;
+                font-size: 6.5vh;
+                color: white;
+                text-shadow: 2px 2px 0px #000000,
+                    5px 4px 0px rgba(0, 0, 0, 0.15);
+            }
+            .workout-img-box {
+                @extend .flex-center;
+                width: 100%;
+                height: 100%;
+                grid-area: 1/6/9/9;
+                img {
+                    width: 13rem;
+                    height: fit-content;
+                }
+            }
+            .advice {
+                grid-area: 10/2/12/7;
+                padding: 1rem;
+            }
+            .content-video {
+                width: 100%;
+                height: 100%;
+                grid-area: 1/10/14/20;
+                .workout-video {
+                    width: 100%;
+                    height: fit-content;
+                    overflow: hidden;
+                    position: relative;
+                    background-color: #dae7c4;
+                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                }
+            }
+            .workout-h2 {
+                @extend .flex-center, .bgGreen;
+                grid-area: 16/2/20/9;
+                font-size: 2.2rem;
+            }
+            .workout-title-box {
+                @extend .flex-center;
+                padding: 2rem;
+                gap: 2rem;
+                grid-area: 15/10/20/20;
+                width: 100%;
+                height: 100%;
+                background-color: #dae7c4;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-/* Larger smartphones (portrait) */
-@media (max-width: 480px) and (max-height: 960px) {
-  .workoutPage {
-    width: 100vw;
-
-    .workoutContainer {
-      width: 70%;
-      
-      h1 {
-       margin-top: 8rem;
-          font-size: 1.6rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 0.9rem;
-      }
-    .content {
-        flex-direction: column;
-     
-        .workoutVideo {
-          width: 70%;
-          height: 30%;
-          margin-top: -10rem;
-          margin-bottom: 1rem;
-          
+                p {
+                    text-align: justify;
+                    padding: 2rem 0.5rem 2rem 0.5rem;
+                    font-size: 1.3rem;
+                }
+            }
         }
-        .imageWrapper {
-          width: 60%;
-         
-        
-          .workoutImage {
-            width: 110px;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-          }
-          .advice {
-            font-size: 0.7rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
     }
-    .backToChoose {
-      font-size: 1.1rem;
-      width: 6rem;
-      height: 2rem;
-    }
-  }
-}
-
-/* Tablets in portrait mode */
-@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
-  .workoutPage {
-    width: 100vw;
-
-    .workoutContainer {
-      width: 70%;
-      
-      h1 {
-       margin-top: -4rem;
-          font-size: 2.2rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 1rem;
-      }
-    .content {
-        flex-direction: column;
-     
-        .workoutVideo {
-          width: 70%;
-          height: 50%;
-          margin-top: -2rem;
-          margin-bottom: 1rem;
-          
-        }
-        .imageWrapper {
-          width: 60%;
-         
-        
-          .workoutImage {
-            width: 200px;
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-          }
-          .advice {
-            font-size: 1.2rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.1rem;
-      width: 6rem;
-      height: 2rem;
-    }
-  }
-}
-/* Tablets in landscape mode */
-@media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
-  .workoutPage {
-    width: 100vw;
-
-    .workoutContainer {
-      width: 70%;
-      
-      h1 {
-       margin-top: 1rem;
-          font-size: 2rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 1rem;
-      }
-    .content {
-        flex-direction: row;
-     
-        .workoutVideo {
-          width: 75%;
-          height: 70%;
-          margin-top: -5rem;
-          margin-bottom: 1rem;
-          
-        }
-        .imageWrapper {
-          width: 60%;
-          margin-top: -5rem;
-         margin-left: -3rem;
-        
-          .workoutImage {
-            width: 150px;
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-          }
-          .advice {
-            font-size: 1rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.5rem;
-      width: 10rem;
-      height: 3rem;
-    }
-  }
-}
-/* Laptops and desktops with wide screens */
-@media (min-width: 1281px) and (min-height: 800px) {
-  .workoutPage {
-    width: 100vw;
-
-    .workoutContainer {
-      width: 70%;
-      
-      h1 {
-       margin-top: 1rem;
-          font-size: 2rem;
-      }
-      p {
-        margin-top: -1rem;
-        font-size: 1rem;
-      }
-    .content {
-        flex-direction: row;
-     
-        .workoutVideo {
-          width: 75%;
-          height: 70%;
-          margin-top: -5rem;
-          margin-bottom: 1rem;
-          
-        }
-        .imageWrapper {
-          width: 60%;
-          margin-top: -5rem;
-         margin-left: -3rem;
-        
-          .workoutImage {
-            width: 150px;
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-          }
-          .advice {
-            font-size: 1rem;
-            width: 100%;
-            height: 30%;
-            
-          }
-        }
-      }
-    }
-    .backToChoose {
-      font-size: 1.5rem;
-      width: 10rem;
-      height: 3rem;
-    }
-  }
 }

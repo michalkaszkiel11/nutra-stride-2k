@@ -1,15 +1,27 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getVideoId } from "../helper/getVideo.js";
 import YouTube from "react-youtube";
 import apiInstance from "../../utils/axiosInstance";
-
+import { Menu } from "../../Menu.jsx";
+import { Fade } from "react-awesome-reveal";
 const WorkoutPage = () => {
     const [workout, setWorkout] = useState(null);
+    const [healthConditions, setHealthConditions] = useState([]);
     const { conditionId } = useParams();
-    const navigate = useNavigate();
-    const inst = apiInstance();
 
+    const inst = apiInstance();
+    const getConditions = async () => {
+        try {
+            const response = await inst.get("/special/health-conditions");
+            setHealthConditions(response.data.data);
+        } catch (error) {
+            console.error("Error fetching health conditions:", error);
+        }
+    };
+    useEffect(() => {
+        getConditions();
+    }, []);
     useEffect(() => {
         const getWorkouts = async () => {
             try {
@@ -34,47 +46,64 @@ const WorkoutPage = () => {
         }
     }, [conditionId]);
 
-    const backToChoose = () => {
-        navigate("/"); //back to choose diet or workout
-    };
-
     return (
         <div className="workout-page">
-            {workout ? (
-                <div key={workout._id} className="workout-main">
-                    <h1>{workout.workoutTitle}</h1>
-                    <p>{workout.workoutDesc}</p>
-
-                    <div className="content">
-                        {workout.workoutVideo && (
-                            <YouTube
-                                videoId={getVideoId(workout.workoutVideo)}
-                                className="workout-video"
-                                opts={{
-                                    width: "150%",
-                                    height: "500",
-                                    playerVars: {
-                                        autoplay: 0,
-                                        controls: 1,
-                                    },
-                                }}
-                            />
-                        )}
+            <Menu />
+            <Fade
+                className="workout-container"
+                duration={1500}
+                direction="down"
+            >
+                {workout ? (
+                    <div key={workout._id} className="workout-main">
+                        <div className="workout-background1"></div>
+                        <div className="workout-background2"></div>
+                        <div className="workout-background3"></div>
+                        <div className="workout-background4"></div>
+                        <h1 className="workout-header">
+                            Your health is our priority
+                        </h1>
                         <div className="workout-img-box">
-                            {workout.workoutImage && (
-                                <img
-                                    src={workout.workoutImage}
-                                    alt="Workout"
-                                    className="workout-img"
+                            {healthConditions.map((condition, index) => {
+                                if (condition._id === conditionId) {
+                                    return (
+                                        <img
+                                            key={index}
+                                            src={condition.image}
+                                            alt="Health Condition"
+                                            className="dowCondImage"
+                                        />
+                                    );
+                                }
+                                return null;
+                            })}
+                        </div>
+                        <p className="advice">"{workout.advice}"</p>
+                        <div className="content-video">
+                            {workout.workoutVideo && (
+                                <YouTube
+                                    videoId={getVideoId(workout.workoutVideo)}
+                                    className="workout-video"
+                                    opts={{
+                                        width: "100%",
+                                        height: "500",
+                                        playerVars: {
+                                            autoplay: 0,
+                                            controls: 1,
+                                        },
+                                    }}
                                 />
                             )}
-                            <p className="advice">"{workout.advice}"</p>
                         </div>
+                        <div className="workout-title-box">
+                            <p>{workout.workoutDesc}</p>
+                        </div>
+                        <h2 className="workout-h2">{workout.workoutTitle}</h2>
                     </div>
-                </div>
-            ) : (
-                <div className="loading-spinner"></div>
-            )}
+                ) : (
+                    <div className="loading-spinner"></div>
+                )}
+            </Fade>
         </div>
     );
 };

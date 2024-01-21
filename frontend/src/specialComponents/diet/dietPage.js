@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import apiInstance from "../../utils/axiosInstance";
 import { Menu } from "../../Menu";
 import breakfast from "./images/breakfast.png";
@@ -74,12 +74,27 @@ const DietPage = () => {
     };
 
     const handleMealClick = (meal) => {
-        setSelectedMeal(meal); // Set the selected meal to display its content
+        setSelectedMeal(meal);
     };
+
     const btnImgarray = [breakfast, lunch, dinner];
     const btnImg = btnImgarray.map((img) => img);
     const stpbox = selectedMealType ? "4/2/8/20" : "4/2/16/20";
     const stpimg = selectedMealType ? "8rem" : "12rem";
+
+    const mealClick = (meal) => {
+        const item = document.querySelector(meal);
+
+        if (item) {
+            item.classList.add("insetBtn");
+
+            setTimeout(() => {
+                item.classList.remove("insetBtn");
+            }, 200);
+        }
+    };
+    // const mealOpt = document.querySelector(".meal-options");
+
     return (
         <div className="diet-page">
             <Menu />
@@ -94,7 +109,11 @@ const DietPage = () => {
                         {mealTypes.map((mealType, index) => (
                             <div
                                 key={index}
-                                onClick={() => handleMealTypeClick(mealType)}
+                                onClick={() => {
+                                    handleMealTypeClick(mealType);
+                                    mealClick(mealType);
+                                }}
+                                className="meal"
                             >
                                 <img
                                     src={btnImg[index]}
@@ -124,9 +143,9 @@ const DietPage = () => {
                                         <div
                                             key={meal._id || index}
                                             className="meal-card"
-                                            onClick={() =>
-                                                handleMealClick(meal)
-                                            }
+                                            onClick={() => {
+                                                handleMealClick(meal);
+                                            }}
                                         >
                                             {meal.title}
                                         </div>
