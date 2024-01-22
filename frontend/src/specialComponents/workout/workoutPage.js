@@ -85,8 +85,6 @@ const WorkoutPage = () => {
                                     videoId={getVideoId(workout.workoutVideo)}
                                     className="workout-video"
                                     opts={{
-                                        width: "100%",
-                                        height: "500",
                                         playerVars: {
                                             autoplay: 0,
                                             controls: 1,
