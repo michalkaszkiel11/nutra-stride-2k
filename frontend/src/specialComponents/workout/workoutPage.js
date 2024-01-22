@@ -56,10 +56,10 @@ const WorkoutPage = () => {
             >
                 {workout ? (
                     <div key={workout._id} className="workout-main">
-                        <div className="workout-background1"></div>
-                        <div className="workout-background2"></div>
-                        <div className="workout-background3"></div>
-                        <div className="workout-background4"></div>
+                        <div className="green-holder"></div>
+                        <div className="workout-background"></div>
+                        <div className="title-black"></div>
+                        <div className="workout-black"></div>
                         <h1 className="workout-header">
                             Your health is our priority
                         </h1>
