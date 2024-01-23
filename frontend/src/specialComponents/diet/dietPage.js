@@ -184,11 +184,7 @@ const DietPage = () => {
                             <div
                                 className="menu-meal"
                                 style={{
-                                    flexDirection: `${
-                                        isMobileLandscape
-                                            ? menuListDirection
-                                            : ""
-                                    }`,
+                                    flexDirection: menuListDirection,
                                 }}
                             >
                                 <Fade duration={2000}>
