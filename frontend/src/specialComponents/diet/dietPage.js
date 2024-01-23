@@ -27,8 +27,38 @@ const DietPage = () => {
     const [mealPlans, setMealPlans] = useState([]);
     const [selectedMeal, setSelectedMeal] = useState(null);
     const [healthImpactRange, setHealthImpactRange] = useState(0);
+    const [isTablet, setIsTablet] = useState(false);
+    const [isMobileLandscape, setIsMobileLandscape] = useState(false);
     const inst = apiInstance();
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 1024) {
+                setIsTablet(true);
+            } else {
+                setIsTablet(false);
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 960 && window.innerHeight <= 480) {
+                setIsMobileLandscape(true);
+            } else {
+                setIsMobileLandscape(false);
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     useEffect(() => {
         if (selectedMeal) {
             const newHealthImpactRange = selectedMeal.healthImpactRange / 100;
@@ -77,11 +107,6 @@ const DietPage = () => {
         setSelectedMeal(meal);
     };
 
-    const btnImgarray = [breakfast, lunch, dinner];
-    const btnImg = btnImgarray.map((img) => img);
-    const stpbox = selectedMealType ? "4/2/8/20" : "4/2/16/20";
-    const stpimg = selectedMealType ? "8rem" : "12rem";
-
     const mealClick = (meal) => {
         const item = document.querySelector(meal);
 
@@ -93,18 +118,39 @@ const DietPage = () => {
             }, 200);
         }
     };
-    // const mealOpt = document.querySelector(".meal-options");
 
+    const btnImgarray = [breakfast, lunch, dinner];
+    const btnImg = btnImgarray.map((img) => img);
+    const stpbox = selectedMealType ? "4/2/8/20" : "4/2/16/20";
+    const stpboxTabletPortrait = selectedMealType ? "4/2/9/20" : "5/2/20/20";
+    const stpimg = selectedMealType ? "8rem" : "10rem";
+    const mealFontSize = selectedMeal ? "2vh" : "4vh";
+    const mealDirection = selectedMealType ? "row" : "column";
+    const menuListDirection = selectedMeal ? "row" : "column";
+    const menuListWidth = selectedMeal ? "25vw" : "70vw";
     return (
         <div className="diet-page">
             <Menu />
-            <div className="diet-main">
+            <div
+                className="diet-main"
+                style={{
+                    height: `${
+                        selectedMealType && isMobileLandscape ? "100%" : "100vh"
+                    }`,
+                }}
+            >
                 <header>
                     <h1>{dietInfo.healthCondition}</h1>
                     <p>{dietInfo.description}</p>
                 </header>
 
-                <div className="meal-types" style={{ gridArea: stpbox }}>
+                <div
+                    className="meal-types"
+                    style={{
+                        gridArea: `${isTablet ? stpboxTabletPortrait : stpbox}`,
+                        flexDirection: `${isTablet && mealDirection}`,
+                    }}
+                >
                     <Zoom duration={1800}>
                         {mealTypes.map((mealType, index) => (
                             <div
@@ -127,8 +173,6 @@ const DietPage = () => {
                 </div>
                 {selectedMealType && (
                     <div className="options-box">
-                        {/* {selectedMealType && <h2>Options</h2>} */}
-
                         <div className="meal-options">
                             <Fade
                                 className="options-img"
@@ -137,7 +181,16 @@ const DietPage = () => {
                             >
                                 <img src={menup} alt="menu"></img>
                             </Fade>
-                            <div className="menu-meal">
+                            <div
+                                className="menu-meal"
+                                style={{
+                                    flexDirection: `${
+                                        isMobileLandscape
+                                            ? menuListDirection
+                                            : ""
+                                    }`,
+                                }}
+                            >
                                 <Fade duration={2000}>
                                     {mealPlans.map((meal, index) => (
                                         <div
@@ -145,6 +198,10 @@ const DietPage = () => {
                                             className="meal-card"
                                             onClick={() => {
                                                 handleMealClick(meal);
+                                            }}
+                                            style={{
+                                                fontSize: mealFontSize,
+                                                width: menuListWidth,
                                             }}
                                         >
                                             {meal.title}

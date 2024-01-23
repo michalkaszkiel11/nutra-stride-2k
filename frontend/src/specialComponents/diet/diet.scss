@@ -42,7 +42,7 @@
 
         header {
             @extend .flex-center;
-            grid-area: 1/3/3/19;
+            grid-area: 2/3/3/19;
             flex-direction: column;
             width: 100%;
             height: 100%;
@@ -109,11 +109,6 @@
             align-items: center;
 
             .meal-options {
-                // -webkit-transition: all 1s ease-in;
-                // -moz-transition: all 1s ease-in;
-                // -o-transition: all 1s ease-in;
-                // transition: all 1s ease-in;
-
                 display: grid;
                 grid-template-columns: repeat(10, 10%);
                 grid-template-rows: repeat(10, 10%);
@@ -201,6 +196,820 @@
                             }
                             span {
                                 font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Laptops and desktops with wide screens */
+@media (min-width: 1281px) and (min-height: 800px) {
+    .diet-page {
+        .diet-main {
+            padding: 0;
+            header {
+                margin-top: 1rem;
+                flex-direction: row;
+                padding: 2rem;
+                gap: 2rem;
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .meal-types {
+                gap: 3rem;
+
+                div {
+                    padding: 0.25rem;
+                    .meal {
+                        gap: 0.25rem;
+                        font-size: 1.2rem;
+                        img {
+                            width: 6rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                .meal-options {
+                    width: 70%;
+                    font-size: 1.45rem;
+                    padding: 1rem;
+                    gap: 1rem;
+                    .menu-meal {
+                        flex-direction: column !important;
+                        grid-area: 2/3/8/9;
+                        gap: 3rem;
+                    }
+                    .options-img {
+                        margin: -3rem 0 0 -5rem;
+                        grid-area: 1/1/5/4;
+                        img {
+                            width: 14rem;
+                        }
+                    }
+                }
+                .faded {
+                    gap: 0.25rem;
+                    width: 100%;
+                    height: 80%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            flex-direction: row;
+                            padding: 2rem;
+                            width: 100%;
+                            height: 50%;
+                            h2 {
+                                font-size: 1.6rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Tablets in landscape mode */
+@media (min-width: 1025px) and (max-width: 1280px) and (max-height: 800px) {
+    .diet-page {
+        .diet-main {
+            padding: 0;
+            header {
+                margin-top: 1rem;
+                flex-direction: row;
+                padding: 2rem;
+                gap: 2rem;
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .meal-types {
+                gap: 3rem;
+
+                div {
+                    padding: 0.25rem;
+                    .meal {
+                        gap: 0.25rem;
+                        font-size: 1.2rem;
+                        img {
+                            width: 6rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                .meal-options {
+                    width: 100%;
+                    font-size: 1.45rem;
+                    padding: 1rem;
+                    gap: 1rem;
+                    .menu-meal {
+                        grid-area: 2/3/8/9;
+                        gap: 3rem;
+                    }
+                    .options-img {
+                        margin: -3rem 0 0 -5rem;
+                        grid-area: 1/1/5/4;
+                        img {
+                            width: 14rem;
+                        }
+                    }
+                }
+                .faded {
+                    gap: 0.25rem;
+                    width: 100%;
+                    height: 80%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            flex-direction: row;
+                            padding: 2rem;
+                            width: 100%;
+
+                            height: 50%;
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Tablets in portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
+    .diet-page {
+        .diet-main {
+            padding: 2rem;
+            margin-top: 0vh;
+            header {
+                grid-area: 2/3/4/19;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                gap: 0.5rem;
+
+                h1 {
+                    font-size: 2.6rem;
+                    font-weight: 800;
+                }
+                p {
+                    font-size: 1.6rem;
+                    text-align: center;
+                }
+            }
+            .meal-types {
+                gap: 1rem;
+                div {
+                    width: 100%;
+                    padding: 0.5rem;
+                    .meal {
+                        gap: 0.5rem;
+                        font-size: 1.2rem;
+                        padding: 1rem;
+                        img {
+                            width: 6rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                grid-area: 8/1/21/21;
+                flex-direction: column;
+                .meal-options {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-content: center;
+                    font-size: 1.6rem;
+                    padding: 1rem;
+                    text-align: center;
+                    gap: 1rem;
+                    width: 100%;
+                    .menu-meal {
+                        flex-direction: row;
+                        gap: 2.5rem;
+                        background-image: none;
+
+                        .meal-card {
+                            background-color: #f0fdd8;
+                            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+                            padding: 1rem;
+                            height: 14vh;
+                        }
+                    }
+
+                    .options-img {
+                        display: none;
+                        img {
+                            width: 0rem;
+                            height: 0;
+                        }
+                    }
+                }
+                .faded {
+                    flex-direction: column;
+                    gap: 0.25rem;
+                    width: 100%;
+
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            width: 100%;
+                            height: 16rem;
+                        }
+                        .smTxt {
+                            width: 100%;
+                            h2 {
+                                font-size: 2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1.2rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 4rem;
+                                    height: 4rem;
+                                }
+                                span {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Larger smartphones (landscape) */
+@media (max-width: 960px) and (max-height: 480px) {
+    .diet-page {
+        height: 100%;
+        .diet-main {
+            display: flex;
+            flex-direction: column;
+
+            padding: 0;
+            header {
+                margin-top: 0;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                h1 {
+                    font-size: 4vh;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .meal-types {
+                height: 100%;
+                gap: 3rem;
+                flex-direction: row !important;
+                div {
+                    padding: 0.25rem;
+                    width: 15rem;
+                    .meal {
+                        gap: 0.25rem;
+                        font-size: 1.2rem;
+                        img {
+                            width: 3rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                .meal-options {
+                    width: 100%;
+                    font-size: 1.45rem;
+                    padding: 1rem;
+                    gap: 1rem;
+                    .menu-meal {
+                        grid-area: 2/3/8/9;
+                        gap: 3rem;
+                    }
+                    .options-img {
+                        display: none;
+                    }
+                }
+                .faded {
+                    gap: 0.25rem;
+                    width: 90%;
+                    height: 100%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            flex-direction: row;
+                            padding: 2rem;
+                            width: 100%;
+                            gap: 1.5rem;
+                            height: 50%;
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Larger smartphones (portrait) */
+@media (max-width: 480px) and (max-height: 960px) {
+    .diet-page {
+        .diet-main {
+            padding: 1rem;
+            margin-top: 0vh;
+            header {
+                grid-area: 2/3/4/19;
+                gap: 0.5rem;
+
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 800;
+                }
+                p {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+            }
+            .meal-types {
+                gap: 1rem;
+                div {
+                    width: 100%;
+                    padding: 0.5rem;
+                    .meal {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        font-size: 0.75rem;
+                        padding: 1rem;
+                        img {
+                            width: 4rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                grid-area: 8/1/21/21;
+                flex-direction: column;
+                .meal-options {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-content: center;
+                    font-size: 1.6rem;
+                    padding: 1rem;
+
+                    .menu-meal {
+                        flex-direction: row;
+                        gap: 2rem;
+                        background-image: none;
+
+                        .meal-card {
+                            background-color: #f0fdd8;
+                            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+                            padding: 1rem;
+                            height: 12vh;
+                        }
+                    }
+
+                    .options-img {
+                        display: none;
+                        img {
+                            width: 0rem;
+                            height: 0;
+                        }
+                    }
+                }
+                .faded {
+                    flex-direction: column;
+                    gap: 0.25rem;
+                    width: 100%;
+                    height: 60%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            width: 100%;
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            width: 100%;
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 2.5rem;
+                                    height: 2.5rem;
+                                }
+                                span {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Medium-sized smartphones (landscape) */
+@media (max-width: 896px) and (max-height: 414px) {
+    .diet-page {
+        height: 100%;
+        .diet-main {
+            display: flex;
+            flex-direction: column;
+
+            padding: 0;
+            header {
+                margin-top: 0;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                h1 {
+                    font-size: 4vh;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .meal-types {
+                height: 100%;
+                gap: 3rem;
+                flex-direction: row !important;
+                div {
+                    padding: 0.25rem;
+                    width: 15rem;
+                    .meal {
+                        gap: 0.25rem;
+                        font-size: 1.2rem;
+                        img {
+                            width: 3rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                .meal-options {
+                    width: 100%;
+                    font-size: 1.45rem;
+                    padding: 1rem;
+                    gap: 1rem;
+                    .menu-meal {
+                        grid-area: 2/3/8/9;
+                        gap: 3rem;
+                    }
+                    .options-img {
+                        display: none;
+                    }
+                }
+                .faded {
+                    gap: 0.25rem;
+                    width: 90%;
+                    height: 100%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            flex-direction: row;
+                            padding: 2rem;
+                            width: 100%;
+                            gap: 1.5rem;
+                            height: 50%;
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Medium-sized smartphones (portrait) */
+@media (max-width: 414px) and (max-height: 896px) {
+    .diet-page {
+        .diet-main {
+            padding: 1rem;
+            margin-top: 0vh;
+            header {
+                margin-top: 1rem;
+                grid-area: 1/3/4/19;
+
+                h1 {
+                    font-size: 1.4rem;
+                }
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+            .options-box {
+                .faded {
+                    .selected-meal {
+                        .smMeal {
+                            height: 10rem;
+                        }
+                        .smTxt {
+                            h2 {
+                                padding-top: 1rem;
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Small smartphones (landscape) */
+@media (max-width: 667px) and (max-height: 375px) {
+    .diet-page {
+        height: 100%;
+        .diet-main {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+
+            padding: 0;
+            header {
+                margin-top: 0;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                h1 {
+                    font-size: 4vh;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .meal-types {
+                height: 100%;
+                gap: 3rem;
+                flex-direction: row !important;
+                div {
+                    padding: 0.25rem;
+                    width: 15rem;
+                    .meal {
+                        gap: 0.25rem;
+                        font-size: 1rem;
+                        img {
+                            width: 3rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                width: 100%;
+                display: flex;
+                flex-direction: column !important;
+                .meal-options {
+                    font-size: 1.45rem;
+                    padding: 1rem;
+                    gap: 1rem;
+                    display: flex;
+                    .menu-meal {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        grid-area: 2/3/8/9;
+                        gap: 3rem;
+                        background-image: none;
+                        .meal-card {
+                            background-color: #f0fdd8;
+                            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+                            padding: 1rem;
+                            height: 14vh;
+                            font-size: 1rem !important;
+                        }
+                    }
+                    .options-img {
+                        width: 0;
+                        height: 0;
+                        display: none;
+                    }
+                }
+                .faded {
+                    gap: 0.25rem;
+                    width: 90%;
+                    height: 100%;
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            height: 12rem;
+                        }
+                        .smTxt {
+                            flex-direction: row;
+                            padding: 2rem;
+                            width: 100%;
+                            gap: 1.5rem;
+                            height: 50%;
+                            h2 {
+                                font-size: 1.2rem;
+                            }
+                            .health-impact {
+                                flex-direction: column;
+                                h5 {
+                                    font-size: 1rem;
+                                }
+                                gap: 1rem;
+                                .range {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Small smartphones (portrait) */
+@media (max-width: 375px) and (max-height: 667px) {
+    .diet-page {
+        .diet-main {
+            padding: 1rem;
+            margin-top: 0vh;
+            header {
+                grid-area: 1/3/3/19;
+                gap: 0.5rem;
+
+                h1 {
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                }
+                p {
+                    font-size: 0.8rem;
+                    text-align: center;
+                }
+            }
+            .meal-types {
+                gap: 1rem;
+                div {
+                    width: 90%;
+                    height: 70%;
+                    padding: 0.25rem;
+                    .meal {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        font-size: 0.6rem;
+                        padding: 1rem;
+                        img {
+                            width: 3rem !important;
+                        }
+                    }
+                }
+            }
+
+            .options-box {
+                grid-area: 8/1/21/21;
+                flex-direction: column;
+                .meal-options {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-content: center;
+                    font-size: 1.6rem;
+                    padding: 1rem;
+
+                    .menu-meal {
+                        flex-direction: row;
+                        gap: 2rem;
+                        background-image: none;
+
+                        .meal-card {
+                            padding: 1rem;
+                            height: 12vh;
+                        }
+                    }
+                }
+                .faded {
+                    .selected-meal {
+                        width: 100%;
+
+                        .smMeal {
+                            width: 100%;
+                            height: 8rem;
+                        }
+                        .smTxt {
+                            width: 100%;
+                            h2 {
+                                font-size: 1rem;
+                            }
+                            p {
+                                font-size: 0.8rem;
+                            }
+                            .health-impact {
+                                flex-direction: row;
+                                h5 {
+                                    font-size: 0.8rem;
+                                }
+                                gap: 1rem;
+                                padding: 0.5rem;
+                                .range {
+                                    width: 2.5rem;
+                                    height: 2.5rem;
+                                }
                             }
                         }
                     }
