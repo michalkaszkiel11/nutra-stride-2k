@@ -122,8 +122,8 @@ const DietPage = () => {
     const btnImgarray = [breakfast, lunch, dinner];
     const btnImg = btnImgarray.map((img) => img);
     const stpbox = selectedMealType ? "4/2/8/20" : "4/2/16/20";
-    const stpboxTabletPortrait = selectedMealType ? "4/2/9/20" : "5/2/20/20";
-    const stpimg = selectedMealType ? "8rem" : "10rem";
+    const stpboxTabletPortrait = selectedMealType ? "4/2/8/20" : "5/2/20/20";
+    const stpimg = selectedMealType ? "7vh" : "12vh";
     const mealFontSize = selectedMeal ? "2vh" : "4vh";
     const mealDirection = selectedMealType ? "row" : "column";
     const menuListDirection = selectedMeal ? "row" : "column";
@@ -184,7 +184,9 @@ const DietPage = () => {
                             <div
                                 className="menu-meal"
                                 style={{
-                                    flexDirection: menuListDirection,
+                                    flexDirection: `${
+                                        isTablet ? menuListDirection : ""
+                                    }`,
                                 }}
                             >
                                 <Fade duration={2000}>
