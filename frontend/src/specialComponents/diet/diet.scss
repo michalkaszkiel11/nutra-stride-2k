@@ -175,6 +175,8 @@
                         background-size: cover;
                     }
                     .smTxt {
+                        gap: 1rem;
+
                         @extend .flex-center;
                         flex-direction: column;
                         padding: 1rem;
@@ -182,6 +184,7 @@
                         height: 40%;
                         text-align: center;
                         h2 {
+                            padding: 1rem;
                             font-size: 2rem;
                         }
                         .health-impact {
