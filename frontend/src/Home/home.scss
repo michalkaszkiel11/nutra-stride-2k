@@ -115,7 +115,7 @@
                     .hpLogoImg {
                         width: 100%;
                         height: 100%;
-                        background-image: url(./images/green.png);
+                        background-image: url(./images/utra.png);
                         background-position: center;
                         background-size: contain;
                         background-repeat: no-repeat;
@@ -477,7 +477,7 @@
                     height: 250px;
                     .animation-start {
                         p {
-                            font-size: 1rem;
+                            font-size: 0.8rem;
                         }
                     }
                 }
@@ -487,8 +487,28 @@
             }
             .hpOverviewSec {
                 .hpOverview-sub {
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+
+                    h3,
+                    p {
+                        display: none;
+                    }
                     .hpOverviewBoxx {
-                        height: 55%;
+                        width: 100%;
+                        height: 100%;
+                        p {
+                            display: block;
+                        }
+                    }
+                    .hpOverviewBoxx div:not(:first-child) {
+                        display: none;
+                    }
+                    .hpOverviewBoxx div:first-child {
+                        width: 100%;
+                        height: 100%;
+                        padding: 1rem;
                     }
                     i {
                         display: none;
@@ -511,11 +531,16 @@
                 width: 100vw;
                 align-self: center;
                 height: 60vh;
+
                 .hpLogo-box {
                     grid-area: 1/2/4/10;
+
+                    .hpLogoImg {
+                        display: none;
+                    }
                 }
                 .healthyIcon {
-                    grid-area: 4/1/6/11;
+                    grid-area: 2/1/5/11;
                     background-image: url(./images/health.png);
                     background-size: 70%;
                     background-position: center;
@@ -580,7 +605,7 @@
                     .hpCure {
                         .cureBg {
                             img {
-                                height: 5rem;
+                                height: 4rem;
                             }
                         }
                         div {
@@ -590,7 +615,7 @@
                     .hpBeFit {
                         .befitBg {
                             img {
-                                height: 5rem;
+                                height: 4rem;
                             }
                         }
                         div {
@@ -606,9 +631,17 @@
                 }
             }
             .hpOverviewSec {
+                font-size: smaller;
+
                 .hpOverview-sub {
-                    .hpOverviewBoxx {
-                        height: 60%;
+                    height: 100%;
+                    .hpOverviewBoxx div:not(:first-child) {
+                        display: none;
+                    }
+                    .hpOverviewBoxx div:first-child {
+                        width: 100%;
+                        height: 100%;
+                        padding: 0rem;
                     }
                 }
             }
@@ -695,18 +728,21 @@
                 }
             }
             .hpOverviewSec {
+                font-size: smaller;
+
                 .hpOverview-sub {
                     .hpOverviewBoxx {
+                        font-size: smaller;
                         gap: 0rem;
-                        height: 60%;
+                        height: 100%;
                         .over-zoom {
                             .linked {
                                 img {
-                                    width: 90%;
+                                    width: 100%;
                                 }
                                 p {
-                                    padding: 1rem 0 1rem 0;
-                                    width: 90%;
+                                    padding: 1rem;
+                                    width: 100%;
                                 }
                             }
                         }
@@ -728,7 +764,7 @@
                     grid-area: 1/2/4/10;
                 }
                 .healthyIcon {
-                    grid-area: 4/1/6/11;
+                    grid-area: 2/1/5/11;
                     background-image: url(./images/health.png);
                     background-size: 60%;
                     background-position: center;

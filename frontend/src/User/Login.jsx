@@ -34,7 +34,7 @@ export const Login = () => {
                 const token = response.data.token;
                 Cookies.set("jwtToken", token);
                 login();
-                navigate("/home");
+                navigate("/");
                 console.log("success");
             } else {
                 setError(response.data.message);
