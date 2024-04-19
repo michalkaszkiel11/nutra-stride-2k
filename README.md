@@ -1,4 +1,5 @@
 Welcome to Nutra Stride.
+
 Web space which helps you to find your fitness path.  Nutra Stride is a dynamic web application dedicated not only to individuals with special health conditions but also to anyone aspiring to make a real impact on their well-being.
 Our platform inspire users to make positive changes in their lives through personalized health solutions.
 
@@ -27,5 +28,12 @@ Product Overview:
 - One of the few - Market gap filler 
 - Authentic - Based on real data 
 
+Project Production Phase:
 
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/3ed82591-8a0d-4ac3-b9e0-278b2976b31e)
+
+
+
+
+We as Nutra Stride believe that its worth giving 110% of coding skills and effort to help others.
+
