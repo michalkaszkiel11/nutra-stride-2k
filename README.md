@@ -4,6 +4,7 @@ Web space which helps you to find your fitness path.  Nutra Stride is a dynamic 
 Our platform inspire users to make positive changes in their lives through personalized health solutions.
 
 <h4>Problem</h4>
+
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/d4b603e0-9556-4d51-b660-aabe33eb595c)
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/c55573eb-3f8b-4490-991e-0a7945a338cc)
 
@@ -21,6 +22,7 @@ Our platform inspire users to make positive changes in their lives through perso
 - Insufficient or inadequate therapy
 - Lack of energy or motivation 
 - Education and awareness 
+
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/be857152-5e88-4943-8123-bd29214f9199)
 
 <h4>Product Overview:</h4>
