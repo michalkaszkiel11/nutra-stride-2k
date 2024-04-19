@@ -9,15 +9,18 @@ Our platform inspire users to make positive changes in their lives through perso
 
 
 <h4>Users</h4>
+
 - In nearly every European country approximately  10% of population  is affected by significant health conditions.
 - 30% may have health problems.
 - About 60 to 70% of population have no major health issues.
 
 <h4>Market niche</h4>
+
 - A flood of small unreliable providers
 - No diversity in several areas (overall approach to the user)
 
 <h4>Self care</h4>
+
 - Seeking an alternative treatment caused by long queues to doctor office.
 - Insufficient or inadequate therapy
 - Lack of energy or motivation 
@@ -26,6 +29,7 @@ Our platform inspire users to make positive changes in their lives through perso
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/be857152-5e88-4943-8123-bd29214f9199)
 
 <h4>Product Overview:</h4>
+
 - Precise & accesible - The product deliver accurate knowledge for everyone.
 - One of the few - Market gap filler 
 - Authentic - Based on real data 
