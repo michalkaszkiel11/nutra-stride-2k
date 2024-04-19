@@ -6,7 +6,7 @@ Our platform inspire users to make positive changes in their lives through perso
 <h4>Problem</h4>
 
 ![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/d4b603e0-9556-4d51-b660-aabe33eb595c)
-![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/c55573eb-3f8b-4490-991e-0a7945a338cc)
+[![image](https://github.com/michalkaszkiel11/nutra-stride-2k/assets/149673103/c55573eb-3f8b-4490-991e-0a7945a338cc)](https://ec.europa.eu/eurostat/statistics-explained/images/thumb/1/13/Self-perceived_health_among_people_aged_16_years_or_over%2C_2022_%28%25%29_Health2023.png/700px-Self-perceived_health_among_people_aged_16_years_or_over%2C_2022_%28%25%29_Health2023.png)
 
 <h4>Users</h4>
 - In nearly every European country approximately  10% of population  is affected by significant health conditions.
