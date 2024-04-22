@@ -1700,14 +1700,14 @@ i {
     .main-box {
         .mainGoal-box {
             .header-box {
-                grid-area: 3/1/3/21; /*change*/
+                grid-area: 2/1/3/21; /*change*/
                 font-size: 4.5vh;
                 h1 {
                     font-size: 4.25vh; /*change*/
                 }
                 h3 {
                     position: absolute;
-                    top: 72%;
+                    top: 85%;
                     left: 70%;
                     margin-top: 0;
                     font-size: 1.5vh; /*change*/
@@ -1733,7 +1733,7 @@ i {
                         height: 100%;
                     }
                     img {
-                        width: 7rem; /*change*/
+                        width: 6.25rem; /*change*/
                         object-fit: contain;
                         display: none;
                     }
@@ -1783,7 +1783,7 @@ i {
 
     .workout-box {
         .top-nav {
-            margin-left: 0.5rem;
+            width: 100vw;
         }
         .intro {
             margin-top: 0;
@@ -1924,16 +1924,20 @@ i {
         }
     }
     .blog {
+        height: 225vh;
+        .top-nav {
+            width: 100vw;
+        }
         width: 100vw;
-        height: 100%;
         .blog-box {
-            margin-top: 15vh;
+            height: 100%;
+            margin-top: 0vh;
             display: flex;
             flex-direction: column;
-            grid-area: 4/2/17/20;
+            grid-area: 3/2/17/20;
             .blog-cards {
                 img {
-                    height: 55vh;
+                    height: 40vh;
                 }
                 div {
                     height: 15vh;
@@ -1942,8 +1946,9 @@ i {
         }
         h1 {
             grid-area: 1/2/3/20;
-            font-size: 2.5vh;
-            margin-top: 2vh;
+            text-align: center;
+            font-size: 3vh;
+            margin-top: 0vh;
         }
     }
     .posts {
@@ -2488,7 +2493,7 @@ i {
     .main-box {
         .mainGoal-box {
             .header-box {
-                grid-area: 3/1/5/21; /*change*/
+                grid-area: 2/1/4/21; /*change*/
                 // @extend .flex-center;
                 font-size: 4.5vh;
                 h1 {
@@ -2501,9 +2506,9 @@ i {
                 }
             }
             .dietChoose-box {
-                grid-area: 5/1/20/8; /*change*/
+                grid-area: 4/1/20/8; /*change*/
                 flex-direction: column; /*change*/
-                gap: 3rem; /*change*/
+                gap: 4rem; /*change*/
                 position: relative;
                 .dietbox {
                     width: 100%;
@@ -2515,11 +2520,12 @@ i {
                     gap: 1.5rem; /*change*/
                     button {
                         /*change*/
+                        font-size: smaller;
                         width: 100%;
                         height: 100%;
                     }
                     img {
-                        width: 4rem; /*change*/
+                        width: 3.5rem; /*change*/
                     }
                 }
             }
@@ -2528,7 +2534,7 @@ i {
                 gap: 1.5rem;
                 transition: all 0.5s;
                 flex-direction: column;
-                grid-area: 5/10/20/20; /*change*/
+                grid-area: 4/10/20/20; /*change*/
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
@@ -2720,16 +2726,16 @@ i {
             width: 100vw;
         }
         width: 100vw;
-        height: 100%;
+        height: 260vh;
         .blog-box {
-            margin-top: 16vh;
+            margin-top: 0vh;
             display: flex;
             flex-direction: column;
             grid-area: 3/2/17/20;
             .blog-cards {
-                margin-top: 5vh;
+                margin-top: 0vh;
                 img {
-                    height: 50vh;
+                    height: 45vh;
                 }
                 div {
                     height: 15vh;
@@ -2738,8 +2744,8 @@ i {
         }
         h1 {
             grid-area: 1/2/3/20;
-            font-size: 2.8vh;
-            margin-bottom: 5vh;
+            font-size: 3.2vh;
+            margin-top: 2.5vh;
             text-align: center;
         }
         P {
@@ -3099,6 +3105,9 @@ i {
                     button {
                         font-size: 2vh;
                     }
+                    img {
+                        width: 2.75rem;
+                    }
                 }
             }
             .diet-plans {
@@ -3424,7 +3433,7 @@ i {
     .main-box {
         .mainGoal-box {
             .dietChoose-box {
-                gap: 2.5rem;
+                gap: 2.75rem;
                 .dietbox {
                     height: 10vh;
                     gap: 1rem;
@@ -3434,7 +3443,7 @@ i {
                         font-size: 2vh;
                     }
                     img {
-                        width: 3rem; /*change*/
+                        width: 2rem; /*change*/
                     }
                 }
             }
@@ -3550,20 +3559,21 @@ i {
         }
     }
     .blog {
+        height: 270vh;
         width: 100vw;
-        height: 100%;
         .blog-box {
             margin-top: 12vh;
             display: flex;
             flex-direction: column;
-            grid-area: 4/2/17/20;
+            grid-area: 2/2/17/20;
             p {
                 font-size: 1.5vh;
             }
         }
         h1 {
             grid-area: 1/2/3/20;
-            font-size: 2.5vh;
+            font-size: 3vh;
+            margin-top: 5vh;
         }
     }
     .posts {
