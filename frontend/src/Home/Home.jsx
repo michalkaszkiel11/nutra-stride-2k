@@ -75,56 +75,6 @@ export const Home = () => {
         <div className="home">
             <Menu />
             <div className="home-box">
-                <div className="hpOverview">
-                    <div className="home-start">
-                        <Fade
-                            key={indexed}
-                            duration={1000}
-                            direction="left"
-                            className="animation-start"
-                            style={{
-                                backgroundImage: `url(${changeImg})`,
-                            }}
-                        >
-                            <p style={{ padding: `${pPadd}` }}>
-                                {indexed === 0 ? startTxt[0] : startTxt[1]}
-                            </p>
-                        </Fade>
-                    </div>
-                    <div className="hpOverview-sub">
-                        <h3>In numbers</h3>
-                        <p>
-                            Statistics never lie. Trust our reliability and
-                            authenticity
-                        </p>
-                        <div className="hpOverviewBox">
-                            <Zoom delay={200}>
-                                <div>
-                                    <h2>+100</h2>
-                                    <p>diets</p>
-                                </div>
-                            </Zoom>
-                            <Zoom delay={400}>
-                                <div>
-                                    <h2>+1000</h2>
-                                    <p>exercises</p>
-                                </div>
-                            </Zoom>
-                            <Zoom delay={600}>
-                                <div>
-                                    <h2>+30</h2>
-                                    <p>specialists</p>
-                                </div>
-                            </Zoom>
-                            <Zoom delay={800}>
-                                <div>
-                                    <h2>+1</h2>
-                                    <p>who wants changes</p>
-                                </div>
-                            </Zoom>
-                        </div>
-                    </div>
-                </div>
                 <div className="hpLogo">
                     <div className="hpLogo-box">
                         <Fade
@@ -150,43 +100,6 @@ export const Home = () => {
                             </div>
                             <div className="befitTxt">Be Fit</div>
                         </Link>
-                    </div>
-                </div>
-                <div className="hpOverviewSec">
-                    <div className="hpOverview-sub">
-                        <h3>Latest News</h3>
-                        <p>Be up to date with the latest nutrition news</p>
-                        <div className="hpOverviewBoxx">
-                            {blog.map((category, index) => (
-                                <Zoom className="over-zoom" key={index}>
-                                    <Link to="/blog" className="linked">
-                                        <img
-                                            src={category.image}
-                                            alt={index}
-                                            key={index}
-                                        ></img>
-                                        <p>{category.title}</p>
-                                    </Link>
-                                </Zoom>
-                            ))}
-                        </div>
-                        {isMobile && (
-                            <>
-                                {rolled ? (
-                                    <i
-                                        style={{ fontSize: "3rem" }}
-                                        className="fa-solid fa-chevron-up"
-                                        onClick={chevronDown}
-                                    ></i>
-                                ) : (
-                                    <i
-                                        style={{ fontSize: "3rem" }}
-                                        className="fa-solid fa-chevron-down"
-                                        onClick={chevronUp}
-                                    ></i>
-                                )}
-                            </>
-                        )}
                     </div>
                 </div>
             </div>

@@ -1980,7 +1980,381 @@ i {
         }
     }
 }
+@media (max-width: 768px) {
+    .login {
+        .login-container {
+            margin-top: 5vh;
+            flex-direction: column; /* change */
+            .login-box {
+                width: 100vw; /* change */
+                height: 50vh; /* change */
 
+                gap: 2rem;
+                .login-inputs {
+                    gap: 2rem;
+                    input {
+                        width: 60vw; /* change */
+                    }
+                    .password-box {
+                        .fa-lock,
+                        .fa-lock-open {
+                            right: 21%;
+                            position: absolute;
+                        }
+                    }
+                }
+                .login-buttons {
+                    font-size: larger;
+                    button {
+                        width: 60vw;
+                        height: 5vh;
+                    }
+                }
+            }
+            .bg {
+                width: 90vw;
+                height: 40vh;
+                .bg-login {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .logout-message {
+        z-index: 11;
+        width: 60vw;
+    }
+    .error-message {
+        z-index: 11;
+        width: 60vw;
+    }
+    .register {
+        background: linear-gradient(
+            82.3deg,
+            rgba(231, 239, 197, 1) 10.8%,
+            rgba(163, 196, 188, 0.8) 94.3%
+        );
+        .register-container {
+            margin-top: 0vh;
+            flex-direction: column; /* change */
+            .info {
+                grid-template-columns: repeat(2, 50vw); /* change */
+                width: 100vw; /* change */
+                height: 40vh; /* change */
+            }
+            .register-box {
+                width: 100vw; /* change */
+                height: 50vh; /* change */
+
+                .registration-progress {
+                    background: linear-gradient(
+                        82.3deg,
+                        rgba(231, 239, 197, 1) 10.8%,
+                        rgba(163, 196, 188, 0.8) 94.3%
+                    );
+                    padding-top: 1vh;
+
+                    width: 100vw;
+
+                    .register-inputs {
+                        input {
+                            width: 70vw; /* change */
+                            height: 80px; /* change */
+                        }
+                    }
+                    .register-buttons {
+                        button {
+                            width: 35vw; /* change */
+                            height: 60px; /* change */
+                        }
+                        margin-bottom: 125px;
+                    }
+                }
+            }
+        }
+    }
+    .main-box {
+        .mainGoal-box {
+            .header-box {
+                grid-area: 2/1/3/21; /*change*/
+                font-size: 4.5vh;
+                h1 {
+                    font-size: 4.25vh; /*change*/
+                }
+                h3 {
+                    position: absolute;
+                    top: 85%;
+                    left: 70%;
+                    margin-top: 0;
+                    font-size: 1.5vh; /*change*/
+                    text-shadow: none !important;
+                }
+            }
+            .dietChoose-box {
+                grid-area: 4/1/19/8; /*change*/
+                flex-direction: column; /*change*/
+                gap: 2.5rem;
+                position: relative;
+                .dietbox {
+                    width: 100%;
+                    height: 10vh;
+                    display: flex;
+                    flex-direction: column; /*change*/
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 0.5rem; /*change*/
+                    button {
+                        /*change*/
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 6.25rem; /*change*/
+                        object-fit: contain;
+                        display: none;
+                    }
+                }
+            }
+
+            .diet-plans {
+                gap: 1.5rem;
+                transition: all 0.5s;
+                flex-direction: column;
+                grid-area: 4/10/19/20; /*change*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+
+                .plan-card {
+                    padding: 0.5rem;
+                    box-shadow: 6px 6px 0 black;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 100%;
+                    height: 15vh;
+                    flex-direction: column;
+                    border-radius: 1.5rem;
+                    font-size: 1.8vh;
+
+                    gap: 1rem;
+                    h4 {
+                        font-size: 2vh;
+                    }
+                }
+            }
+        }
+    }
+    .meal-box {
+        height: 100%;
+        gap: 0.5rem;
+        .meal-selection {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 4rem;
+        }
+    }
+    .workout-box {
+        .top-nav {
+            width: 100vw;
+        }
+        .intro {
+            grid-area: 3/1/8/19;
+            padding: 1rem;
+            h1 {
+                font-size: 2.8vh;
+            }
+            p {
+                padding: 1rem 0.5rem 0 0;
+                font-size: 1.75vh;
+            }
+        }
+        .image {
+            grid-area: 3/18/6/20;
+        }
+
+        .level-box {
+            grid-area: 9/2/21/20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            gap: 0.5rem;
+            .level-card {
+                padding: 0.25rem;
+                display: flex;
+                border-radius: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                h2 {
+                    padding: 0.05rem;
+                }
+                .bgImg {
+                    width: 100%;
+                    height: 100%;
+                }
+                button {
+                    width: 100%;
+                    height: 30px;
+                    margin: 0rem;
+                    font-size: small;
+                }
+            }
+        }
+    }
+    .role-box {
+        display: flex;
+        flex-direction: column;
+        width: 100dvw;
+        height: 100%;
+        h1 {
+            padding-left: 2rem;
+            margin-top: 5vh;
+            font-size: 4vh;
+        }
+        .exercises-box {
+            margin-top: 0vh;
+            flex-direction: column;
+            .role-card {
+                width: 100%;
+                height: 70vh;
+                border: #a8a8a8 1px solid;
+                margin-bottom: 10vh;
+                h2 {
+                    font-size: 2.8vh;
+                    text-align: center;
+                }
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 50vh;
+                }
+                p {
+                    font-size: 2.3vh;
+                }
+            }
+        }
+    }
+    .exercise-box {
+        .exercise-card-box {
+            .exercise-card {
+                height: 90vh;
+                margin-top: 3vh;
+                .title {
+                    z-index: 11;
+                    width: 100%;
+                    height: fit-content;
+                    background-color: transparent;
+                    grid-area: 8/2/12/15;
+
+                    h2 {
+                        padding: 2rem;
+                        font-size: 2vh;
+                    }
+                    i {
+                        padding: 3rem;
+                        font-size: 4.5vh;
+                    }
+                }
+                .level {
+                    z-index: 11;
+                    grid-area: 9/16/12/25;
+                    background-color: transparent;
+                    h2 {
+                        padding: 0.75rem 1rem 0rem 1rem;
+                        font-size: 2vh;
+                    }
+                    p {
+                        padding: 0rem 2rem 0.5rem 1rem;
+                        font-size: 1.5vh;
+                    }
+                }
+                .text {
+                    grid-area: 11/2/19/25;
+                    font-size: 1vh;
+                    background-color: transparent;
+
+                    li {
+                        padding: 0rem 0rem 0.5rem 0rem;
+                        font-size: 1.5vh;
+                    }
+                }
+                .image {
+                    grid-area: 1/2/8/25;
+                    z-index: 1;
+                }
+                .videos {
+                    grid-area: 20/2/25/25;
+                    gap: 0.75rem;
+                }
+            }
+        }
+    }
+    .blog {
+        height: 225vh;
+        .top-nav {
+            width: 100vw;
+        }
+        width: 100vw;
+        .blog-box {
+            height: 100%;
+            margin-top: 0vh;
+            display: flex;
+            flex-direction: column;
+            grid-area: 3/2/17/20;
+            .blog-cards {
+                img {
+                    height: 40vh;
+                }
+                div {
+                    height: 15vh;
+                }
+            }
+        }
+        h1 {
+            grid-area: 1/2/3/20;
+            text-align: center;
+            font-size: 3vh;
+            margin-top: 0vh;
+        }
+    }
+    .posts {
+        .posts-box {
+            margin-top: 0vh;
+            flex-direction: column;
+            justify-content: space-around;
+            .posts-cards {
+                flex-direction: column;
+                gap: 20px;
+                div {
+                    height: 55vh;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    h4 {
+                        font-size: 2.8vh;
+                    }
+                    p {
+                        font-size: 1.4vh;
+                    }
+                }
+                img {
+                    height: 350px;
+                }
+            }
+        }
+        .posts-box > .posts-cards:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+    }
+}
 /* Larger smartphones (landscape) */
 @media (max-width: 960px) and (max-height: 480px) {
     .top-nav {

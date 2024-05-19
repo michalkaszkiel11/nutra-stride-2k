@@ -171,7 +171,53 @@
         }
     }
 }
-
+@media (max-width: 768px) {
+    .dowMain {
+        .dowRest {
+            margin-top: 0vh;
+            .dowWelcome {
+                .dowTitle {
+                    font-size: 3rem;
+                }
+                .dowText {
+                    font-size: 1.6rem;
+                    margin-bottom: 0.25rem;
+                    font-weight: 500;
+                    padding: 0.25rem;
+                }
+            }
+            .dowCarouselContainer {
+                width: 80vw;
+                height: 46vh;
+                gap: 0.25rem;
+                .dowBtnContainer {
+                    gap: 0rem;
+                    margin-top: 0rem;
+                    .dowBtnchoose1,
+                    .dowBtnchoose2 {
+                        margin: 0.5rem 1rem 1rem 1rem;
+                        width: 6rem;
+                        height: 6rem;
+                    }
+                }
+                .dowCondImage {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            .dowButtons {
+                margin-bottom: 2rem;
+                margin-top: 6vh;
+                gap: 4rem;
+                button {
+                    font-size: 1.75rem;
+                    width: 18rem;
+                    height: 7.5rem;
+                }
+            }
+        }
+    }
+}
 /* Tablets in portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1366px) {
     .dowMain {
