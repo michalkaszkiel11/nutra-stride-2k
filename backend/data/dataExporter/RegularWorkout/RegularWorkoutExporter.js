@@ -1,9 +1,9 @@
 import RegularWorkout from "../../../models/RegularWorkout/regularUserWorkoutModel.js";
 import regularWorkout from "../../regularWorkoutData.js";
-import RegularExerciseRole from "../../../models/RegularWorkout/regularExerciseRole.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import getIdByTitle from "../../../middleware/getIDByTitle.js";
+import RegularExerciseRole from "../../../models/RegularWorkout/RegularExerciseRole.js";
+import getIdByTitle from "../../../middleware/getIdByTitle.js";
 dotenv.config();
 mongoose
     .connect(

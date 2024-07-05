@@ -33,14 +33,8 @@ async function exportBlog() {
                 )
             );
             const newCategory = new BlogCategoriesModel({
-                // categories: [
-                //     {
-                //         title: category.title,
-                //         description: category.description,
-                //         posts: categoryId.filter((id) => id != null),
-                //     },
-                // ],
                 title: category.title,
+                image: category.image,
                 description: category.description,
                 posts: categoryId.filter((id) => id != null),
             });
@@ -55,14 +49,3 @@ async function exportBlog() {
 }
 
 exportBlog();
-
-// export default saveExerciseRoleData;
-// const checkout = async () => {
-//     blogData.categories.flatMap((role) =>
-//         role.workout.flatMap((workouts) =>
-//             workouts.title.flatMap((diet) => console.log(diet))
-//         )
-//     );
-// };
-
-// checkout();

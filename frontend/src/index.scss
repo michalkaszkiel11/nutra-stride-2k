@@ -2,6 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Libre Franklin", sans-serif;
+    // font-family: "Gruppo", sans-serif;
+}
+
+:root {
+    --primary-color: rgba(231, 239, 197, 1); /* Pale Spring Bud */
+    --secondary-color: rgba(163, 196, 188, 0.8); /* Silver Lake Blue */
+    --accent-color: #bfd7b5; /* Light Moss Green */
+    --dark-color: #a3c4bc; /* Glacier */
+    --darker-color: #413c58; /* Outer Space */
+    --darkest-color: #131b23; /* Dark Gunmetal */
 }
 
 body {
@@ -9,11 +20,9 @@ body {
     height: 100%;
 }
 .App {
-    width: 100vw;
-    height: 100vh;
-    div {
-        width: 50%;
-        height: 50%;
-        background-color: antiquewhite;
-    }
+    width: 100%;
+    height: 100%;
+    background-image: url("../src/specialComponents/chooseDietorWorkout/bkg.png");
+    background-size: cover;
+    background-position: center;
 }

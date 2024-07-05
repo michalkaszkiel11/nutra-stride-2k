@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import regularWorkout from "../../regularWorkoutData.js";
-import RegularExerciseRole from "../../../models/RegularWorkout/regularExerciseRole.js";
+
 import ExercisesModel from "../../../models/RegularWorkout/regularExerciseModel.js";
 import getIdByTitle from "../../../middleware/getIdByTitle.js";
 import express from "express";
+import RegularExerciseRole from "../../../models/RegularWorkout/RegularExerciseRole.js";
 dotenv.config();
 
 const app = express();
@@ -42,10 +43,9 @@ async function saveExerciseRoleData() {
                 );
                 const newExerciseRole = new RegularExerciseRole({
                     title: roles.title,
+                    image: roles.image,
                     description: roles.description,
                     workout: workoutIds.filter((id) => id != null),
-                    video: roles.video,
-                    image: roles.image,
                 });
 
                 await newExerciseRole.save();

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import RegularDiet from "../../../models/RegularDiet/regularDiet.js";
 import regularDiet from "../../../data/regularDietData.js";
 import RegularDietPlan from "../../../models/RegularDiet/PlanModel.js";
-import getIdByTitle from "../../../middleware/getIDByTitle.js";
+import getIdByTitle from "../../../middleware/getIdByTitle.js";
 dotenv.config();
 mongoose
     .connect(
@@ -35,6 +35,7 @@ async function regularGoalExporter() {
             );
             const newGoal = new RegularDiet({
                 title: goals.title,
+                image: goals.image,
                 plan: goalId.filter((id) => id != null),
             });
             await newGoal.save();
